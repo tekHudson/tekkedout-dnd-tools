@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DndTools</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>D&amp;D 5e Tools</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= render partial: "common/navbar", locals: { active: @active_tab } %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <%= render partial: "common/flash" %>
+          <%= content_for(:messages) %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <% if content_for(:title).present? %>
+            <h4 class="hidden-print"><%= content_for(:title) %></h4>
+          <% end %>
+
+          <%= content_for(:before_content) %>
+
+          <% if content_for(:content).present? || content_for(:sidebar).present? %>
+            <div class="row">
+              <% if content_for(:sidebar).present? %>
+                <div class="col-md-2 col-sm-3 sidebar sidebar-left sidebar-animate sidebar-md-show">
+                  <%= content_for(:sidebar) %>
+                </div>
+              <% end %>
+
+              <div class="<%= content_for(:content_size).present? ? content_for(:content_size) : 'col-xs-12' %>">
+                <%= render partial: "common/contents" %>
+              </div>
+            </div>
+          <% else %>
+            <%= yield %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
