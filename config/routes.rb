@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "races#index"
 
+  resources :combat_trackers, only: [:index]
+  resources :characters, only: [:create, :update, :destroy]
   resources :classes, only: [:index]
   resources :races, only: [:index]
 

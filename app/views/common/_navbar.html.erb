@@ -1,6 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
+      <%= tab("Combat Tracker", combat_trackers_path, active == "combat_tracker") %>
       <%= tab("Races", races_path, active == "races") %>
       <%= tab("Classes", classes_path, active == "classes") %>
       <li class="dropdown">

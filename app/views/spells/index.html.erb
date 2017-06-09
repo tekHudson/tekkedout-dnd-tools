@@ -1,0 +1,15 @@
+<% content_for :title, "Spells" %>
+
+<% content_for :content do %>
+  <div class="row">
+    <% @spells.each do |spell| %>
+      <div id="<%= spell.name %>" class="col-xs-2">
+        <div class="row">
+          <div class="col-xs-12 well">
+            <%= spell.name %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
