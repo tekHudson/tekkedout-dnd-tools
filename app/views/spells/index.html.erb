@@ -1,15 +1,24 @@
 <% content_for :title, "Spells" %>
 
 <% content_for :content do %>
-  <div class="row">
-    <% @spells.each do |spell| %>
-      <div id="<%= spell.name %>" class="col-xs-2">
-        <div class="row">
-          <div class="col-xs-12 well">
-            <%= spell.name %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <table class="table table-hover table-striped">
+    <tbody>
+      <% @spells.each do |spell_row| %>
+        <tr>
+          <% spell_row.each do |spell| %>
+            <td class="spell-td">
+              <div class="spell-div">
+                <button id="<%= spell.id %>" class="btn spell-tile btn-block" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
+                  <%= spell.name %></button>
+              </div>
+            </td>
+
+            <%= render partial: "spell_info_modal", :locals => {spell: spell} %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 <% end %>
+

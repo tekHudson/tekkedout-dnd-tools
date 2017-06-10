@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.spell-tile {
+.spell-tile .btn {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
 
+div .spell-div {
+    // width: 104px !important;
+    // height: 74px !important;
+}
+
+.btn {
+    white-space: normal;
 }
