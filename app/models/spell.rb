@@ -6,9 +6,9 @@ class Spell < ApplicationRecord
     elsif params[:name].present?
       results = Spell.where("name LIKE ? ", "%#{params[:name]}%")
     elsif params[:description].present?
-      results = Spell.where("description LIKE ? ", "%#{params[:description]}")
+      results = Spell.where("description LIKE ? ", "%#{params[:description]}%")
     elsif params[:klass].present?
-      results = Spell.where("klass LIKE ? ", "%#{params[:klass]}")
+      results = Spell.where("klass LIKE ? ", "%#{params[:klass]}%")
     else
       results = Spell.all.order(:name)
     end
