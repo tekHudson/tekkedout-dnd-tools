@@ -9,7 +9,7 @@ class CreateSpells < ActiveRecord::Migration[5.0]
       t.string :components
       t.string :duration
       t.string :description
-      t.string :other
+      t.string :klass
 
       t.timestamps
     end

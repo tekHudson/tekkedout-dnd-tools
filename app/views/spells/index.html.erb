@@ -1,24 +1,37 @@
 <% content_for :title, "Spells" %>
 
 <% content_for :content do %>
-  <table class="table table-hover table-striped">
-    <tbody>
-      <% @spells.each do |spell_row| %>
-        <tr>
-          <% spell_row.each do |spell| %>
-            <td class="spell-td">
-              <div class="spell-div">
-                <button id="<%= spell.id %>" class="btn spell-tile btn-block" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
-                  <%= spell.name %></button>
-              </div>
-            </td>
-
-            <%= render partial: "spell_info_modal", :locals => {spell: spell} %>
-          <% end %>
-        </tr>
+  <div class="spells container-fluid">
+    <div class="row spell-search">
+      <%= form_tag spells_path, method: :get, class: "navbar-form" do %>
+        <div class="form-group">
+          <%= label :search, :name, "By Spell Name:" %>
+          <%= text_field_tag :name, params[:name], placeholder: "Search text...", class: "form-control" %>
+          <%= label :description, :by_spell_description, "By Spell Description:" %>
+          <%= text_field_tag :description, params[:description], placeholder: "Search text...", class: "form-control" %>
+        </div>
+        <%= submit_tag "Search", name: nil, class: "btn btn-danger" %>
       <% end %>
-    </tbody>
-  </table>
+    </div>
 
+    <% @spells.each do |spell_row| %>
+      <div class="row table-row">
+        <% spell_row.each do |spell| %>
+          <div id="<%= spell.name %>" class="spell col-xs-2">
+            <button id="<%= spell.id %>" class="btn btn-primary spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>" stlye="height: 100px;">
+              <%= spell.name %>
+            </button>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%# Construct modal for every spell  %>
+    <% @spells.each do |spell_row| %>
+      <% spell_row.each do |spell| %>
+        <%= render partial: "spell_info_modal", :locals => {spell: spell} %>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
 

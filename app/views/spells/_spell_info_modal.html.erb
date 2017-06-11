@@ -10,22 +10,12 @@
         <h3><%= spell.name %></h3>
 
         <div class="well">
-          <div>
-            <label>Casting Time:</label>
-            <%= spell.casting_time %>
-          </div>
-          <div>
-            <label>Range:</label>
-            <%= spell.range %>
-          </div>
-          <div>
-            <label>Components:</label>
-            <%= spell.components %>
-          </div>
-          <div>
-            <label>Duration:</label>
-            <%= spell.duration %>
-          </div>
+          <div><label>Class:</label> <%= spell.klass %></div>
+          <div><label>Sub Class:</label> <%= spell.sub_class %></div>
+          <div><label>Casting Time:</label> <%= spell.casting_time %></div>
+          <div><label>Range:</label> <%= spell.range %></div>
+          <div><label>Components:</label> <%= spell.components %></div>
+          <div><label>Duration:</label> <%= spell.duration %></div>
         </div>
 
         <div class="well">

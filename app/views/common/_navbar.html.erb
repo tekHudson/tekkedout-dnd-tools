@@ -11,6 +11,14 @@
         </a>
         <ul class="dropdown-menu">
           <li><%= link_to "All Spells", spells_path %></li>
+          <li><%= link_to "Bard", spells_path(klass: "Bard") %></li>
+          <li><%= link_to "Cleric", spells_path(klass: "Cleric") %></li>
+          <li><%= link_to "Druid", spells_path(klass: "Druid") %></li>
+          <li><%= link_to "Paladin", spells_path(klass: "Paladin") %></li>
+          <li><%= link_to "Ranger", spells_path(klass: "Ranger") %></li>
+          <li><%= link_to "Sorcerer", spells_path(klass: "Sorcerer") %></li>
+          <li><%= link_to "Warlock", spells_path(klass: "Warlock") %></li>
+          <li><%= link_to "Wizard", spells_path(klass: "Wizard") %></li>
         </ul>
       </li>
 

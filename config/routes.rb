@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   resources :characters, only: [:create, :update, :destroy]
   resources :classes, only: [:index]
   resources :races, only: [:index]
-
-  resources :spells, only: [:index]
+  resources :spells, only: [:index, :search]
 end
