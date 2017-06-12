@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :combat_trackers, only: [:index]
   resources :characters, only: [:create, :update, :destroy]
-  resources :classes, only: [:index]
+  resources :klasses, only: [:index]
   resources :races, only: [:index]
   resources :spells, only: [:index, :search]
 end

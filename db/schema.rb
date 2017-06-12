@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170608202118) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "characters", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "init",       null: false
@@ -26,15 +29,15 @@ ActiveRecord::Schema.define(version: 20170608202118) do
   create_table "spells", force: :cascade do |t|
     t.integer  "level"
     t.string   "name"
-    t.string   "sub_class"
+    t.string   "sub_klass",    default: [],              array: true
     t.string   "casting_time"
     t.string   "range"
     t.string   "components"
     t.string   "duration"
     t.string   "description"
-    t.string   "klass"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "klass",        default: [],              array: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

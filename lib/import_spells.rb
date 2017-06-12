@@ -1,13 +1,13 @@
 require 'csv'
 
 class ImportSpells
-  SPELL_DETAILS = %i(level name sub_class casting_time range components duration description klass)
+  SPELL_DETAILS = %i(level name sub_klass casting_time range components duration description klass)
 
   def initialize
     @spells = []
   end
 
-  def construct_spells(file_name)
+  def self.construct_spells(file_name)
     begin
       spells_by_name = {}
 
@@ -29,14 +29,24 @@ class ImportSpells
         exisiting_spell = Spell.where(name: spell_hash[:name]).first
 
         if exisiting_spell.present?
-          exisiting_spell.update_attribute(:klass, (exisiting_spell.klass + ", #{spell_hash[:klass]}"))
+          exisiting_spell.klass.push spell_hash[:klass]
+          exisiting_spell.sub_klass.push spell_hash[:sub_klass]
+          exisiting_spell.save!
         else
+          spell_hash[:klass] = [spell_hash[:klass]]
           Spell.create spell_hash
         end
       end
     rescue => e
       puts "Unable to complete #{file_name}"
       puts "Exception: #{e.inspect}"
+    end
+  end
+
+  def self.update_all_components
+    Spell.all.each do |spell|
+      spell.components = spell.components.gsub(/(V)/, 'Verbal').gsub(/(S)/, 'Somatic').gsub(/(M)/, 'Material')
+      spell.save!
     end
   end
 end
