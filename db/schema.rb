@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20170608202118) do
 
   create_table "characters", force: :cascade do |t|
     t.string   "name",       null: false
-    t.integer  "init",       null: false
-    t.integer  "max_hp",     null: false
-    t.integer  "hp",         null: false
-    t.integer  "ac",         null: false
-    t.integer  "dc",         null: false
+    t.integer  "init"
+    t.integer  "max_hp"
+    t.integer  "hp"
+    t.integer  "ac"
+    t.integer  "dc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
