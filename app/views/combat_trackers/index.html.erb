@@ -1,35 +1,40 @@
 <% content_for :title, "Combat Tracker" %>
 
 <% content_for :content do %>
-  <% if @combat_trackers.present? %>
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-          <td>Name</td>
-          <td>Date Created</td>
-          <td>Date Updated</td>
-          <td>Actions</td>
-        </tr>
-      </thead>
+  <%= render partial: "combat_trackers/tabs" %>
 
-      <tbody>
-        <% @combat_trackers.each do |ct| %>
-          <%= form_for ct do |f| %>
-            <tr>
-              <td class="col-xs-5"><%= ct.name %></td>
-              <td><%= ct.created_at.strftime('%x') %> @ <%= ct.created_at.strftime('%r') %></td>
-              <td><%= ct.updated_at.strftime('%x') %> @ <%= ct.updated_at.strftime('%r') %></td>
-              <td class="col-xs-2">
-                <%= button_tag "Update", type: "submit", class: "btn btn-default" %>
-                <%= link_to combat_tracker_path(ct), method: :delete, type: :button, class: "btn btn-danger" do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
+  <% if @combat_trackers.present? %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Date Created</td>
+                <td>Date Updated</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @combat_trackers.each do |tracker| %>
+                <tr class="tracker" data-tracker-id="<%= tracker.id %>" data-href="<%= edit_combat_tracker_path(tracker) %>">
+                  <td class="col-xs-5"><%= tracker.name %></td>
+                  <td><%= tracker.created_at.strftime('%x') %> @ <%= tracker.created_at.strftime('%r') %></td>
+                  <td><%= tracker.updated_at.strftime('%x') %> @ <%= tracker.updated_at.strftime('%r') %></td>
+                  <td class="col-xs-1">
+                    <%= link_to combat_tracker_path(tracker), method: :delete, type: :button, class: "btn btn-danger" do %>
+                      <span class="glyphicon glyphicon-trash"></span>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   <% else %>
     <div>
       There are currently no combat trackers.

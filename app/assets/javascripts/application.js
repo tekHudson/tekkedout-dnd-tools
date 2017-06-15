@@ -12,9 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require turbolinks
+//= require expose
+//= require bootstrap-sprockets
+//= require combat_tracker
+//= require data-tables-init
+//= require races
+//= require spells
+//= require table_row_click
 //= require twitter/bootstrap/rails/confirm
+//= require tmpl
 //= require_tree .

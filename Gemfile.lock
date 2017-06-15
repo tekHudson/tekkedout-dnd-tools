@@ -46,6 +46,13 @@ GEM
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    blueimp-templates-rails (3.8.0)
+      railties (>= 3.0, < 6.0)
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
+    bootstrap-guardsjs-rails (0.4.0.1)
+      guardsjs-rails (>= 1.2.0)
+      railties (>= 3.0, < 6.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -65,6 +72,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    guardsjs-rails (1.5.1.1)
+      railties (>= 3.0, < 6.0)
     i18n (0.8.4)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
@@ -171,6 +180,9 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  blueimp-templates-rails
+  bootstrap-datepicker-rails
+  bootstrap-guardsjs-rails (~> 0.4)
   bootstrap-sass (~> 3.3)
   byebug
   coffee-rails (~> 4.2)

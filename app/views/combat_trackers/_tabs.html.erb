@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-6">
+    <ul class="nav nav-pills">
+      <%= tab("Active Trackers", combat_trackers_path, params[:controller] == "combat_tracker" && params[:action] != "deleted") %>
+      <%= tab("Deleted Trackers", deleted_combat_trackers_path, params[:controller] == "combat_tracker" && params[:action] == "deleted") %>
+    </ul>
+  </div>
+
+  <div class="col-xs-6">
+    <div class="pull-right">
+      <%= link_to new_combat_tracker_path(type: :new), type: :button, class: "btn btn-success" do %>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create
+      <% end %>
+    </div>
+  </div>
+</div>

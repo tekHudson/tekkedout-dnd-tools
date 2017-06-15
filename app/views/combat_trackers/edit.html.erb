@@ -1,0 +1,67 @@
+<% content_for :title, params[:action] == :new ? "New" : "Edit" %>
+
+<% content_for :content_size, "col-sm-9 col-md-10" %>
+
+<% content_for :content do %>
+  <%= render partial: "combat_trackers/combatant-row-template" %>
+
+  <%= javascript_tag do %>
+    var data = data || {};
+    data.combat_tracker = <%= @combat_tracker.to_json.html_safe %>;
+    addCombatantRows();
+  <% end %>
+
+  <%= form_for @combat_tracker, method: :patch do |f| %>
+
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <%= f.label :name, "Combat Tracker Name" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <h4>Combatants information</h4>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <table class="table table-striped combatant-table">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Init</td>
+                <td>Max HP</td>
+                <td>HP</td>
+                <td>AC</td>
+                <td>Spell DC</td>
+              </tr>
+            </thead>
+            <tbody>
+              <%# Dynamically Generated %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <button id="add-combatant-row" type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Item
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <%= button_tag "Save", type: "submit", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

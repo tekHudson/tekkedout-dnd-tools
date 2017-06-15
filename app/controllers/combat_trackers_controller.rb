@@ -4,6 +4,16 @@ class CombatTrackersController < ApplicationController
     @deleted_trackers = CombatTracker.deleted
   end
 
+  def new
+    @combat_tracker = CombatTracker.new
+
+    render :edit
+  end
+
+  def edit
+    @combat_tracker = CombatTracker.find(params[:id])
+  end
+
   def update
     ct = CombatTracker.find(params[:id])
 
@@ -26,6 +36,11 @@ class CombatTrackersController < ApplicationController
     end
   end
 
+  def deleted
+    @combat_trackers = CombatTracker.deleted
+
+    render :index
+  end
 
   private
 

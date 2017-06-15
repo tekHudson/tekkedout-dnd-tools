@@ -1,5 +1,5 @@
 class CombatTracker < ApplicationRecord
-  has_many :combatants
+  has_many :combatants, autosave: true
 
   def mark_deleted
     self.deleted = true
@@ -26,4 +26,17 @@ class CombatTracker < ApplicationRecord
   def deleted?
     deleted_at != nil
   end
+
+  def to_json
+    {
+      id: id,
+      name: name,
+      combatants: combatants.sort_by(&:id).map(&:to_json),
+    }.to_json
+  end
+
+  def self.to_json
+    includes(:combatants).order(:id).all.map(&:to_json).to_json
+  end
+
 end
