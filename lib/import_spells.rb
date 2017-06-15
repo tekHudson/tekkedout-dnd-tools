@@ -34,6 +34,7 @@ class ImportSpells
           exisiting_spell.save!
         else
           spell_hash[:klass] = [spell_hash[:klass]]
+          spell_hash[:sub_klass] = [spell_hash[:sub_klass]]
           Spell.create spell_hash
         end
       end

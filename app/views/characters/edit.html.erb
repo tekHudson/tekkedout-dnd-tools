@@ -1,0 +1,27 @@
+<% content_for :title, "Edit #{@character.name}" %>
+
+<% content_for :content_size, "col-sm-9 col-md-10" %>
+
+<% content_for :content do %>
+  <%= form_for @character do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :hp, "HP(max)" %>
+      <%= f.text_field :max_hp, { type: "number", class: "form-control" } %>
+    </div>
+    <div class="form-group">
+      <%= f.label :ac, "AC" %>
+      <%= f.text_field :ac, { type: "number", class: "form-control" } %>
+    </div>
+    <div class="form-group">
+      <%= f.label :spell_dc, "Spell DC" %>
+      <%= f.text_field :spell_dc, { type: "number", class: "form-control" } %>
+    </div>
+    <div class="form-group">
+      <%= button_tag "Save", type: "submit", class: "btn btn-default" %>
+    </div>
+  <% end %>
+<% end %>

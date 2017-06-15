@@ -1,0 +1,20 @@
+<%= form_for combatant do |c| %>
+  <tr>
+    <td class="col-xs-4"><%= c.text_field :name, class: "form-control" %></td>
+    <td><%= c.text_field :init, class: "form-control" %></td>
+    <td><%= c.text_field :max_hp, class: "form-control" %></td>
+    <td><%= c.text_field :hp, class: "form-control" %></td>
+    <td><%= c.text_field :ac, class: "form-control" %></td>
+    <td><%= c.text_field :dc, class: "form-control" %></td>
+    <td class="col-xs-2">
+      <div class="btn-group" role="group" aria-label="...">
+        <%= link_to combatant_path(combatant), method: :update, type: :button, class: "btn btn-primary", authenticity_token: true do %>
+          Update
+        <% end %>
+        <%= link_to combatant_path(combatant), method: :delete, type: :button, class: "btn btn-danger", authenticity_token: true do %>
+          <span class="glyphicon glyphicon-trash"></span>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+<% end %>

@@ -1,63 +1,38 @@
 <% content_for :title, "Combat Tracker" %>
 
 <% content_for :content do %>
-  <%= form_for @character do |f| %>
+  <% if @combat_trackers.present? %>
     <table class="table table-hover table-striped">
       <thead>
         <tr>
           <td>Name</td>
-          <td>Init</td>
-          <td>HP(max)</td>
-          <td>HP</td>
-          <td>AC</td>
-          <td>DC(spell)</td>
+          <td>Date Created</td>
+          <td>Date Updated</td>
+          <td>Actions</td>
         </tr>
       </thead>
 
       <tbody>
-        <tr>
-          <td class="col-xs-4"><%= f.text_field :name, { type: "text", class: "form-control" } %></td>
-          <td><%= f.text_field :init, { type: "number", class: "form-control" } %></td>
-          <td><%= f.text_field :max_hp, { type: "number", class: "form-control" } %></td>
-          <td><%= f.text_field :hp, { type: "number", class: "form-control" } %></td>
-          <td><%= f.text_field :ac, { type: "number", class: "form-control" } %></td>
-          <td><%= f.text_field :dc, { type: "number", class: "form-control" } %></td>
-          <td class="col-xs-2">
-            <%= button_tag type: "submit", class: "btn btn-default" do %>
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
-            <% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  <% end %>
-
-  <% if @characters.present? %>
-    <table class="table table-hover table-striped data-table">
-      <tbody>
-        <% @characters.each_with_index do |char, i| %>
-          <%= form_for char do |f| %>
+        <% @combat_trackers.each do |ct| %>
+          <%= form_for ct do |f| %>
             <tr>
-              <td class="col-xs-4"><%= f.text_field :name, class: "form-control" %></td>
-              <td><%= f.text_field :init, class: "form-control" %></td>
-              <td><%= f.text_field :max_hp, class: "form-control" %></td>
-              <td><%= f.text_field :hp, class: "form-control" %></td>
-              <td><%= f.text_field :ac, class: "form-control" %></td>
-              <td><%= f.text_field :dc, class: "form-control" %></td>
+              <td class="col-xs-5"><%= ct.name %></td>
+              <td><%= ct.created_at.strftime('%x') %> @ <%= ct.created_at.strftime('%r') %></td>
+              <td><%= ct.updated_at.strftime('%x') %> @ <%= ct.updated_at.strftime('%r') %></td>
               <td class="col-xs-2">
-                <div class="btn-group" role="group" aria-label="...">
-                  <%= link_to character_path(char), method: :update, type: :button, class: "btn btn-primary", authenticity_token: true do %>
-                    Update
-                  <% end %>
-                  <%= link_to character_path(char), method: :delete, type: :button, class: "btn btn-danger", authenticity_token: true do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                  <% end %>
-                </div>
+                <%= button_tag "Update", type: "submit", class: "btn btn-default" %>
+                <%= link_to combat_tracker_path(ct), method: :delete, type: :button, class: "btn btn-danger" do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                <% end %>
               </td>
             </tr>
           <% end %>
         <% end %>
       </tbody>
     </table>
+  <% else %>
+    <div>
+      There are currently no combat trackers.
+    </div>
   <% end %>
 <% end %>

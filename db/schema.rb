@@ -10,20 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608202118) do
+ActiveRecord::Schema.define(version: 20170614203037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
     t.string   "name",       null: false
+    t.integer  "max_hp"
+    t.integer  "ac"
+    t.integer  "dc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "combat_trackers", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "combatants", force: :cascade do |t|
+    t.integer  "combat_tracker_id"
+    t.string   "name",              null: false
     t.integer  "init"
     t.integer  "max_hp"
     t.integer  "hp"
     t.integer  "ac"
     t.integer  "dc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["combat_tracker_id"], name: "index_combatants_on_combat_tracker_id", using: :btree
   end
 
   create_table "spells", force: :cascade do |t|
