@@ -1,0 +1,59 @@
+<% content_for :title, "Creatures" %>
+
+<% content_for :content do %>
+  <%#= render partial: "combat_trackers/tabs" %>
+
+  <% if @creatures.present? %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="table-responsive">
+          <table class="table table-hover table-striped data-table sort-asc">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Species</td>
+                <td>Size</td>
+                <td>Alignment</td>
+                <td>Ac</td>
+                <td>Hp</td>
+                <td>Str</td>
+                <td>Dex</td>
+                <td>Con</td>
+                <td>Int</td>
+                <td>Wis</td>
+                <td>Cha</td>
+                <td>Book</td>
+                <td>Page</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @creatures.each do |creature| %>
+                <tr class="creature">
+                  <td><%= creature.name %></td>
+                  <td><%= creature.species %></td>
+                  <td><%= creature.size %></td>
+                  <td><%= creature.alignment %></td>
+                  <td><%= creature.ac %></td>
+                  <td><%= creature.hp %></td>
+                  <td><%= creature.str %></td>
+                  <td><%= creature.dex %></td>
+                  <td><%= creature.con %></td>
+                  <td><%= creature.int %></td>
+                  <td><%= creature.wis %></td>
+                  <td><%= creature.cha %></td>
+                  <td><%= creature.book %></td>
+                  <td><%= creature.page %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div>
+      There are currently no creatures in the system.
+    </div>
+  <% end %>
+<% end %>

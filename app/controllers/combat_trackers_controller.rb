@@ -1,10 +1,13 @@
 class CombatTrackersController < ApplicationController
+  active_tab "combat_tracker"
+
   def index
     @combat_trackers = CombatTracker.not_deleted
     @deleted_trackers = CombatTracker.deleted
   end
 
   def new
+    @new_combatant = Combatant.new
     @combat_tracker = CombatTracker.new
 
     render :edit
@@ -12,17 +15,17 @@ class CombatTrackersController < ApplicationController
 
   def edit
     @combat_tracker = CombatTracker.find(params[:id])
+    @new_combatant = Combatant.new
   end
 
   def update
-    ct = CombatTracker.find(params[:id])
+    # puts params.inspect
+    ct = CombatTracker.includes(:combatants).find(params[:id])
 
-    ct.assign_attributes combat_tracker_params
-
-    if ct.save
-      redirect_to combat_trackers_path, flash: { success: "Tracker updated!" }
+    if ct.update(combat_tracker_params)
+      redirect_to edit_combat_tracker_path(ct), flash: { success: "Tracker updated!" }
     else
-      redirect_to :back, alert: ct.errors.full_messages.to_sentence
+      redirect_to edit_combat_tracker_path(ct), alert: ct.errors.full_messages.to_sentence
     end
   end
 
@@ -45,6 +48,6 @@ class CombatTrackersController < ApplicationController
   private
 
   def combat_tracker_params
-    params.require(:combat_tracker).permit(:name)
+    params.require(:combat_tracker).permit(:name, combatants_attributes: [:id, :name, :init, :max_hp, :hp, :ac, :dc])
   end
 end

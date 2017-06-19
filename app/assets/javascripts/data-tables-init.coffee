@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $(".data-table").each ->
     table = $(@)
 
@@ -13,4 +13,4 @@ $(document).on "page:change", ->
     if table.hasClass("no-paging")
       options["paging"] = false
 
-    table.dataTable(options)
+    table.DataTable(options)

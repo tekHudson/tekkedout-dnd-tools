@@ -17,11 +17,7 @@
 //= require turbolinks
 //= require expose
 //= require bootstrap-sprockets
-//= require combat_tracker
-//= require data-tables-init
-//= require races
-//= require spells
-//= require table_row_click
-//= require twitter/bootstrap/rails/confirm
+//= require select2
 //= require tmpl
+//= require twitter/bootstrap/rails/confirm
 //= require_tree .

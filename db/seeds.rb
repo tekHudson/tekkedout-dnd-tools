@@ -14,7 +14,11 @@ def random_stat_value
 end
 
 if Spell.all.count < 400
-  Rake::Task['import'].invoke
+  Rake::Task['import_spells'].invoke
+end
+
+if Creature.all.count < 431
+  Rake::Task['import_creatures'].invoke
 end
 
 (1..10).each do |i|
@@ -25,7 +29,7 @@ end
   (1..rand(2..5)).each do |n|
     combatant = Combatant.new
     combatant.combat_tracker_id = ct.id
-    combatant.name = COMBATANT_NAMES.sample.trim
+    combatant.name = COMBATANT_NAMES.sample.strip
     combatant.init = random_stat_value
     combatant.max_hp = random_stat_value
     combatant.hp = random_stat_value

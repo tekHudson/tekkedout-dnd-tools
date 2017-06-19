@@ -1,0 +1,432 @@
+name,species,size,alignment,ac,hp,speed,str,dex,con,int,wis,cha,saving_throws,skills,damage immunities,damage resistance,condition immunities,senses,languages,challenge,xp,book,page
+Ambush Drake,Dragon,Medium,U,13,22,30ft,13,15,14,4,11,6,,"Perception +4, Stealth +4",,poison,,"darkvision 60ft, passive Perception 14",understands Draconic but can't speak it,0.5,100,Hoard of the Dragon Queen,88
+Dragonclaw,Humanoid,Medium,NE,14,16,30ft,9,16,13,11,10,12,Wis +2,"Deception +3, Stealth +5",,,,passive Perception 10,"Common, Draconic",1,200,Hoard of the Dragon Queen,89
+Guard Drake,Dragon,Medium,U,14,52,30ft,16,11,16,4,10,7,,Perception +2,,lightning,,"darkvision 60ft, passive Perception 12",understands Draconic but can't speak it,2,450,Hoard of the Dragon Queen,91
+Aarakocra,Humanoid,Medium,NG,12,13,20ft,10,14,10,11,12,11,,Perception +5,,,,passive Perception 15,"Arakocra, Auran",0.25,50,Monster Manual,12
+Aboleth,Aberration,Large,LE,17,135,"10ft, swim 40ft",21,9,15,18,15,18,"Con +6, Int +8, Wis +6","History +12, Perception +10",,,,"darkvision 120ft, passive Perception 20","Deep Speech, telepathy 120ft",10,5900,Monster Manual,13
+Deva,Celestial,Medium,LG,17,136,"30ft, fly 90ft",18,18,18,17,20,20,"Wis +9, Cha +9","Insight +9, Perception +9",,"radiant; bludgeoning, piercing, and slashing from nonmagical attacks","charmed, exhaustion, frightened","darkvision 120ft, passive Perception 19",,10,5900,Monster Manual,16
+Planetar,Celestial,Large,LG,19,200,,,,,,,,,,,,,,,16,15000,Monster Manual,17
+Solar,Celestial,Large,LG,21,243,,,,,,,,,,,,,,,21,33000,Monster Manual,18
+Animated Armor,Construct,Medium,U,18,33,,,,,,,,,,,,,,,1,200,Monster Manual,19
+Flying Sword,Construct,Small,U,17,17,,,,,,,,,,,,,,,0.25,50,Monster Manual,20
+Rug of Smothering,Construct,Large,U,12,33,,,,,,,,,,,,,,,2,450,Monster Manual,20
+Ankheg,Monstrosity,Large,U,14,39,,,,,,,,,,,,,,,2,450,Monster Manual,21
+Azer,Elemental,Medium,LN,17,39,,,,,,,,,,,,,,,2,450,Monster Manual,22
+Banshee,Undead,Medium,CE,12,58,,,,,,,,,,,,,,,4,1100,Monster Manual,23
+Basilisk,Monstrosity,Medium,U,15,52,,,,,,,,,,,,,,,3,700,Monster Manual,24
+Behir,Monstrosity,Huge,NE,17,168,,,,,,,,,,,,,,,11,7200,Monster Manual,25
+Beholder,Aberration,Large,LE,18,180,,,,,,,,,,,,,,,13,10000,Monster Manual,28
+Death Tyrant,Undead,Large,LE,19,187,,,,,,,,,,,,,,,14,11500,Monster Manual,29
+Spectator,Aberration,Medium,LN,14,39,,,,,,,,,,,,,,,3,700,Monster Manual,30
+Twig Blight,Plant,Small,NE,13,4,,,,,,,,,,,,,,,0.125,25,Monster Manual,32
+Needle Blight,Plant,Medium,NE,12,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,32
+Vine Blight,Plant,Medium,NE,12,26,,,,,,,,,,,,,,,0.5,100,Monster Manual,32
+Bugbear,Humanoid,Medium,CE,16,27,,,,,,,,,,,,,,,1,200,Monster Manual,33
+Bugbear Chief,Humanoid,Medium,CE,17,65,,,,,,,,,,,,,,,3,700,Monster Manual,33
+Bulette,Monstrosity,Large,U,17,94,,,,,,,,,,,,,,,5,1800,Monster Manual,34
+Bullywug,Humanoid,Medium,NE,15,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,35
+Cambion,Fiend,Medium,E,19,82,,,,,,,,,,,,,,,5,1800,Monster Manual,36
+Carrion Crawler,Monstrosity,Large,U,13,51,,,,,,,,,,,,,,,2,450,Monster Manual,37
+Centaur,Monstrosity,Large,NG,12,45,,,,,,,,,,,,,,,2,450,Monster Manual,38
+Chimera,Monstrosity,Large,CE,14,114,,,,,,,,,,,,,,,6,2300,Monster Manual,39
+Chuul,Aberration,Large,CE,16,93,,,,,,,,,,,,,,,4,1100,Monster Manual,40
+Cloaker,Aberration,Large,CN,14,78,,,,,,,,,,,,,,,8,3900,Monster Manual,41
+Cockatrice,Monstrosity,Small,U,11,27,,,,,,,,,,,,,,,0.5,100,Monster Manual,42
+Couatl,Celestial,Medium,LG,19,97,,,,,,,,,,,,,,,4,1100,Monster Manual,43
+Crawling Claw,Undead,Tiny,NE,12,2,,,,,,,,,,,,,,,0,10,Monster Manual,44
+Cyclops,Giant,Huge,CN,14,138,,,,,,,,,,,,,,,6,2300,Monster Manual,45
+Darkmantle,Monstrosity,Small,U,11,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,46
+Death Knight,Undead,Medium,CE,20,180,,,,,,,,,,,,,,,17,18000,Monster Manual,47
+Demilich,Undead,Tiny,NE,20,80,,,,,,,,,,,,,,,18,20000,Monster Manual,48
+Balor,Fiend (Demon),Huge,CE,19,262,,,,,,,,,,,,,,,19,22000,Monster Manual,55
+Barlgura,Fiend (Demon),Large,CE,15,68,,,,,,,,,,,,,,,5,1800,Monster Manual,56
+Dretch,Fiend (Demon),small,CE,11,18,,,,,,,,,,,,,,,0.25,50,Monster Manual,57
+Chasme,Fiend (Demon),Large,CE,15,84,,,,,,,,,,,,,,,6,2300,Monster Manual,57
+Glabrezu,Fiend (Demon),Large,CE,17,157,,,,,,,,,,,,,,,9,5000,Monster Manual,58
+Goristro,Fiend (Demon),Huge,CE,19,310,,,,,,,,,,,,,,,17,18000,Monster Manual,59
+Manes,Fiend (Demon),Small,CE,9,9,,,,,,,,,,,,,,,0.125,25,Monster Manual,60
+Hezrou,Fiend (Demon),Large,CE,16,136,,,,,,,,,,,,,,,8,3900,Monster Manual,60
+Marilith,Fiend (Demon),Large,CE,18,189,,,,,,,,,,,,,,,16,15000,Monster Manual,61
+Nalfeshnee,Fiend (Demon),Large,LE,18,184,,,,,,,,,,,,,,,13,10000,Monster Manual,62
+Quasit,Fiend (Demon),Tiny,CE,13,7,,,,,,,,,,,,,,,1,200,Monster Manual,63
+Shadow Demon,Fiend (Demon),Medium,CE,13,66,,,,,,,,,,,,,,,4,1100,Monster Manual,64
+Vrock,Fiend (Demon),Large,CE,15,104,,,,,,,,,,,,,,,6,2300,Monster Manual,64
+Yochlol,Fiend (Demon),Medium,CE,15,136,,,,,,,,,,,,,,,10,5900,Monster Manual,65
+Bearded Devil,Fiend (Devil),Medium,LE,13,52,,,,,,,,,,,,,,,3,700,Monster Manual,70
+Barbed Devil,Fiend (Devil),Medium,LE,15,110,,,,,,,,,,,,,,,5,1800,Monster Manual,70
+Bone Devil,Fiend (Devil),Large,LE,19,142,,,,,,,,,,,,,,,9,5000,Monster Manual,71
+Chain Devil,Fiend (Devil),Medium,LE,16,85,,,,,,,,,,,,,,,8,3900,Monster Manual,72
+Erinyes,Fiend (Devil),Medium,LE,18,153,,,,,,,,,,,,,,,12,8400,Monster Manual,73
+Horned Devil,Fiend (Devil),Large,LE,18,178,,,,,,,,,,,,,,,11,7200,Monster Manual,74
+Ice Devil,Fiend (Devil),Large,LE,18,180,,,,,,,,,,,,,,,14,11500,Monster Manual,75
+Lemure,Fiend (Devil),Medium,LE,7,13,,,,,,,,,,,,,,,0,10,Monster Manual,76
+Imp,Fiend (Devil),Tiny,LE,13,10,,,,,,,,,,,,,,,1,200,Monster Manual,76
+Pit Fiend,Fiend (Devil),Large,LE,19,300,,,,,,,,,,,,,,,20,25000,Monster Manual,77
+Spined Devil,Fiend (Devil),Small,LE,15,110,,,,,,,,,,,,,,,2,450,Monster Manual,78
+Allosaurus,Beast,Large,U,13,51,,,,,,,,,,,,,,,2,450,Monster Manual,79
+Ankylosaurus,Beast,Huge,U,15,68,,,,,,,,,,,,,,,3,700,Monster Manual,79
+Pteranodon,Beast,Medium,U,13,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,80
+Plesiosaurus,Beast,Large,U,13,68,,,,,,,,,,,,,,,2,450,Monster Manual,80
+Triceratops,Beast,Huge,U,13,95,,,,,,,,,,,,,,,5,1800,Monster Manual,80
+Tyrannosaurus Rex,Beast,Huge,U,13,136,,,,,,,,,,,,,,,8,3900,Monster Manual,80
+Displacer Beast,Monstrosity,Large,LE,13,85,,,,,,,,,,,,,,,3,700,Monster Manual,81
+Doppelganger,Monstrosity,Medium,N,14,52,,,,,,,,,,,,,,,3,700,Monster Manual,82
+Dracolich,Undead,VARIES,LE,19,225,,,,,,,,,,,,,,,17,18000,Monster Manual,84
+Shadow Dragon,Dragon,VARIES,CE,18,178,,,,,,,,,,,,,,,13,10000,Monster Manual,85
+Ancient Black Dragon,Dragon,Gargantuan,CE,22,367,,,,,,,,,,,,,,,21,33000,Monster Manual,87
+Wyrmling Black Dragon,Dragon,Medium,CE,17,33,,,,,,,,,,,,,,,2,450,Monster Manual,88
+Young Black Dragon,Dragon,Large,CE,18,127,,,,,,,,,,,,,,,7,2900,Monster Manual,88
+Adult Black Dragon,Dragon,Huge,CE,19,195,,,,,,,,,,,,,,,14,11500,Monster Manual,88
+Ancient Blue Dragon,Dragon,Gargantuan,LE,22,481,,,,,,,,,,,,,,,23,50000,Monster Manual,90
+Wyrmling Blue Dragon,Dragon,Medium,LE,17,52,,,,,,,,,,,,,,,3,700,Monster Manual,91
+Young Blue Dragon,Dragon,Large,LE,18,152,,,,,,,,,,,,,,,9,5000,Monster Manual,91
+Adult Blue Dragon,Dragon,Huge,LE,19,225,"40ft, burrow 30ft, fly 80ft",25,10,23,16,15,19,"Dex +5, Con +11, Wis +7, Cha +9","Perception +12, Stealth +5",lightning,,,"blindsight 60ft, darkvision 120ft, passive Perception 22","Common, Draconic",16,15000,Monster Manual,91
+Ancient Green Dragon,Dragon,Gargantuan,LE,21,385,,,,,,,,,,,,,,,22,41000,Monster Manual,93
+Young Green Dragon,Dragon,Large,LE,18,136,,,,,,,,,,,,,,,8,3900,Monster Manual,94
+Adult Green Dragon,Dragon,Huge,LE,19,207,,,,,,,,,,,,,,,15,13000,Monster Manual,94
+Wyrmling Green Dragon,Dragon,Medium,LE,17,38,,,,,,,,,,,,,,,2,450,Monster Manual,95
+Ancient Red Dragon,Dragon,Gargantuan,CE,22,546,,,,,,,,,,,,,,,24,62000,Monster Manual,97
+Wyrmling Red Dragon,Dragon,Medium,CE,17,75,,,,,,,,,,,,,,,4,1100,Monster Manual,98
+Young Red Dragon,Dragon,Large,CE,18,178,,,,,,,,,,,,,,,10,5900,Monster Manual,98
+Adult Red Dragon,Dragon,Huge,CE,19,256,,,,,,,,,,,,,,,17,18000,Monster Manual,98
+Ancient White Dragon,Dragon,Gargantuan,CE,20,333,,,,,,,,,,,,,,,20,25000,Monster Manual,100
+Young White Dragon,Dragon,Large,CE,14,135,,,,,,,,,,,,,,,6,2300,Monster Manual,101
+Adult White Dragon,Dragon,Huge,CE,18,200,,,,,,,,,,,,,,,13,10000,Monster Manual,101
+Wyrmling White Dragon,Dragon,Medium,CE,16,32,,,,,,,,,,,,,,,2,450,Monster Manual,102
+Ancient Brass Dragon,Dragon,Gargantuan,CG,20,297,,,,,,,,,,,,,,,20,25000,Monster Manual,104
+Young Brass Dragon,Dragon,Large,CG,17,110,,,,,,,,,,,,,,,6,2300,Monster Manual,105
+Adult Brass Dragon,Dragon,Huge,CG,18,172,,,,,,,,,,,,,,,13,10000,Monster Manual,105
+Wyrmling Brass Dragon,Dragon,Medium,CG,16,16,,,,,,,,,,,,,,,1,200,Monster Manual,106
+Ancient Bronze Dragon,Dragon,Gargantuan,LG,22,444,,,,,,,,,,,,,,,22,41000,Monster Manual,107
+Young Bronze Dragon,Dragon,Large,LG,18,142,,,,,,,,,,,,,,,8,3900,Monster Manual,108
+Adult Bronze Dragon,Dragon,Huge,LG,19,212,,,,,,,,,,,,,,,15,13000,Monster Manual,108
+Wyrmling Bronze Dragon,Dragon,Medium,LG,17,32,,,,,,,,,,,,,,,2,450,Monster Manual,109
+Ancient Copper Dragon,Dragon,Gargantuan,CG,21,350,,,,,,,,,,,,,,,21,33000,Monster Manual,110
+Young Copper Dragon,Dragon,Large,CG,17,119,,,,,,,,,,,,,,,7,2900,Monster Manual,111
+Adult Copper Dragon,Dragon,Huge,CG,18,184,,,,,,,,,,,,,,,14,11500,Monster Manual,111
+Wyrmling Copper Dragon,Dragon,Medium,CG,16,22,,,,,,,,,,,,,,,1,200,Monster Manual,112
+Ancient Gold Dragon,Dragon,Gargantuan,LG,22,546,,,,,,,,,,,,,,,24,62000,Monster Manual,113
+Adult Gold Dragon,Dragon,Huge,LG,19,256,,,,,,,,,,,,,,,17,18000,Monster Manual,114
+Wyrmling Gold Dragon,Dragon,Medium,LG,17,60,,,,,,,,,,,,,,,3,700,Monster Manual,115
+Young Gold Dragon,Dragon,Large,LG,18,178,,,,,,,,,,,,,,,10,5900,Monster Manual,115
+Ancient Silver Dragon,Dragon,Gargantuan,LG,22,487,,,,,,,,,,,,,,,23,50000,Monster Manual,116
+Adult Silver Dragon,Dragon,Huge,LG,19,243,,,,,,,,,,,,,,,16,15000,Monster Manual,117
+Wyrmling Silver Dragon,Dragon,Medium,LG,17,45,,,,,,,,,,,,,,,2,450,Monster Manual,118
+Young Silver Dragon,Dragon,Large,LG,18,168,,,,,,,,,,,,,,,9,5000,Monster Manual,118
+Dragon Turtle,Dragon,Gargantuan,N,20,341,,,,,,,,,,,,,,,17,18000,Monster Manual,119
+Drider,Monstrosity,Large,CE,19,123,,,,,,,,,,,,,,,6,2300,Monster Manual,120
+Dryad,Fey,Medium,N,11,22,,,,,,,,,,,,,,,1,200,Monster Manual,121
+Duergar,Humanoid,Medium,LE,16,26,,,,,,,,,,,,,,,1,200,Monster Manual,122
+Air Elemental,Elemental,Large,N,15,90,,,,,,,,,,,,,,,5,1800,Monster Manual,124
+Earth Elemental,Elemental,Large,N,17,126,,,,,,,,,,,,,,,5,1800,Monster Manual,124
+Fire Elemental,Elemental,large,N,13,102,,,,,,,,,,,,,,,5,1800,Monster Manual,125
+Water Elemental,Elemental,Large,N,14,114,,,,,,,,,,,,,,,5,1800,Monster Manual,125
+Drow,Humanoid,Medium,NE,15,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,128
+Drow Elite Warrior,Humanoid,Medium,NE,18,71,,,,,,,,,,,,,,,5,1800,Monster Manual,128
+Drow Mage,Humanoid,Medium,NE,12,45,,,,,,,,,,,,,,,7,2900,Monster Manual,129
+Drow Priestess of Lolth,Humanoid,Medium,NE,16,71,,,,,,,,,,,,,,,8,3900,Monster Manual,129
+Empyrean,Celestial,Huge,CG OR NE,22,313,,,,,,,,,,,,,,,23,50000,Monster Manual,130
+Ettercap,Monstrosity,Medium,NE,13,44,,,,,,,,,,,,,,,2,450,Monster Manual,131
+Ettin,Giant,large,CE,12,85,,,,,,,,,,,,,,,4,1100,Monster Manual,132
+Faerie Dragon,Dragon,Tiny,CG,15,14,,,,,,,,,,,,,,,1,200,Monster Manual,133
+Flameskull,Undead,Tiny,NE,13,40,,,,,,,,,,,,,,,4,1100,Monster Manual,134
+Flumph,Aberration,Small,LG,12,7,,,,,,,,,,,,,,,0.125,25,Monster Manual,135
+Fomorian,Giant,Huge,CE,14,149,,,,,,,,,,,,,,,8,3900,Monster Manual,136
+Shrieker,Plant,Medium,U,5,13,,,,,,,,,,,,,,,0,10,Monster Manual,138
+Violet Fungus,Plant,Medium,U,5,18,5ft,3,1,10,1,3,1,,,,,"blinded, deafened, frightened","blindsight 30ft (blind beyond this radius), passive Perception 6",,0.25,50,Monster Manual,138
+Gas Spore,Plant,Large,U,5,1,,,,,,,,,,,,,,,0.5,100,Monster Manual,138
+Galeb Duhr,Elemental,Medium,N,16,85,,,,,,,,,,,,,,,6,2300,Monster Manual,139
+Gargoyle,Elemental,Medium,CE,15,52,,,,,,,,,,,,,,,2,450,Monster Manual,140
+Dao,Elemental,Large,NE,18,187,,,,,,,,,,,,,,,11,7200,Monster Manual,143
+Djinni,Elemental,Large,CG,17,161,,,,,,,,,,,,,,,11,7200,Monster Manual,144
+Efreeti,Elemental,Large,LE,17,200,,,,,,,,,,,,,,,11,7200,Monster Manual,145
+Marid,Elemental,Large,CN,17,229,,,,,,,,,,,,,,,11,7200,Monster Manual,146
+Ghost,Undead,Medium,ANY,11,45,,,,,,,,,,,,,,,4,1100,Monster Manual,147
+Ghoul,Undead,Medium,CE,12,22,,,,,,,,,,,,,,,1,200,Monster Manual,148
+Ghast,Undead,Medium,CE,13,36,,,,,,,,,,,,,,,2,450,Monster Manual,148
+Cloud Giant,Giant,Huge,N,14,200,,,,,,,,,,,,,,,9,5000,Monster Manual,154
+Fire Giant,Giant,Huge,LE,18,162,,,,,,,,,,,,,,,9,5000,Monster Manual,154
+Hill Giant,Giant,Huge,CE,13,105,,,,,,,,,,,,,,,5,1800,Monster Manual,155
+Frost Giant,Giant,Huge,NE,15,138,,,,,,,,,,,,,,,8,3900,Monster Manual,155
+Stone Giant,Giant,Huge,N,17,126,,,,,,,,,,,,,,,7,2900,Monster Manual,156
+Storm Giant,Giant,Huge,CG,16,230,,,,,,,,,,,,,,,13,10000,Monster Manual,156
+Gibbering Mouther,Aberration,Medium,N,9,67,,,,,,,,,,,,,,,2,450,Monster Manual,157
+Githyanki Warrior,Humanoid,Medium,LE,17,46,,,,,,,,,,,,,,,3,700,Monster Manual,160
+Githyanki Knight,Humanoid,Medium,LE,18,91,,,,,,,,,,,,,,,8,3900,Monster Manual,160
+Githzerai Monk,Humanoid,Medium,LN,14,38,,,,,,,,,,,,,,,2,450,Monster Manual,161
+Githzerai Zerth,Humanoid,Medium,LN,17,84,,,,,,,,,,,,,,,6,2300,Monster Manual,161
+Gnoll,Humanoid,Medium,CE,15,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,163
+Gnoll Pack Lord,Humanoid,Medium,CE,15,49,,,,,,,,,,,,,,,2,450,Monster Manual,163
+Gnoll Fang of Yeenoghu,Humanoid,Medium,CE,14,65,,,,,,,,,,,,,,,4,1100,Monster Manual,163
+Deep (Svirfneblin) Gnome,Humanoid,Small,NG,15,16,,,,,,,,,,,,,,,0.5,100,Monster Manual,164
+Goblin,Humanoid,small,NE,15,7,,,,,,,,,,,,,,,0.25,50,Monster Manual,166
+Goblin Boss,Humanoid,small,NE,17,21,,,,,,,,,,,,,,,1,200,Monster Manual,166
+Clay Golem,Construct,Large,U,14,133,,,,,,,,,,,,,,,9,5000,Monster Manual,168
+Flesh Golem,Construct,Medium,N,9,93,,,,,,,,,,,,,,,5,1800,Monster Manual,169
+Stone Golem,Construct,Large,U,17,178,,,,,,,,,,,,,,,10,5900,Monster Manual,170
+Iron Golem,Construct,Large,U,20,210,,,,,,,,,,,,,,,16,15000,Monster Manual,170
+Gorgon,Construct,Large,U,19,114,,,,,,,,,,,,,,,5,1800,Monster Manual,171
+Grell,Aberration,Medium,NE,12,55,,,,,,,,,,,,,,,3,700,Monster Manual,172
+Grick,Monstrosity,Medium,N,14,27,,,,,,,,,,,,,,,2,450,Monster Manual,173
+Grick Alpha,Monstrosity,Medium,N,18,75,,,,,,,,,,,,,,,7,2900,Monster Manual,173
+Griffon,Monstrosity,Large,U,12,59,,,,,,,,,,,,,,,2,450,Monster Manual,174
+Grimlock,Humanoid,Medium,NE,11,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,175
+Green Hag,Fey,Medium,NE,17,82,,,,,,,,,,,,,,,3,700,Monster Manual,177
+Night Hag,Fiend,Medium,NE,17,112,,,,,,,,,,,,,,,5,1800,Monster Manual,178
+Sea Hag,Fey,Medium,CE,14,52,,,,,,,,,,,,,,,2,450,Monster Manual,179
+Half-Red Dragon Veteran,Humanoid,Medium,ANY,18,65,,,,,,,,,,,,,,,5,1800,Monster Manual,180
+Harpy,Monstrosity,Medium,CE,11,38,,,,,,,,,,,,,,,1,200,Monster Manual,181
+Hell Hound,Fiend,Medium,LE,15,45,,,,,,,,,,,,,,,3,700,Monster Manual,182
+Helmed Horror,Construct,Medium,N,20,60,,,,,,,,,,,,,,,4,1100,Monster Manual,183
+Hippogriff,Monstrosity,Large,U,11,19,,,,,,,,,,,,,,,1,200,Monster Manual,184
+Hobgoblin,Humanoid,Medium,LE,18,11,,,,,,,,,,,,,,,0.5,100,Monster Manual,186
+Hobgoblin Captain,Humanoid,Medium,LE,17,39,,,,,,,,,,,,,,,3,700,Monster Manual,186
+Hobgoblin Warlord,Humanoid,Medium,LE,20,97,,,,,,,,,,,,,,,6,2300,Monster Manual,187
+Homunculus,Construct,Tiny,N,13,5,,,,,,,,,,,,,,,0,10,Monster Manual,188
+Hook Horror,Monstrosity,Large,N,15,75,,,,,,,,,,,,,,,3,700,Monster Manual,189
+Hydra,Monstrosity,Huge,U,15,172,,,,,,,,,,,,,,,8,3900,Monster Manual,190
+Intellect Devourer,Aberration,Tiny,LE,12,21,,,,,,,,,,,,,,,2,450,Monster Manual,191
+Invisible Stalker,Elemental,Medium,N,14,104,,,,,,,,,,,,,,,6,2300,Monster Manual,192
+Jackalwere,Humanoid,Medium,CE,12,18,,,,,,,,,,,,,,,0.5,100,Monster Manual,193
+Kenku,Humanoid,Medium,CN,13,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,194
+Kobold,Humanoid,Small,LE,12,5,30,7,15,9,8,7,8,,,,,,"darkvision 60ft, passive Perception 8","Common, Draconic",0.125,25,Monster Manual,195
+Winged Kobold,Humanoid,Small,LE,13,7,"30ft, fly 30ft",7,16,9,8,7,8,,,,,,"darkvision 60ft, passive Perception 8","Common, Draconic",0.25,50,Monster Manual,195
+Kraken,Monstrosity,Gargantuan,CE,18,472,,,,,,,,,,,,,,,23,50000,Monster Manual,197
+Kuo-Toa,Humanoid,Medium,NE,13,18,,,,,,,,,,,,,,,0.25,50,Monster Manual,199
+Kuo-Toa Whip,Humanoid,Medium,NE,11,65,,,,,,,,,,,,,,,1,200,Monster Manual,200
+Kuo-Toa Archpriest,Humanoid,Medium,NE,13,97,,,,,,,,,,,,,,,6,2300,Monster Manual,200
+Lamia,Monstrosity,Large,CE,13,97,,,,,,,,,,,,,,,4,1100,Monster Manual,201
+Lich,Undead,Medium,E,17,135,,,,,,,,,,,,,,,21,33000,Monster Manual,202
+Lizardfolk,Humanoid,Medium,N,15,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,204
+Lizardfolk Shaman,Humanoid,Medium,N,13,27,,,,,,,,,,,,,,,2,450,Monster Manual,205
+Lizard King/Queen,Humanoid,Medium,CE,15,78,,,,,,,,,,,,,,,4,1100,Monster Manual,205
+Werebear,Humanoid,Medium,NG,11,135,,,,,,,,,,,,,,,5,1800,Monster Manual,208
+Wererat,Humanoid,Medium,LE,12,35,,,,,,,,,,,,,,,2,450,Monster Manual,209
+Wereboar,Humanoid,Medium,NE,11,78,,,,,,,,,,,,,,,4,1100,Monster Manual,209
+Weretiger,Humanoid,Medium,N,12,120,,,,,,,,,,,,,,,4,1100,Monster Manual,210
+Werewolf,Humanoid,Medium,CE,12,58,,,,,,,,,,,,,,,3,700,Monster Manual,211
+Magmin,Elemental,Small,CN,14,9,,,,,,,,,,,,,,,0.5,100,Monster Manual,212
+Manticore,Monstrosity,Large,LE,14,68,,,,,,,,,,,,,,,3,700,Monster Manual,213
+Medusa,Monstrosity,Medium,LE,15,127,,,,,,,,,,,,,,,6,2300,Monster Manual,214
+Dust Mephit,Elemental,Small,NE,12,17,,,,,,,,,,,,,,,0.5,100,Monster Manual,215
+Ice Mephit,Elemental,Small,NE,11,21,,,,,,,,,,,,,,,0.5,100,Monster Manual,215
+Mud Mephit,Elemental,Small,NE,11,27,,,,,,,,,,,,,,,0.25,50,Monster Manual,216
+Magma Mephit,Elemental,Small,NE,11,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,216
+Smoke Mephit,Elemental,Small,NE,12,22,,,,,,,,,,,,,,,0.25,50,Monster Manual,217
+Steam Mephit,Elemental,Small,NE,10,21,,,,,,,,,,,,,,,0.25,50,Monster Manual,217
+Merfolk,Humanoid,Medium,N,11,11,,,,,,,,,,,,,,,0.125,25,Monster Manual,218
+Merrow,Monstrosity,Large,CE,13,45,,,,,,,,,,,,,,,2,450,Monster Manual,219
+Mimic,Monstrosity,Medium,N,12,58,,,,,,,,,,,,,,,2,450,Monster Manual,220
+Mind Flayer,Aberration,Medium,LE,15,71,,,,,,,,,,,,,,,7,2900,Monster Manual,222
+Minotaur,Monstrosity,Large,CE,14,76,,,,,,,,,,,,,,,3,700,Monster Manual,223
+Monodrone,Construct,Medium,LN,15,5,,,,,,,,,,,,,,,0.125,25,Monster Manual,224
+Duodrone,Construct,Medium,LN,15,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,225
+Tridrone,Construct,Medium,LN,15,16,,,,,,,,,,,,,,,0.5,100,Monster Manual,225
+Quadrone,Construct,Medium,LN,16,22,,,,,,,,,,,,,,,1,200,Monster Manual,226
+Pentadrone,Construct,Large,LN,16,32,,,,,,,,,,,,,,,2,450,Monster Manual,226
+Mummy,Undead,Medium,LE,11,58,,,,,,,,,,,,,,,3,700,Monster Manual,228
+Mummy Lord,Undead,Medium,LE,17,97,,,,,,,,,,,,,,,15,13000,Monster Manual,229
+Myconid Sprout,Plant,Small,LN,10,7,,,,,,,,,,,,,,,0,10,Monster Manual,230
+Quaggoth Spore Servant,Plant,Medium,U,13,45,,,,,,,,,,,,,,,1,200,Monster Manual,230
+Myconid Adult,Plant,Medium,LN,12,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,232
+Myconid Sovereign,Plant,Large,LN,13,60,,,,,,,,,,,,,,,2,450,Monster Manual,232
+Bone Naga,Undead,Large,LE,15,58,,,,,,,,,,,,,,,4,1100,Monster Manual,233
+Spirit Naga,Monstrosity,Large,CE,15,75,,,,,,,,,,,,,,,8,3900,Monster Manual,234
+Guardian Naga,Monstrosity,Large,LG,18,127,,,,,,,,,,,,,,,10,5900,Monster Manual,234
+Nightmare,Fiend,Large,NE,13,68,,,,,,,,,,,,,,,3,700,Monster Manual,235
+Nothic,Aberration,Medium,NE,15,45,,,,,,,,,,,,,,,2,450,Monster Manual,236
+Ogre,Giant,Large,CE,11,59,,,,,,,,,,,,,,,2,450,Monster Manual,237
+Half Ogre,Giant,Large,C,12,30,,,,,,,,,,,,,,,1,200,Monster Manual,238
+Oni,Giant,Large,LE,16,110,,,,,,,,,,,,,,,7,2900,Monster Manual,239
+Black Pudding,Ooze,Large,U,7,85,,,,,,,,,,,,,,,4,1100,Monster Manual,241
+Gelatinous Cube,Ooze,Large,U,6,84,,,,,,,,,,,,,,,2,450,Monster Manual,242
+Gray Ooze,Ooze,Medium,U,8,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,243
+Ochre Jelly,Ooze,Large,U,8,45,,,,,,,,,,,,,,,2,450,Monster Manual,243
+Orc,Humanoid,Medium,CE,13,15,,,,,,,,,,,,,,,0.5,100,Monster Manual,246
+Orc War Chief,Humanoid,Medium,CE,16,93,,,,,,,,,,,,,,,4,1100,Monster Manual,246
+Orc Eye of Gruumsh,Humanoid,Medium,CE,16,45,,,,,,,,,,,,,,,2,450,Monster Manual,247
+Orog,Humanoid,Medium,CE,18,42,,,,,,,,,,,,,,,2,450,Monster Manual,247
+Otyugh,Aberration,Large,N,14,114,,,,,,,,,,,,,,,5,1800,Monster Manual,248
+Owlbear,Monstrosity,Large,U,13,59,,,,,,,,,,,,,,,3,700,Monster Manual,249
+Pegasus,Celestial,Large,CG,12,59,,,,,,,,,,,,,,,2,450,Monster Manual,250
+Peryton,Monstrosity,Medium,CE,13,33,,,,,,,,,,,,,,,2,450,Monster Manual,251
+Piercer,Monstrosity,Medium,U,15,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,252
+Pixie,Fey,Tiny,NG,15,1,,,,,,,,,,,,,,,0.25,50,Monster Manual,253
+Pseudodragon,Dragon,Tiny,NG,13,7,,,,,,,,,,,,,,,0.25,50,Monster Manual,254
+Purple Worm,Monstrosity,Gargantuan,U,18,247,,,,,,,,,,,,,,,15,13000,Monster Manual,255
+Quaggoth,Humanoid,Medium,CN,13,45,,,,,,,,,,,,,,,2,450,Monster Manual,256
+Rakshasa,Fiend,Medium,LE,16,110,,,,,,,,,,,,,,,13,10000,Monster Manual,257
+Young Remorhaz,Monstrosity,Large,U,14,93,,,,,,,,,,,,,,,5,1800,Monster Manual,258
+Remorhaz,Monstrosity,Huge,U,17,195,,,,,,,,,,,,,,,11,7200,Monster Manual,258
+Revenant,Undead,Medium,N,13,136,,,,,,,,,,,,,,,5,1800,Monster Manual,259
+Roc,Monstrosity,Gargantuan,U,15,248,,,,,,,,,,,,,,,11,7200,Monster Manual,260
+Roper,Monstrosity,Large,NE,20,93,"10ft, climb 10ft",18,8,17,7,16,6,,"Perception +6, Stealth +5",,,,"darvision 60ft, passive Perception 16",,5,1800,Monster Manual,261
+Rust Monster,Monstrosity,Medium,U,14,27,,,,,,,,,,,,,,,0.5,100,Monster Manual,262
+Sahuagin,Humanoid,Medium,LE,12,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,263
+Sahuagin Priestess,Humanoid,Medium,LE,12,33,,,,,,,,,,,,,,,2,450,Monster Manual,264
+Sahuagin Baron,Humanoid,Large,LE,16,76,,,,,,,,,,,,,,,5,1800,Monster Manual,264
+Fire Snake,Elemental,Medium,NE,14,22,,,,,,,,,,,,,,,1,200,Monster Manual,265
+Salamander,Elemental,Large,NE,15,90,,,,,,,,,,,,,,,5,1800,Monster Manual,266
+Satyr,Fey,Medium,CN,14,31,,,,,,,,,,,,,,,0.5,100,Monster Manual,267
+Scarecrow,Construct,Medium,CE,11,36,,,,,,,,,,,,,,,1,200,Monster Manual,268
+Shadow,Undead,Medium,CE,12,16,,,,,,,,,,,,,,,0.5,100,Monster Manual,269
+Shambling Mound,Plant,Large,U,15,136,,,,,,,,,,,,,,,5,1800,Monster Manual,270
+Shield Guardian,Construct,Large,U,17,142,,,,,,,,,,,,,,,7,2900,Monster Manual,271
+Skeleton,Undead,Medium,LE,13,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,272
+Warhorse Skeleton,Undead,Large,LE,13,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,273
+Minotaur Skeleton,Undead,Large,LE,12,67,,,,,,,,,,,,,,,2,450,Monster Manual,273
+Slaad Tadpole,Aberration,Tiny,CN,12,10,,,,,,,,,,,,,,,0.125,25,Monster Manual,276
+Red Slaad,Aberration,Large,CN,14,93,,,,,,,,,,,,,,,5,1800,Monster Manual,276
+Blue Slaad,Aberration,Large,CN,15,123,,,,,,,,,,,,,,,7,2900,Monster Manual,276
+Green Slaad,Aberration,Large,CN,16,127,,,,,,,,,,,,,,,8,3900,Monster Manual,277
+Gray Slaad,Aberration,Medium,CN,18,127,,,,,,,,,,,,,,,9,5000,Monster Manual,277
+Death Slaad,Aberration,Medium,CE,18,170,,,,,,,,,,,,,,,10,5900,Monster Manual,278
+Specter,Undead,Medium,CE,12,22,,,,,,,,,,,,,,,1,200,Monster Manual,279
+Androsphinx,Monstrosity,Large,LN,17,199,,,,,,,,,,,,,,,17,18000,Monster Manual,281
+Gynosphinx,Monstrosity,Large,LN,17,136,,,,,,,,,,,,,,,11,7200,Monster Manual,282
+Sprite,Fey,Tiny,NG,15,2,,,,,,,,,,,,,,,0.25,50,Monster Manual,283
+Stirge,Beast,Tiny,U,14,2,,,,,,,,,,,,,,,0.125,25,Monster Manual,284
+Succubus/Incubus,Fiend,Medium,NE,15,66,,,,,,,,,,,,,,,4,1100,Monster Manual,285
+Tarrasque,Monstrosity,Gargantuan,U,25,676,,,,,,,,,,,,,,,30,155000,Monster Manual,286
+Thri-Kreen,Humanoid,Medium,CN,15,33,,,,,,,,,,,,,,,1,200,Monster Manual,288
+Treant,Plant,Huge,CG,16,138,,,,,,,,,,,,,,,9,5000,Monster Manual,289
+Troglodyte,Humanoid,Medium,CE,11,13,30ft,14,10,14,6,10,6,,Stealth +2,,,,"darkvision 60ft, passive Perception 10",Troglodyte,0.25,50,Monster Manual,290
+Troll,Giant,Large,CE,15,84,,,,,,,,,,,,,,,5,1800,Monster Manual,291
+Umber Hulk,Monstrosity,Large,CE,18,93,,,,,,,,,,,,,,,5,1800,Monster Manual,292
+Unicorn,Celestial,Large,LG,12,67,,,,,,,,,,,,,,,5,1800,Monster Manual,294
+Vampire,Undead,Medium,LE,16,144,,,,,,,,,,,,,,,13,10000,Monster Manual,297
+Vampire Spawn,Undead,Medium,NE,15,82,,,,,,,,,,,,,,,5,1800,Monster Manual,298
+Water Weird,Elemental,Large,N,13,58,,,,,,,,,,,,,,,3,700,Monster Manual,299
+Wight,Undead,Medium,NE,14,45,,,,,,,,,,,,,,,3,700,Monster Manual,300
+Will-O'-Wisp,Undead,Tiny,CE,19,22,,,,,,,,,,,,,,,2,450,Monster Manual,301
+Wraith,Undead,Medium,NE,13,67,,,,,,,,,,,,,,,5,1800,Monster Manual,302
+Wyvern,Dragon,Large,U,13,110,,,,,,,,,,,,,,,6,2300,Monster Manual,303
+Xorn,Elemental,Medium,N,19,73,,,,,,,,,,,,,,,5,1800,Monster Manual,304
+Yeti,Monstrosity,Large,CE,12,51,,,,,,,,,,,,,,,3,700,Monster Manual,305
+Abominable Yeti,Monstrosity,Huge,CE,15,137,,,,,,,,,,,,,,,9,5000,Monster Manual,306
+Yuan-Ti Abomination,Monstrosity,Large,NE,15,127,,,,,,,,,,,,,,,7,2900,Monster Manual,308
+Yuan-Ti Malison,Monstrosity,Medium,NE,12,66,,,,,,,,,,,,,,,3,700,Monster Manual,309
+Yuan-Ti Pureblood,Monstrosity,Medium,NE,11,40,,,,,,,,,,,,,,,1,200,Monster Manual,310
+Mezzoloth,Fiend,Medium,NE,18,75,,,,,,,,,,,,,,,5,1800,Monster Manual,313
+Arcanaloth,Fiend,Medium,NE,17,104,,,,,,,,,,,,,,,12,8400,Monster Manual,313
+Nycaloth,Fiend,Large,NE,18,123,,,,,,,,,,,,,,,9,5000,Monster Manual,314
+Ultroloth,Fiend,Medium,NE,19,153,,,,,,,,,,,,,,,13,10000,Monster Manual,314
+Zombie,Undead,Medium,NE,8,22,,,,,,,,,,,,,,,0.25,50,Monster Manual,316
+Ogre Zombie,Undead,Large,NE,8,85,,,,,,,,,,,,,,,2,450,Monster Manual,316
+Beholder Zombie,Undead,Large,NE,15,93,,,,,,,,,,,,,,,5,1800,Monster Manual,316
+Awakened Shrub,Plant,Small,U,9,10,,,,,,,,,,,,,,,0,10,Monster Manual,317
+Axe Beak,Beast,Large,U,11,19,,,,,,,,,,,,,,,0.25,50,Monster Manual,317
+Ape,Beast,Medium,U,12,19,,,,,,,,,,,,,,,0.5,100,Monster Manual,317
+Awakened Tree,Plant,Huge,U,13,59,,,,,,,,,,,,,,,2,450,Monster Manual,317
+Baboon,Beast,Small,U,12,3,,,,,,,,,,,,,,,0,10,Monster Manual,318
+Badger,Beast,Tiny,U,10,3,,,,,,,,,,,,,,,0,10,Monster Manual,318
+Bat,Beast,Tiny,U,12,1,,,,,,,,,,,,,,,0,10,Monster Manual,318
+Blink Dog,Fey,Medium,LG,13,22,,,,,,,,,,,,,,,0.25,50,Monster Manual,318
+Black Bear,Beast,Medium,U,11,19,,,,,,,,,,,,,,,0.5,100,Monster Manual,318
+Blood Hawk,Beast,Small,U,12,7,,,,,,,,,,,,,,,0.125,25,Monster Manual,319
+Boar,Beast,Medium,U,11,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,319
+Brown Bear,Beast,Large,U,11,34,,,,,,,,,,,,,,,1,200,Monster Manual,319
+Cat,Beast,Tiny,U,12,2,,,,,,,,,,,,,,,0,10,Monster Manual,320
+Crab,Beast,Tiny,U,11,2,,,,,,,,,,,,,,,0,10,Monster Manual,320
+Camel,Beast,Large,U,9,15,,,,,,,,,,,,,,,0.125,25,Monster Manual,320
+Constrictor Snake,Beast,large,U,12,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,320
+Crocodile,Beast,Large,U,12,19,,,,,,,,,,,,,,,0.5,100,Monster Manual,320
+Deer,Beast,Medium,U,13,4,,,,,,,,,,,,,,,0,10,Monster Manual,321
+Draft Horse,Beast,Large,U,10,19,,,,,,,,,,,,,,,0.25,50,Monster Manual,321
+Death Dog,Monstrosity,Medium,NE,12,39,,,,,,,,,,,,,,,1,200,Monster Manual,321
+Dire Wolf,Beast,Large,U,14,37,,,,,,,,,,,,,,,1,200,Monster Manual,321
+Eagle,Beast,Small,U,12,3,,,,,,,,,,,,,,,0,10,Monster Manual,322
+Frog,Beast,Tiny,U,11,1,,,,,,,,,,,,,,,0,10,Monster Manual,322
+Flying Snake,Beast,Tiny,U,14,5,,,,,,,,,,,,,,,0.125,25,Monster Manual,322
+Elk,Beast,Large,U,10,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,322
+Elephant,Beast,Huge,U,12,76,,,,,,,,,,,,,,,4,1100,Monster Manual,322
+Giant Badger,Beast,Medium,U,10,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,323
+Giant Bat,Beast,Large,U,13,22,,,,,,,,,,,,,,,0.25,50,Monster Manual,323
+Giant Centipede,Beast,small,U,13,4,,,,,,,,,,,,,,,0.25,50,Monster Manual,323
+Giant Boar,Beast,Large,U,12,42,,,,,,,,,,,,,,,2,450,Monster Manual,323
+Giant Ape,Beast,Huge,U,12,157,,,,,,,,,,,,,,,7,2900,Monster Manual,323
+Giant Crab,Beast,Medium,U,15,13,,,,,,,,,,,,,,,0.125,25,Monster Manual,324
+Giant Eagle,Beast,Large,U,13,26,,,,,,,,,,,,,,,1,200,Monster Manual,324
+Giant Constrictor Snake,Beast,Huge,U,12,60,,,,,,,,,,,,,,,2,450,Monster Manual,324
+Giant Crocodile,Beast,Huge,U,14,85,,,,,,,,,,,,,,,5,1800,Monster Manual,324
+Giant Fire Beetle,Beast,small,U,13,4,,,,,,,,,,,,,,,0,10,Monster Manual,325
+Giant Frog,Beast,Medium,U,11,18,,,,,,,,,,,,,,,0.25,50,Monster Manual,325
+Giant Elk,Beast,Huge,U,14,42,,,,,,,,,,,,,,,2,450,Monster Manual,325
+Giant Lizard,Beast,Large,U,12,19,,,,,,,,,,,,,,,0.25,50,Monster Manual,326
+Giant Goat,Beast,Large,U,11,19,,,,,,,,,,,,,,,0.5,100,Monster Manual,326
+Giant Hyena,Beast,Large,U,12,45,,,,,,,,,,,,,,,1,200,Monster Manual,326
+Giant Octopus,Beast,Large,U,11,52,,,,,,,,,,,,,,,1,200,Monster Manual,326
+Giant Rat,Beast,Small,U,12,7,,,,,,,,,,,,,,,0.125,25,Monster Manual,327
+Giant Owl,Beast,Large,U,12,19,,,,,,,,,,,,,,,0.25,50,Monster Manual,327
+Giant Poisonous Snake,Beast,Medium,U,14,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,327
+Giant Scorpion,Beast,Large,U,15,52,,,,,,,,,,,,,,,3,700,Monster Manual,327
+Giant Sea Horse,Beast,Large,U,13,16,,,,,,,,,,,,,,,0.5,100,Monster Manual,328
+Giant Spider,Beast,Large,U,14,26,,,,,,,,,,,,,,,1,200,Monster Manual,328
+Giant Shark,Beast,Huge,U,13,126,,,,,,,,,,,,,,,5,1800,Monster Manual,328
+Giant Weasel,Beast,Medium,U,13,9,,,,,,,,,,,,,,,0.125,25,Monster Manual,329
+Giant Wasp,Beast,Medium,U,12,13,,,,,,,,,,,,,,,0.5,100,Monster Manual,329
+Giant Toad,Beast,Large,U,11,39,,,,,,,,,,,,,,,1,200,Monster Manual,329
+Giant Vulture,Beast,Large,NE,10,22,,,,,,,,,,,,,,,1,200,Monster Manual,329
+Goat,Beast,Medium,U,10,4,,,,,,,,,,,,,,,0,10,Monster Manual,330
+Hawk,Beast,Tiny,U,13,11,,,,,,,,,,,,,,,0,10,Monster Manual,330
+Giant Wolf Spider,Beast,Medium,U,13,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,330
+Hunter Shark,Beast,Large,U,12,45,,,,,,,,,,,,,,,2,450,Monster Manual,330
+Hyena,Beast,Medium,U,11,5,,,,,,,,,,,,,,,0,10,Monster Manual,331
+Jackal,Beast,Small,U,12,3,,,,,,,,,,,,,,,0,10,Monster Manual,331
+Lion,Beast,Large,U,12,26,,,,,,,,,,,,,,,1,200,Monster Manual,331
+Killer Whale,Beast,Huge,U,12,90,,,,,,,,,,,,,,,3,700,Monster Manual,331
+Lizard,Beast,Tiny,U,10,2,,,,,,,,,,,,,,,0,10,Monster Manual,332
+Mastiff,Beast,Medium,U,12,5,,,,,,,,,,,,,,,0.125,25,Monster Manual,332
+Mammoth,Beast,Huge,U,13,126,,,,,,,,,,,,,,,6,2300,Monster Manual,332
+Octopus,Beast,Small,U,12,3,,,,,,,,,,,,,,,0,10,Monster Manual,333
+Owl,Beast,Tiny,U,11,1,,,,,,,,,,,,,,,0,10,Monster Manual,333
+Mule,Beast,Medium,U,10,11,,,,,,,,,,,,,,,0.125,25,Monster Manual,333
+Panther,Beast,Medium,U,12,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,333
+Poisonous Snake,Beast,Tiny,U,13,2,,,,,,,,,,,,,,,0.125,25,Monster Manual,334
+Polar Bear,Beast,Large,U,12,42,,,,,,,,,,,,,,,2,450,Monster Manual,334
+Phase Spider,Monstrosity,Large,U,13,32,,,,,,,,,,,,,,,3,700,Monster Manual,334
+Quipper,Beast,Tiny,U,13,1,,,,,,,,,,,,,,,0,10,Monster Manual,335
+Rat,Beast,Tiny,U,10,1,,,,,,,,,,,,,,,0,10,Monster Manual,335
+Raven,Beast,Tiny,U,12,1,,,,,,,,,,,,,,,0,10,Monster Manual,335
+Pony,Beast,Medium,U,10,11,,,,,,,,,,,,,,,0.125,25,Monster Manual,335
+Riding Horse,Beast,Large,U,10,13,,,,,,,,,,,,,,,0.25,50,Monster Manual,336
+Reef Shark,Beast,Medium,U,12,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,336
+Rhinoceros,Beast,Large,U,11,45,,,,,,,,,,,,,,,2,450,Monster Manual,336
+Saber-Toothed Tiger,Beast,Large,U,12,52,,,,,,,,,,,,,,,2,450,Monster Manual,336
+Scorpion,Beast,Tiny,U,11,1,,,,,,,,,,,,,,,0,10,Monster Manual,337
+Sea Horse,Beast,Tiny,U,11,1,,,,,,,,,,,,,,,0,10,Monster Manual,337
+Spider,Beast,Tiny,U,12,1,,,,,,,,,,,,,,,0,10,Monster Manual,337
+Swarm of Bats,Beast,Medium,U,12,22,,,,,,,,,,,,,,,0.25,50,Monster Manual,337
+Swarm of Insects,Beast,Medium,U,12,22,,,,,,,,,,,,,,,0.5,100,Monster Manual,338
+Swarm of Quippers,Beast,Medium,U,13,28,,,,,,,,,,,,,,,1,200,Monster Manual,338
+Swarm of Poisonous Snakes,Beast,Medium,U,14,36,,,,,,,,,,,,,,,2,450,Monster Manual,338
+Vulture,Beast,Medium,U,10,5,,,,,,,,,,,,,,,0,10,Monster Manual,339
+Swarm of Rats,Beast,Medium,U,10,24,30ft,9,11,9,2,10,3,,,,"bludgeoning, piercing, slashing","charmed, frightened, grappled, paralyzed, petrified, prone, restrained, stunned","darkvision 30ft, passive Perception 10",,0.25,50,Monster Manual,339
+Swarm of Ravens,Beast,Medium,U,12,24,,,,,,,,,,,,,,,0.25,50,Monster Manual,339
+Tiger,Beast,Large,U,12,37,,,,,,,,,,,,,,,1,200,Monster Manual,339
+Weasel,Beast,Tiny,U,13,1,,,,,,,,,,,,,,,0,10,Monster Manual,340
+Warhorse,Beast,Large,U,11,19,,,,,,,,,,,,,,,0.5,100,Monster Manual,340
+Winter Wolf,Monstrosity,Large,NE,13,75,,,,,,,,,,,,,,,3,700,Monster Manual,340
+Wolf,Beast,Medium,U,13,11,,,,,,,,,,,,,,,0.25,50,Monster Manual,341
+Worg,Monstrosity,Large,NE,13,26,,,,,,,,,,,,,,,0.5,100,Monster Manual,341
+Acolyte,Humanoid,Medium,ANY,10,9,30ft,10,10,10,10,14,11,,"Medicine +4, Religion +2",,,,passive Perception 12,Common,0.25,50,Monster Manual,342
+Archmage,Humanoid,Medium,ANY,12,99,,,,,,,,,,,,,,,12,8400,Monster Manual,342
+Bandit,Humanoid,Medium,NOT LAWFUL,12,11,,,,,,,,,,,,,,,0.125,25,Monster Manual,343
+Assassin,Humanoid,Medium,NOT GOOD,15,78,,,,,,,,,,,,,,,8,3900,Monster Manual,343
+Bandit Captain,Humanoid,Medium,NOT LAWFUL,15,65,,,,,,,,,,,,,,,2,450,Monster Manual,344
+Berserker,Humanoid,Medium,C,13,67,30ft,16,12,17,9,11,9,,,,,,passive Perception 10,Common,2,450,Monster Manual,344
+Commoner,Humanoid,Medium,ANY,10,4,30ft,10,10,10,10,10,10,,,,,,passive Perception 10,Common,0,10,Monster Manual,345
+Cultist,Humanoid,Medium,NOT GOOD,12,9,30ft,11,12,10,10,11,10,,"Deception +2, Religion +2",,,,passive Perception 10,Common,0.125,25,Monster Manual,345
+Cult Fanatic,Humanoid,Medium,NOT GOOD,13,33,,,,,,,,,,,,,,,2,450,Monster Manual,345
+Druid,Humanoid,Medium,ANY,11,27,,,,,,,,,,,,,,,2,450,Monster Manual,346
+Gladiator,Humanoid,Medium,ANY,16,112,,,,,,,,,,,,,,,5,1800,Monster Manual,346
+Guard,Humanoid,Medium,ANY,16,11,30ft,13,12,12,10,11,10,,Perception +2,,,,passive Perception 12,Common,0.125,25,Monster Manual,347
+Knight,Humanoid,Medium,ANY,18,52,,,,,,,,,,,,,,,3,700,Monster Manual,347
+Mage,Humanoid,Medium,ANY,12,40,,,,,,,,,,,,,,,6,2300,Monster Manual,347
+Noble,Humanoid,Medium,ANY,15,9,,,,,,,,,,,,,,,0.125,25,Monster Manual,348
+Priest,Humanoid,Medium,ANY,13,27,,,,,,,,,,,,,,,2,450,Monster Manual,348
+Scout,Humanoid,Medium,ANY,13,16,30ft,11,14,12,11,13,11,,"Nature +4, Perception +5, Stealth +6, Survival +5",,,,passive Perception 15,Common,0.5,100,Monster Manual,349
+Spy,Humanoid,Medium,ANY,12,27,,,,,,,,,,,,,,,1,200,Monster Manual,349
+Tribal Warrior,Humanoid,Medium,ANY,12,11,,,,,,,,,,,,,,,0.125,25,Monster Manual,350
+Thug,Humanoid,Medium,NOT GOOD,11,32,,,,,,,,,,,,,,,0.5,100,Monster Manual,350
+Veteran,Humanoid,Medium,ANY,17,58,30ft,16,13,14,10,11,10,,"Athletics +5, Perception +2",,,,passive Perception 12,Common,3,700,Monster Manual,350
