@@ -9,11 +9,17 @@ class CreateCreatures < ActiveRecord::Migration[5.0]
       t.integer :hp, null: false
       t.string :speed, array:true, default: []
       t.integer :str
+      t.integer :str_mod
       t.integer :dex
+      t.integer :dex_mod
       t.integer :con
+      t.integer :con_mod
       t.integer :int
+      t.integer :int_mod
       t.integer :wis
+      t.integer :wis_mod
       t.integer :cha
+      t.integer :cha_mod
       t.string :saving_throws, array:true, default: []
       t.string :skills, array:true, default: []
       t.string :damage_immunities, array:true, default: []

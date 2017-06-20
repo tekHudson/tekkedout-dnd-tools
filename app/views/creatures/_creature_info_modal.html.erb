@@ -1,0 +1,74 @@
+<div id="creature-info-modal-<%= creature.id %>" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Creature Info</h4>
+      </div>
+
+      <div class="modal-body">
+        <h3><%= creature.name %></h3>
+
+        <% if creature.str.present? %>
+          <table class="table table-bordered table-condensed">
+            <tbody>
+              <tr>
+                <td>Str: <%= creature.str %> (<%= creature.str_mod %>)</td>
+                <td>Int: <%= creature.int %> (<%= creature.int_mod %>)</td>
+              </tr>
+                <td>Dex: <%= creature.dex %> (<%= creature.dex_mod %>)</td>
+                <td>Wis: <%= creature.wis %> (<%= creature.wis_mod %>)</td>
+              </tr>
+                <td>Con: <%= creature.con %> (<%= creature.con_mod %>)</td>
+                <td>Cha: <%= creature.cha %> (<%= creature.cha_mod %>)</td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+
+        <div class="well">
+          <div>
+            <%= label :creature, :saving_throws %>:
+            <%= creature.saving_throws.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :skills %>:
+            <%= creature.skills.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :damage_immunities %>:
+            <%= creature.damage_immunities.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :damage_resistance %>:
+            <%= creature.damage_resistance.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :condition_immunities %>:
+            <%= creature.condition_immunities.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :senses %>:
+            <%= creature.senses.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :languages %>:
+            <%= creature.languages.to_sentence %>
+          </div>
+          <div>
+            <%= label :creature, :chalange, "XP" %>:
+            <%= creature.xp %>
+          </div>
+          <div>
+            <%= label :creature, :chalange %>:
+            <%= creature.chalange %>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

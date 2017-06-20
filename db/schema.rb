@@ -44,11 +44,17 @@ ActiveRecord::Schema.define(version: 20170614203037) do
     t.integer  "hp",                                null: false
     t.string   "speed",                default: [],              array: true
     t.integer  "str"
+    t.integer  "str_mod"
     t.integer  "dex"
+    t.integer  "dex_mod"
     t.integer  "con"
+    t.integer  "con_mod"
     t.integer  "int"
+    t.integer  "int_mod"
     t.integer  "wis"
+    t.integer  "wis_mod"
     t.integer  "cha"
+    t.integer  "cha_mod"
     t.string   "saving_throws",        default: [],              array: true
     t.string   "skills",               default: [],              array: true
     t.string   "damage_immunities",    default: [],              array: true
