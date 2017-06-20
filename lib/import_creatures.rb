@@ -1,5 +1,4 @@
 require 'csv'
-require 'english'
 
 class ImportCreatures
   MONSTER_COL_NAMES = %i(name species size alignment ac hp speed str dex con int wis cha saving_throws skills damage_immunities damage_resistance condition_immunities senses languages chalange xp book page)
