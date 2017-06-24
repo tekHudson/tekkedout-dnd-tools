@@ -19,7 +19,7 @@ gem "bootstrap-sass", "~> 3.3"
 gem "bootstrap-datepicker-rails"
 gem "bootstrap-guardsjs-rails", "~> 0.4"
 gem "twitter-bootstrap-rails-confirm"
-gem "jquery-datatables-rails", "~> 3.3.0"
+gem "jquery-datatables-rails", "~> 3.4"
 
 gem "blueimp-templates-rails"
 
