@@ -20,7 +20,7 @@
       <div class="col-xs-12">
         <div class="form-group">
           <div class="table-responsive form-group">
-            <table class="table table-striped combatant-table data-table no-paging">
+            <table class="table table-striped combatant-table data-table no-paging sort-1-desc">
               <thead>
                 <tr>
                   <td>Name</td>
@@ -46,7 +46,7 @@
                       <td><%= combatant.dc %></td>
                       <td>
                         <div class="btn-group">
-                          <button id="<%= combatant.id %>" class="edit-combatant-btn btn btn-primary" data-toggle="modal" data-target="#edit-combatant-<%= combatant.id %>" stlye="height: 100px;">
+                          <button id="<%= combatant.id %>" class="edit-combatant-btn btn btn-primary" data-toggle="modal" data-target="#edit-combatant-<%= combatant.id %>">
                             <span class="glyphicon glyphicon-pencil"></span>
                           </button>
                           <%= link_to combatant_path(combatant), method: :delete, class: "btn btn-danger", data: confirm(title: "Delete combatant?") do %>
@@ -58,15 +58,17 @@
 
                     <%= render partial: "combat_trackers/edit_combatant_modal", locals: { combatant: combatant } %>
                   <% end %>
+
+                  <%= render partial: "combat_trackers/add_combatant_modal", locals: { ct_form: f, combat_tracker: @combat_tracker } %>
                 <% else %>
-                  <%= f.fields_for :combatants, @combat_tracker.combatants.build do |nc| %>
+                  <%= f.fields_for :combatants, @combat_tracker.combatants.build do |new_combatant| %>
                     <tr class="combatant-row">
-                      <td class="col-xs-4"><%= nc.text_field :name, class: "name form-control" %></td>
-                      <td><%= nc.text_field :init, { type: "number",class: "init form-control" } %></td>
-                      <td><%= nc.text_field :max_hp, { type: "number",class: "max_hp form-control" } %></td>
-                      <td><%= nc.text_field :hp, { type: "number",class: "hp form-control" } %></td>
-                      <td><%= nc.text_field :ac, { type: "number",class: "ac form-control" } %></td>
-                      <td><%= nc.text_field :dc, { type: "number",class: "dc form-control" } %></td>
+                      <td class="col-xs-4"><%= new_combatant.text_field :name, class: "name form-control" %></td>
+                      <td><%= new_combatant.text_field :init, { type: "number",class: "init form-control" } %></td>
+                      <td><%= new_combatant.text_field :max_hp, { type: "number",class: "max_hp form-control" } %></td>
+                      <td><%= new_combatant.text_field :hp, { type: "number",class: "hp form-control" } %></td>
+                      <td><%= new_combatant.text_field :ac, { type: "number",class: "ac form-control" } %></td>
+                      <td><%= new_combatant.text_field :dc, { type: "number",class: "dc form-control" } %></td>
                     </tr>
                   <% end %>
                 <% end %>
@@ -83,9 +85,19 @@
           <div class="form-inline">
             <%= select("creature", "creature_id", @creatures ) %>
             <button id="add-creature" type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Combatant
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Creature
             </button>
             <%= hidden_field_tag :combat_tracker_id, @combat_tracker.id %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-12">
+          <div class="form-inline">
+            <button id="add-combatant" type="button" class="btn btn-default"  data-toggle="modal" data-target="#add-combatant">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Combatant Row
+            </button>
           </div>
         </div>
       </div>
