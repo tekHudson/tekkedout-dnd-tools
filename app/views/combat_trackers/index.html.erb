@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="table-responsive">
-          <table class="table table-hover table-striped">
+          <table class="table table-hover table-striped data-table">
             <thead>
               <tr>
                 <td>Name</td>
@@ -24,8 +24,14 @@
                   <td><%= tracker.created_at.strftime('%x') %> @ <%= tracker.created_at.strftime('%r') %></td>
                   <td><%= tracker.updated_at.strftime('%x') %> @ <%= tracker.updated_at.strftime('%r') %></td>
                   <td class="col-xs-1">
-                    <%= link_to combat_tracker_path(tracker), method: :delete, type: :button, class: "btn btn-danger" do %>
-                      <span class="glyphicon glyphicon-trash"></span>
+                    <% if tracker.deleted? %>
+                      <%= link_to combat_tracker_path(tracker, restore: true), method: :delete, type: :button, class: "btn btn-success" do %>
+                        <span class="glyphicon glyphicon-plus"></span>
+                      <% end %>
+                    <% else %>
+                      <%= link_to combat_tracker_path(tracker), method: :delete, type: :button, class: "btn btn-danger" do %>
+                        <span class="glyphicon glyphicon-trash"></span>
+                      <% end %>
                     <% end %>
                   </td>
                 </tr>

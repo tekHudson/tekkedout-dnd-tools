@@ -3,19 +3,23 @@ class CombatTrackersController < ApplicationController
 
   def index
     @combat_trackers = CombatTracker.not_deleted
-    @deleted_trackers = CombatTracker.deleted
   end
 
   def new
-    @new_combatant = Combatant.new
     @combat_tracker = CombatTracker.new
+  end
 
-    render :edit
+  def create
+    ct_params = combat_tracker_params
+    ct_params.delete(:combatants_attributes) if ct_params[:combatants_attributes][:name].blank?
+    ct = CombatTracker.create! ct_params
+
+    redirect_to edit_combat_tracker_path(ct)
   end
 
   def edit
     @combat_tracker = CombatTracker.find(params[:id])
-    @new_combatant = Combatant.new
+    @creatures = Creature.all.collect { |c| [ c.name, c.id ] }
   end
 
   def update
@@ -32,10 +36,17 @@ class CombatTrackersController < ApplicationController
   def destroy
     ct = CombatTracker.find(params[:id])
 
-    if ct.soft_delete
-      redirect_to combat_trackers_path, flash: { success: "Tracker successfully deleted!" }
+    if params[:restore]
+      ct.deleted_at = nil
+      ct.save!
+
+      redirect_to combat_trackers_path, flash: { success: "Tracker successfully restored!" }
     else
-      redirect_to :back, alert: ct.errors.full_messages.to_sentence
+      if ct.soft_delete
+        redirect_to combat_trackers_path, flash: { success: "Tracker successfully deleted!" }
+      else
+        redirect_to :back, alert: ct.errors.full_messages.to_sentence
+      end
     end
   end
 
@@ -45,7 +56,19 @@ class CombatTrackersController < ApplicationController
     render :index
   end
 
+  def add_combatant
+    add_params = add_combatant_params
+    ct = CombatTracker.find(add_params[:id])
+    ct.add_combatant(add_params[:creature_id])
+
+    redirect_to edit_combat_tracker_path(ct)
+  end
+
   private
+
+  def add_combatant_params
+    params.permit(:id, :creature_id)
+  end
 
   def combat_tracker_params
     params.require(:combat_tracker).permit(:name, combatants_attributes: [:id, :name, :init, :max_hp, :hp, :ac, :dc])

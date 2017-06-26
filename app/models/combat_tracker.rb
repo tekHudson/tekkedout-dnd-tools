@@ -28,16 +28,9 @@ class CombatTracker < ApplicationRecord
     deleted_at != nil
   end
 
-  def to_json
-    {
-      id: id,
-      name: name,
-      combatants: combatants.sort_by(&:id).map(&:to_json),
-    }.to_json
+  def add_combatant(creature_id)
+    combatant_stats = Creature.generate_combatant_stats(creature_id)
+    self.combatants.build combatant_stats
+    save!
   end
-
-  def self.to_json
-    includes(:combatants).order(:id).all.map(&:to_json).to_json
-  end
-
 end

@@ -1,0 +1,67 @@
+<% content_for :title, "New"%>
+
+<% content_for :content do %>
+  <%= render partial: "combat_trackers/combatant-row-template"%>
+
+  <%= form_for @combat_tracker do |f| %>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <%= f.label :name, "Combat Tracker Name" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <h4>Combatants information</h4>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <table class="table table-striped combatant-table data-table no-paging">
+            <thead>
+              <tr>
+                <td>Name</td>
+                <td>Init</td>
+                <td>Max HP</td>
+                <td>HP</td>
+                <td>AC</td>
+                <td>Spell DC</td>
+              </tr>
+            </thead>
+            <tbody>
+              <%= f.fields_for :combatants, @combat_tracker.combatants.build do |nc| %>
+                <tr class="combatant-row">
+                  <td class="col-xs-4"><%= nc.text_field :name, class: "name form-control" %></td>
+                  <td><%= nc.text_field :init, { type: "number",class: "init form-control" } %></td>
+                  <td><%= nc.text_field :max_hp, { type: "number",class: "max_hp form-control" } %></td>
+                  <td><%= nc.text_field :hp, { type: "number",class: "hp form-control" } %></td>
+                  <td><%= nc.text_field :ac, { type: "number",class: "ac form-control" } %></td>
+                  <td><%= nc.text_field :dc, { type: "number",class: "dc form-control" } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <button id="add-combatant-row" type="button" class="btn btn-default" data-toggle="modal" data-target="#new-combatant">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Combatant
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="form-group">
+          <%= button_tag "Save", type: "submit", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     collection do
       get :deleted
     end
+
+    member do
+      post :add_combatant
+    end
   end
 
   resources :creatures, only: [:index]

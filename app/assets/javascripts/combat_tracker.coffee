@@ -1,34 +1,36 @@
 
-addCombatantRow = (combatantDetails) ->
-  $(".combatant-table tbody").append tmpl("combatant-row-template", {})
-  # return unless combatantDetails
+addCombatantRow = () ->
+  tbody = $(".combatant-table tbody")
+  tbody.append tmpl("combatant-row-template", {})
 
-  # row = $(".combatant-table tbody tr:last")
-  # name = row.find(".name")
-  # init = row.find(".init")
-  # max_hp = row.find(".max_hp")
-  # hp = row.find(".hp")
-  # ac = row.find(".ac")
-  # dc = row.find(".dc")
+  prevInputNum = tbody.find("tr:nth-last-child(2) input.name").attr('name').match /\d+/
 
-  # name.val combatantDetails.name
-  # init.val combatantDetails.init
-  # max_hp.val combatantDetails.max_hp
-  # hp.val combatantDetails.hp
-  # ac.val combatantDetails.ac
-  # dc.val combatantDetails.dc
+  new_row = $(".combatant-table tbody tr:last")
+  elements = []
+  elements.push new_row.find("input.name")
+  elements.push new_row.find("input.init")
+  elements.push new_row.find("input.max_hp")
+  elements.push new_row.find("input.hp")
+  elements.push new_row.find("input.ac")
+  elements.push new_row.find("input.dc")
 
-# expose "addCombatantRows", ->
-#   $ ->
-#     added = false
-#     for combatant in data.combat_tracker.combatants
-#       added = true
-#       addCombatantRow(combatant)
+  for element in elements
+    do ->
+      element.attr("name", element.attr("name").replace(/replace_this/, parseInt( prevInputNum, 10 ) + 1))
 
-#     addCombatantRow() unless added
+addCreature = () ->
+  creature_id = $("select").val()
+  combat_tracker_id = $("#combat_tracker_id").val()
 
+  $.post '/combat_trackers/' + combat_tracker_id + '/add_combatant',
+    creature_id: creature_id
 
-$(document).on "click", "#add-combatant-row", (event) ->
+$(document).on "click", ".edit-combatant-btn", (event) ->
   event.preventDefault()
-  addCombatantRow()
 
+$(document).on "click", "#add-creature", (event) ->
+  event.preventDefault()
+  addCreature()
+
+$(document).on "turbolinks:load", ->
+  $("select").select2(theme: "bootstrap")

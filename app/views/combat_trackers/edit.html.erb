@@ -1,22 +1,14 @@
-<% content_for :title, params[:action] == :new ? "New" : "Edit" %>
-
-<% content_for :content_size, "col-sm-9 col-md-10" %>
+<% content_for :title, "Edit Crombat Tracker" %>
 
 <% content_for :content do %>
-  <%= render partial: "combat_trackers/new_combatant_modal", combat_tracker: @combat_tracker %>
-
-  <%= javascript_tag do %>
-    var data = data || {};
-    data.combat_tracker = <%= @combat_tracker.to_json.html_safe %>;
-    addCombatantRows();
-  <% end %>
+  <%= render partial: "combat_trackers/combatant-row-template"%>
 
   <%= form_for @combat_tracker, method: :patch do |f| %>
 
-    <div class="row">
-      <div class="col-xs-6">
-        <div class="form-group">
-          <%= f.label :name, "Combat Tracker Name" %>
+    <div class="form-inline">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.label :name %>:
           <%= f.text_field :name, class: "form-control" %>
         </div>
       </div>
@@ -27,61 +19,74 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="form-group">
-          <table class="table table-striped combatant-table">
-            <thead>
-              <tr>
-                <td>Name</td>
-                <td>Init</td>
-                <td>Max HP</td>
-                <td>HP</td>
-                <td>AC</td>
-                <td>Spell DC</td>
-              </tr>
-            </thead>
-            <tbody>
-              <% if @combat_tracker.combatants.present? %>
-                <%= f.fields_for :combatants do |ff| %>
-                  <tr class="combatant-row">
-                    <td class="col-xs-4"><%= ff.text_field :name, class: "form-control" %></td>
-                    <td><%= ff.text_field :init, { type: "number", class: "form-control" } %></td>
-                    <td><%= ff.text_field :max_hp, { type: "number", class: "form-control" } %></td>
-                    <td><%= ff.text_field :hp, { type: "number", class: "form-control" } %></td>
-                    <td><%= ff.text_field :ac, { type: "number", class: "form-control" } %></td>
-                    <td><%= ff.text_field :dc, { type: "number", class: "form-control" } %></td>
-                    <td>
-                      <%= link_to combatant_path(ff.object), method: :delete, class: "btn btn-danger pull-right", data: confirm(title: "Delete combatant?") do %>
-                        <span class="glyphicon glyphicon-trash"></span>
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
-              <% end %>
-
-              <%= f.fields_for :combatants, @combat_tracker.combatants.build do |nc| %>
-                <tr class="combatant-row">
-                  <td class="col-xs-4"><%= nc.text_field :name, class: "form-control" %></td>
-                  <td><%= nc.text_field :init, { type: "number",class: "form-control" } %></td>
-                  <td><%= nc.text_field :max_hp, { type: "number",class: "form-control" } %></td>
-                  <td><%= nc.text_field :hp, { type: "number",class: "form-control" } %></td>
-                  <td><%= nc.text_field :ac, { type: "number",class: "form-control" } %></td>
-                  <td><%= nc.text_field :dc, { type: "number",class: "form-control" } %></td>
-                  <td>
-                    <%= button_tag "Save", type: "submit", class: "btn btn-primary" %>
-                  </td>
+          <div class="table-responsive form-group">
+            <table class="table table-striped combatant-table data-table no-paging">
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Init</td>
+                  <td>Max HP</td>
+                  <td>HP</td>
+                  <td>AC</td>
+                  <td>Spell DC</td>
+                  <% if @combat_tracker.combatants.present? %>
+                    <td>Actions</td>
+                  <% end %>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <% if @combat_tracker.combatants.present? %>
+                  <% @combat_tracker.combatants.each do |combatant| %>
+                    <tr class="combatant-row">
+                      <td class="col-xs-4"><%= combatant.name %></td>
+                      <td><%= combatant.init %></td>
+                      <td><%= combatant.max_hp %></td>
+                      <td><%= combatant.hp %></td>
+                      <td><%= combatant.ac %></td>
+                      <td><%= combatant.dc %></td>
+                      <td>
+                        <div class="btn-group">
+                          <button id="<%= combatant.id %>" class="edit-combatant-btn btn btn-primary" data-toggle="modal" data-target="#edit-combatant-<%= combatant.id %>" stlye="height: 100px;">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </button>
+                          <%= link_to combatant_path(combatant), method: :delete, class: "btn btn-danger", data: confirm(title: "Delete combatant?") do %>
+                            <span class="glyphicon glyphicon-trash"></span>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <%= render partial: "combat_trackers/edit_combatant_modal", locals: { combatant: combatant } %>
+                  <% end %>
+                <% else %>
+                  <%= f.fields_for :combatants, @combat_tracker.combatants.build do |nc| %>
+                    <tr class="combatant-row">
+                      <td class="col-xs-4"><%= nc.text_field :name, class: "name form-control" %></td>
+                      <td><%= nc.text_field :init, { type: "number",class: "init form-control" } %></td>
+                      <td><%= nc.text_field :max_hp, { type: "number",class: "max_hp form-control" } %></td>
+                      <td><%= nc.text_field :hp, { type: "number",class: "hp form-control" } %></td>
+                      <td><%= nc.text_field :ac, { type: "number",class: "ac form-control" } %></td>
+                      <td><%= nc.text_field :dc, { type: "number",class: "dc form-control" } %></td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-xs-12">
-        <div class="form-group">
-          <button id="add-combatant-row" type="button" class="btn btn-default" data-toggle="modal" data-target="#new-combatant">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Combatant
-          </button>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <div class="form-inline">
+            <%= select("creature", "creature_id", @creatures ) %>
+            <button id="add-creature" type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Combatant
+            </button>
+            <%= hidden_field_tag :combat_tracker_id, @combat_tracker.id %>
+          </div>
         </div>
       </div>
     </div>

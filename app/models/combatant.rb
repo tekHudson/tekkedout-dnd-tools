@@ -3,18 +3,6 @@ class Combatant < ApplicationRecord
   belongs_to :combat_tracker
   before_save :strip_fields
 
-  def to_json
-    {
-      id: id,
-      name: name,
-      init: init,
-      max_hp: max_hp,
-      hp: hp,
-      ac: ac,
-      dc: dc,
-    }
-  end
-
   private
 
   def strip_fields
