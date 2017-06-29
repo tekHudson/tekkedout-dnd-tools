@@ -60,7 +60,7 @@ class CombatTrackersController < ApplicationController
   def add_combatant
     add_params = add_combatant_params
     ct = CombatTracker.find(add_params[:id])
-    ct.add_combatant(add_params[:creature_id])
+    ct.add_combatant(add_params[:creature_id], add_params[:creature_qty])
 
     redirect_to edit_combat_tracker_path(ct)
   end
@@ -68,7 +68,7 @@ class CombatTrackersController < ApplicationController
   private
 
   def add_combatant_params
-    params.permit(:id, :creature_id)
+    params.permit(:id, :creature_id, :creature_qty)
   end
 
   def combat_tracker_params

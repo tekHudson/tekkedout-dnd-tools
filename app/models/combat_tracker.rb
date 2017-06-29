@@ -28,9 +28,11 @@ class CombatTracker < ApplicationRecord
     deleted_at != nil
   end
 
-  def add_combatant(creature_id)
-    combatant_stats = Creature.generate_combatant_stats(creature_id)
-    self.combatants.build combatant_stats
-    save!
+  def add_combatant(creature_id, qty)
+    (1..qty.to_i).each do |n|
+      combatant_stats = Creature.generate_combatant_stats(creature_id)
+      self.combatants.build combatant_stats
+      save!
+    end
   end
 end
