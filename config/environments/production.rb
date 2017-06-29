@@ -65,6 +65,7 @@ Rails.application.configure do
     api_key: ENV["MAILGUN_API_KEY"],
     domain: ENV["MAILGUN_DOMAIN"]
   }
+  RestClient.log = ::Rails.logger # mailgun_rails uses RestClient under the hood.
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
