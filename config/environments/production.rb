@@ -60,7 +60,10 @@ Rails.application.configure do
   # Send email using mailgun API
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.default_url_options = { host: ENV["MAILGUN_DEFAULT_URL"] }
-  config.action_mailer.default_options = { from: ENV["MAILGUN_DEFAULT_FROM"] }
+  config.action_mailer.default_options = {
+    from: ENV["MAILGUN_DEFAULT_FROM"]
+    reply_to: ENV["MAILGUN_DEFAULT_REPLY_TO"]
+  }
   config.action_mailer.mailgun_settings = {
     api_key: ENV["MAILGUN_API_KEY"],
     domain: ENV["MAILGUN_DOMAIN"]
