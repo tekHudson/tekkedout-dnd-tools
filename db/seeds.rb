@@ -38,3 +38,5 @@ end
     combatant.save!
   end
 end
+
+User.create(email: "site_admin@fake.com", password: "Password1", password_confirmation: "Password1")

@@ -1,29 +1,60 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <%= tab("Combat Tracker", combat_trackers_path, active == "combat_tracker") %>
-      <%= tab("Creatures", creatures_path, active == "creatures") %>
-      <%= tab("Races", races_path, active == "races") %>
-      <%= tab("Classes", klasses_path, active == "classes") %>
+<% if user_signed_in? %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <%= tab("Combat Tracker", combat_trackers_path, active == "combat_tracker") %>
+        <%= tab("Creatures", creatures_path, active == "creatures") %>
 
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-           role="button" aria-haspopup="true" aria-expanded="false">
-            Spells <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "All Spells", spells_path %></li>
-          <li><%= link_to "Bard", spells_path(klass: "Bard") %></li>
-          <li><%= link_to "Cleric", spells_path(klass: "Cleric") %></li>
-          <li><%= link_to "Druid", spells_path(klass: "Druid") %></li>
-          <li><%= link_to "Paladin", spells_path(klass: "Paladin") %></li>
-          <li><%= link_to "Ranger", spells_path(klass: "Ranger") %></li>
-          <li><%= link_to "Sorcerer", spells_path(klass: "Sorcerer") %></li>
-          <li><%= link_to "Warlock", spells_path(klass: "Warlock") %></li>
-          <li><%= link_to "Wizard", spells_path(klass: "Wizard") %></li>
+        <li class="dropdown <%= "active" if active == "races" %>">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+             role="button" aria-haspopup="true" aria-expanded="false">
+              Races <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "All Races", races_path %></li>
+            <li><%= link_to "Dragonborn", races_path(race: "Dragonborn") %></li>
+            <li><%= link_to "Dwarf", races_path(race: "Dwarf") %></li>
+            <li><%= link_to "Elf", races_path(race: "Elf") %></li>
+            <li><%= link_to "Gnome", races_path(race: "Gnome") %></li>
+            <li><%= link_to "Half-Elf", races_path(race: "Half-Elf") %></li>
+            <li><%= link_to "Half-Orc", races_path(race: "Half-Orc") %></li>
+            <li><%= link_to "Halfling", races_path(race: "Halfling") %></li>
+            <li><%= link_to "Human", races_path(race: "Human") %></li>
+            <li><%= link_to "Tiefling", races_path(race: "Tiefling") %></li>
+          </ul>
+        </li>
+
+        <li class="dropdown <%= "active" if active == 'spells' %>">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+             role="button" aria-haspopup="true" aria-expanded="false">
+              Spells <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "All Spells", spells_path %></li>
+            <li><%= link_to "Bard", spells_path(klass: "Bard") %></li>
+            <li><%= link_to "Cleric", spells_path(klass: "Cleric") %></li>
+            <li><%= link_to "Druid", spells_path(klass: "Druid") %></li>
+            <li><%= link_to "Paladin", spells_path(klass: "Paladin") %></li>
+            <li><%= link_to "Ranger", spells_path(klass: "Ranger") %></li>
+            <li><%= link_to "Sorcerer", spells_path(klass: "Sorcerer") %></li>
+            <li><%= link_to "Warlock", spells_path(klass: "Warlock") %></li>
+            <li><%= link_to "Wizard", spells_path(klass: "Wizard") %></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right hidden-xs">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.email %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%#= link_to "Edit User", edit_user_path(current_user) %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
         </ul>
-      </li>
-
-    </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
+<% end %>
