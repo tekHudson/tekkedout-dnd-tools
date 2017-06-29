@@ -6,23 +6,30 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.0.3"
-gem "pg"
-gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
-gem "coffee-rails", "~> 4.2"
-
 gem "sprockets-rails"
 gem "turbolinks", "~> 5"
 gem "puma", "~> 3.0"
+gem "pg"
 
+gem "sass-rails", "~> 5.0"
+gem "uglifier", ">= 1.3.0"
+gem "coffee-rails", "~> 4.2"
 gem "bootstrap-sass", "~> 3.3"
 gem "bootstrap-datepicker-rails"
 gem "bootstrap-guardsjs-rails", "~> 0.4"
 gem "twitter-bootstrap-rails-confirm"
 gem "jquery-datatables-rails", "~> 3.4"
 
+# Devise
+gem "devise"
+gem "devise-bootstrap-views"
+gem "devise_security_extension"
+gem "email_validator"
+
+# tmpl wrapper
 gem "blueimp-templates-rails"
 
+# JavaScript
 gem "jquery-rails"
 gem "jbuilder", "~> 2.5"
 gem "select2-rails"
