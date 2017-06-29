@@ -31,7 +31,12 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Don't send mail.  Preview it in a new window.
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  config.action_mailer.default_options = {
+    from: "noreply@localhost.dev"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

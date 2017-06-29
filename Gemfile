@@ -36,6 +36,7 @@ gem "select2-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "letter_opener"
 end
 
 group :development do
