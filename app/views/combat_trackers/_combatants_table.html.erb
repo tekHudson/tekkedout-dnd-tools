@@ -1,0 +1,38 @@
+<table class="table table-striped combatant-table data-table no-paging sort-1-desc">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Init</td>
+      <td>Max HP</td>
+      <td>HP</td>
+      <td>AC</td>
+      <td>Spell DC</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% combat_tracker.combatants.each do |combatant| %>
+      <tr class="combatant-row">
+        <td class="col-xs-4"><%= combatant.name %></td>
+        <td><%= combatant.init %></td>
+        <td><%= combatant.max_hp %></td>
+        <td><%= combatant.hp %></td>
+        <td><%= combatant.ac %></td>
+        <td><%= combatant.dc %></td>
+        <td>
+          <div class="btn-group">
+            <button id="<%= combatant.id %>" class="edit-combatant-btn btn btn-primary" data-toggle="modal" data-target="#edit-combatant-<%= combatant.id %>">
+              <span class="glyphicon glyphicon-pencil"></span>
+            </button>
+             <%= link_to delete_combatant_path(combatant.id), :method => :patch, class: "btn btn-danger", data: confirm(title: "Delete combatant?") do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+
+      <%= render partial: "combat_trackers/edit_combatant_modal", locals: { combatant: combatant } %>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,6 @@
 class CombatantsController < ApplicationController
   def create
-    combatant_params = combatant_params(params)
+    combatant_params = combatant_params
 
     Combatant.create! combatant_params
 
@@ -17,7 +17,7 @@ class CombatantsController < ApplicationController
     end
   end
 
-  def destroy
+  def delete
     combatant = Combatant.find(params[:id])
 
     if combatant.destroy

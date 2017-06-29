@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "spells#index"
 
-  resources :combatants, only: [:create, :update, :destroy]
+  resources :combatants, only: [:create, :update] do
+    member do
+      patch :delete
+    end
+  end
 
   resources :combat_trackers, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection do
