@@ -1,0 +1,28 @@
+<div id="new-combat-tracker-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">New Combat Tracker</h4>
+      </div>
+
+      <%= form_for combat_tracker do |ct| %>
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group col-xs-10">
+              <%= ct.label :name %>
+              <%= ct.text_field :name, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <%= ct.submit "Save", class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

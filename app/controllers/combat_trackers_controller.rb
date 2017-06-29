@@ -2,6 +2,7 @@ class CombatTrackersController < ApplicationController
   active_tab "combat_tracker"
 
   def index
+    @new_combat_tracker = CombatTracker.new
     @combat_trackers = CombatTracker.not_deleted
   end
 
@@ -11,7 +12,6 @@ class CombatTrackersController < ApplicationController
 
   def create
     ct_params = combat_tracker_params
-    ct_params.delete(:combatants_attributes) if ct_params[:combatants_attributes][:name].blank?
     ct = CombatTracker.create! ct_params
 
     redirect_to edit_combat_tracker_path(ct)
@@ -51,6 +51,7 @@ class CombatTrackersController < ApplicationController
   end
 
   def deleted
+    @new_combat_tracker = CombatTracker.new
     @combat_trackers = CombatTracker.deleted
 
     render :index

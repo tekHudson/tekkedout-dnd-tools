@@ -28,9 +28,13 @@ addCreature = () ->
 $(document).on "click", ".edit-combatant-btn", (event) ->
   event.preventDefault()
 
+$(document).on "click", "#add-combatant-row", (event) ->
+  event.preventDefault()
+  addCombatantRow()
+
 $(document).on "click", "#add-creature", (event) ->
   event.preventDefault()
   addCreature()
 
 $(document).on "turbolinks:load", ->
-  $("select").select2(theme: "bootstrap")
+  $("select").select2({ theme: "bootstrap", width: 'resolve' })

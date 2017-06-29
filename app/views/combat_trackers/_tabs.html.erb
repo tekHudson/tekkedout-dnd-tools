@@ -8,9 +8,12 @@
 
   <div class="col-xs-6">
     <div class="pull-right">
-      <%= link_to new_combat_tracker_path(type: :new), type: :button, class: "btn btn-success" do %>
+      <button id="new-combat-tracker" type="button" class="btn btn-success"  data-toggle="modal" data-target="#new-combat-tracker-modal">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create
-      <% end %>
+      </button>
+      <%#= link_to new_combat_tracker_path(type: :new), type: :button, class: "btn btn-success" do %>
+        <!-- <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create -->
+      <%# end %>
     </div>
   </div>
 </div>
