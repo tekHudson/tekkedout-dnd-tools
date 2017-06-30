@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   resources :races, only: [:index]
 
   resources :spells, only: %i[index search]
+
+  get "/.well-known/acme-challenge/:id" => "letsencrypt#authenticate_key"
 end
