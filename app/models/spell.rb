@@ -1,12 +1,30 @@
 class Spell < ApplicationRecord
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/CyclomaticComplexity
+  # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/PerceivedComplexity
   def self.all_for_display(klass = nil, name = nil, description = nil)
-    return where(klass: klass, name: name, description: description).order(:name).each_slice(6).to_a if klass && name && description
-    return where(klass: klass, description: description).order(:name).each_slice(6).to_a if klass && description
-    return where(name: name, description: description).order(:name).each_slice(6).to_a if name && description
-    return where(klass: klass, name: name).order(:name).each_slice(6).to_a if klass && name
-    return where(description: description).order(:name).each_slice(6).to_a if description
-    return where(klass: klass).order(:name).each_slice(6).to_a if klass
-    return where(name: name).order(:name).each_slice(6).to_a if name
-    all.order(:name).each_slice(6).to_a
+    klass.downcase!
+    name.downcase!
+    description.downcase!
+
+    if klass && name && description
+      return where("? = ANY (klass)", klass).where("lower(name) LIKE ? ", name)
+                                            .where("lower(description) LIKE ? ", description)
+    elsif klass && description
+      return where("? = ANY (klass)", klass).where("lower(description) LIKE ? ", description)
+    elsif klass && name
+      return where("? = ANY (klass)", klass).where("lower(name) LIKE ? ", name)
+    elsif name && description
+      return where("lower(name) LIKE ? ", name).where("lower(description) LIKE ? ", description)
+    elsif klass
+      return where("? = ANY (klass)", klass)
+    elsif description
+      return where("lower(description) LIKE ? ", description)
+    elsif name
+      return where("lower(name) LIKE ? ", name)
+    else
+      return all
+    end
   end
 end
