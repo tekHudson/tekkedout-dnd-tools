@@ -39,6 +39,7 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "letter_opener"
   gem "rubocop", "~> 0.39"
+  gem "rb-fsevent", "0.9.8"
 end
 
 group :development do

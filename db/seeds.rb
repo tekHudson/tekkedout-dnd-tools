@@ -18,19 +18,22 @@ def random_stat_value
   rand(5..20)
 end
 
-Rake::Task["import_spells"].invoke if Spell.all.count < 400
+Rake::Task["import_spells"].invoke
 
-Rake::Task["import_creatures"].invoke if Creature.all.count < 431
+Rake::Task["import_creatures"].invoke
 
-User.create(email: "site_admin@fake.com", password: "Password1", password_confirmation: "Password1")
+ActionMailer::Base.perform_deliveries = false
+admin = User.create(email: "site_admin@fake.com", password: "Password1", password_confirmation: "Password1")
 User.create(email: "site_user@fake.com", password: "Password1", password_confirmation: "Password1")
+ActionMailer::Base.perform_deliveries = true
 
-user = User.where(email: "site_admin@fake.com").first
+users = User.where(email: ["site_admin@fake.com", "site_user@fake.com"])
+users.each { |u| u.confirm; u.save }
 
 (1..10).each do |i|
   ct = CombatTracker.new
   ct.name = "Test tracker #{i}"
-  ct.user_id = user.id
+  ct.user_id = admin.id
   ct.deleted_at = Time.zone.today - i.days if (i % 3).zero?
   ct.save!
   (1..rand(2..5)).each do |_n|

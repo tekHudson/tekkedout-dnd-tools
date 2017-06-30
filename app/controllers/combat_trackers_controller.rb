@@ -18,7 +18,7 @@ class CombatTrackersController < ApplicationController
 
   def edit
     ct = CombatTracker.find(params[:id])
-    redirect_to combat_trackers_path unless current_user.can_edit_tracker(ct)
+    redirect_to combat_trackers_path unless current_user.can_edit_tracker?(ct)
 
     @combat_tracker = ct
     @creatures = Creature.all.collect { |c| [c.name, c.id] }
@@ -26,7 +26,7 @@ class CombatTrackersController < ApplicationController
 
   def update
     ct = CombatTracker.includes(:combatants).find(params[:id])
-    redirect_to combat_trackers_path unless current_user.can_edit_tracker(ct)
+    redirect_to combat_trackers_path unless current_user.can_edit_tracker?(ct)
 
     if ct.update(combat_tracker_params)
       redirect_to edit_combat_tracker_path(ct), flash: { success: "Tracker updated!" }
@@ -37,7 +37,7 @@ class CombatTrackersController < ApplicationController
 
   def destroy
     ct = CombatTracker.find(params[:id])
-    redirect_to combat_trackers_path unless current_user.can_edit_tracker(ct)
+    redirect_to combat_trackers_path unless current_user.can_edit_tracker?(ct)
 
     if params[:restore]
       ct.restore

@@ -11,8 +11,6 @@ class ImportCreatures
     path_to_file = File.join(File.dirname(__FILE__), file_name)
 
     CSV.foreach(path_to_file, headers: true, encoding: "iso-8859-1:utf-8") do |row|
-      # skip labels row
-      next if $INPUT_LINE_NUMBER == 1
       @creature_hash = {}
       populate_creature_hash(row)
       next if Creature.where(name: @creature_hash[:name]).first.present?
@@ -25,21 +23,20 @@ class ImportCreatures
   end
 
   class << self
-    def self.split_strings_in_creature_hash
+    def split_strings_in_creature_hash
       CREATURE_INFO_AS_ARRAY.each do |element|
         @creature_hash[element] = split_to_array(@creature_hash[element])
       end
     end
 
-    def self.populate_creature_hash
+    def populate_creature_hash(row)
       CREATURE_COL_NAMES.each_with_index do |element, i|
         next if row[i].nil?
-
         @creature_hash[element] = row[i]
       end
     end
 
-    def self.split_to_array(string)
+    def split_to_array(string)
       if string.present?
         string.split(",")
       else
