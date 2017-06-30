@@ -21,7 +21,8 @@ class CombatantsController < ApplicationController
     combatant = Combatant.find(params[:id])
 
     if combatant.destroy
-      redirect_to edit_combat_tracker_path(combatant.combat_tracker_id), flash: { success: "Tracker successfully deleted!" }
+      msg = "Tracker successfully deleted!"
+      redirect_to edit_combat_tracker_path(combatant.combat_tracker_id), flash: { success: msg }
     else
       redirect_to :back, alert: combatant.errors.full_messages.to_sentence
     end

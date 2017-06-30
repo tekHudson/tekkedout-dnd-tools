@@ -1,29 +1,12 @@
 class Spell < ApplicationRecord
-  def self.all_for_display(params)
-    if params[:name].present? || params[:description].present? || params[:klass].present?
-      if params[:klass].present?
-        results = Spell.where("? = ANY (klass)", (params[:klass]).to_s)
-      end
-
-      if params[:name].present?
-        results = if results.present?
-                    results.where("lower(name) LIKE ? ", "%#{params[:name]}%".downcase)
-                  else
-                    Spell.where("lower(name) LIKE ? ", "%#{params[:name]}%".downcase)
-                  end
-      end
-
-      if params[:description].present?
-        if results.present?
-          results = results.where("lower(description) LIKE ? ", "%#{params[:description]}%".downcase)
-        else
-          results = Spell.where("lower(description) LIKE ? ", "%#{params[:description]}%".downcase) if params[:description].present?
-        end
-      end
-    else
-      results = Spell.all
-    end
-
-    results.order(:name).each_slice(6).to_a
+  def self.all_for_display(klass = nil, name = nil, description = nil)
+    return where(klass: klass, name: name, description: description).order(:name).each_slice(6).to_a if klass && name && description
+    return where(klass: klass, description: description).order(:name).each_slice(6).to_a if klass && description
+    return where(name: name, description: description).order(:name).each_slice(6).to_a if name && description
+    return where(klass: klass, name: name).order(:name).each_slice(6).to_a if klass && name
+    return where(description: description).order(:name).each_slice(6).to_a if description
+    return where(klass: klass).order(:name).each_slice(6).to_a if klass
+    return where(name: name).order(:name).each_slice(6).to_a if name
+    all.order(:name).each_slice(6).to_a
   end
 end

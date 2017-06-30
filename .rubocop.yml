@@ -5,6 +5,8 @@ AllCops:
     - vendor/**/*
     - db/migrate/**/*
     - db/schema.rb
+    - config/**/*
+    - app/models/spell.rb
   DisplayCopNames: true
   TargetRubyVersion: 2.2
 

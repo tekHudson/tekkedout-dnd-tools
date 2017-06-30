@@ -20,11 +20,35 @@ class Creature < ApplicationRecord
   private
 
   def update_modifiers
+    update_str_mod
+    update_dex_mod
+    update_con_mod
+    update_int_mod
+    update_wis_mod
+    update_cha_mod
+  end
+
+  def update_str_mod
     self.str_mod = modifier(str) if str.present?
+  end
+
+  def update_dex_mod
     self.dex_mod = modifier(dex) if dex.present?
+  end
+
+  def update_con_mod
     self.con_mod = modifier(con) if con.present?
+  end
+
+  def update_int_mod
     self.int_mod = modifier(int) if int.present?
+  end
+
+  def update_wis_mod
     self.wis_mod = modifier(wis) if wis.present?
+  end
+
+  def update_cha_mod
     self.cha_mod = modifier(cha) if cha.present?
   end
 

@@ -41,12 +41,12 @@ class CombatTrackersController < ApplicationController
       ct.save!
 
       redirect_to combat_trackers_path, flash: { success: "Tracker successfully restored!" }
+    end
+
+    if ct.soft_delete
+      redirect_to combat_trackers_path, flash: { success: "Tracker successfully deleted!" }
     else
-      if ct.soft_delete
-        redirect_to combat_trackers_path, flash: { success: "Tracker successfully deleted!" }
-      else
-        redirect_to :back, alert: ct.errors.full_messages.to_sentence
-      end
+      redirect_to :back, alert: ct.errors.full_messages.to_sentence
     end
   end
 
