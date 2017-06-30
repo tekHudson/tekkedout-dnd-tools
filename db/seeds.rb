@@ -22,9 +22,15 @@ Rake::Task["import_spells"].invoke if Spell.all.count < 400
 
 Rake::Task["import_creatures"].invoke if Creature.all.count < 431
 
+User.create(email: "site_admin@fake.com", password: "Password1", password_confirmation: "Password1")
+User.create(email: "site_user@fake.com", password: "Password1", password_confirmation: "Password1")
+
+user = User.where(email: "site_admin@fake.com").first
+
 (1..10).each do |i|
   ct = CombatTracker.new
   ct.name = "Test tracker #{i}"
+  ct.user_id = user.id
   ct.deleted_at = Time.zone.today - i.days if (i % 3).zero?
   ct.save!
   (1..rand(2..5)).each do |_n|
@@ -40,4 +46,3 @@ Rake::Task["import_creatures"].invoke if Creature.all.count < 431
   end
 end
 
-User.create(email: "site_admin@fake.com", password: "Password1", password_confirmation: "Password1")

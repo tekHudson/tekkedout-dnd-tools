@@ -1,4 +1,5 @@
 class CombatTracker < ApplicationRecord
+  belongs_to :user
   has_many :combatants, autosave: true
   accepts_nested_attributes_for :combatants
 
@@ -10,8 +11,8 @@ class CombatTracker < ApplicationRecord
     unscoped.where.not(deleted_at: nil)
   end
 
-  def self.not_deleted
-    where(deleted_at: nil)
+  def self.not_deleted_for(user)
+    where(deleted_at: nil).where(user_id: user.id)
   end
 
   def soft_delete
