@@ -29,9 +29,9 @@ class CombatTracker < ApplicationRecord
   end
 
   def add_combatant(creature_id, qty)
-    (1..qty.to_i).each do |n|
+    (1..qty.to_i).each do |_n|
       combatant_stats = Creature.generate_combatant_stats(creature_id)
-      self.combatants.build combatant_stats
+      combatants.build combatant_stats
       save!
     end
   end

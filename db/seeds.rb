@@ -13,20 +13,16 @@ def random_stat_value
   rand(5..20)
 end
 
-if Spell.all.count < 400
-  Rake::Task['import_spells'].invoke
-end
+Rake::Task["import_spells"].invoke if Spell.all.count < 400
 
-if Creature.all.count < 431
-  Rake::Task['import_creatures'].invoke
-end
+Rake::Task["import_creatures"].invoke if Creature.all.count < 431
 
 (1..10).each do |i|
   ct = CombatTracker.new
   ct.name = "Test tracker #{i}"
-  ct.deleted_at = Date.today - i.days if (i % 3 == 0)
+  ct.deleted_at = Date.today - i.days if i % 3 == 0
   ct.save!
-  (1..rand(2..5)).each do |n|
+  (1..rand(2..5)).each do |_n|
     combatant = Combatant.new
     combatant.combat_tracker_id = ct.id
     combatant.name = COMBATANT_NAMES.sample.strip

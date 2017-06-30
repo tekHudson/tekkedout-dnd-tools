@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "combat_trackers#index"
 
-  resources :combatants, only: [:create, :update] do
+  resources :combatants, only: %i[create update] do
     member do
       patch :delete
     end
   end
 
-  resources :combat_trackers, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :combat_trackers, only: %i[index new create edit update destroy] do
     collection do
       get :deleted
     end
@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   resources :races, only: [:index]
 
-  resources :spells, only: [:index, :search]
+  resources :spells, only: %i[index search]
 end

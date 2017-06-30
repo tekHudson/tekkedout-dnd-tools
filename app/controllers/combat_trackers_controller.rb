@@ -19,7 +19,7 @@ class CombatTrackersController < ApplicationController
 
   def edit
     @combat_tracker = CombatTracker.find(params[:id])
-    @creatures = Creature.all.collect { |c| [ c.name, c.id ] }
+    @creatures = Creature.all.collect { |c| [c.name, c.id] }
   end
 
   def update
@@ -72,6 +72,6 @@ class CombatTrackersController < ApplicationController
   end
 
   def combat_tracker_params
-    params.require(:combat_tracker).permit(:name, combatants_attributes: [:id, :name, :init, :max_hp, :hp, :ac, :dc])
+    params.require(:combat_tracker).permit(:name, combatants_attributes: %i[id name init max_hp hp ac dc])
   end
 end

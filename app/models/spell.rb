@@ -1,16 +1,16 @@
 class Spell < ApplicationRecord
-  def self.all_for_display (params)
+  def self.all_for_display(params)
     if params[:name].present? || params[:description].present? || params[:klass].present?
       if params[:klass].present?
-        results = Spell.where("? = ANY (klass)", "#{params[:klass]}")
+        results = Spell.where("? = ANY (klass)", (params[:klass]).to_s)
       end
 
       if params[:name].present?
-        if results.present?
-          results = results.where("lower(name) LIKE ? ", "%#{params[:name]}%".downcase)
-        else
-          results = Spell.where("lower(name) LIKE ? ", "%#{params[:name]}%".downcase)
-        end
+        results = if results.present?
+                    results.where("lower(name) LIKE ? ", "%#{params[:name]}%".downcase)
+                  else
+                    Spell.where("lower(name) LIKE ? ", "%#{params[:name]}%".downcase)
+                  end
       end
 
       if params[:description].present?

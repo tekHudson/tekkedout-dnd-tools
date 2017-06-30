@@ -1,7 +1,7 @@
 require_relative "../import_spells"
 
 desc "Import spells from files"
-task :import_spells => :environment do
+task import_spells: :environment do
   ImportSpells.construct_spells("bard.csv")
   ImportSpells.construct_spells("cleric.csv")
   ImportSpells.construct_spells("druid.csv")

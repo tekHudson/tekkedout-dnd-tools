@@ -9,10 +9,6 @@
     // color: #D9534F;
 }
 
-.table-row, .spell-search {
-    padding-bottom: 20px;
-}
-
 .spell__notfound {
     font-size: 20px;
     font-style: italic;
@@ -21,8 +17,4 @@
 
 .spell__notfound.is-visible {
     display: block;
-}
-
-.btn-primary {
-    background-color: #333;
 }

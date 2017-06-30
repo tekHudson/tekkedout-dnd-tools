@@ -2,7 +2,7 @@
 
 <% content_for :content do %>
   <div class="spells container-fluid">
-    <div class="row spell-search">
+    <div class="row bottom20">
       <%= form_tag spells_path, method: :get, class: "navbar-form" do %>
         <%= hidden_field_tag :klass, params[:klass] %>
         <div class="form-group">
@@ -16,7 +16,7 @@
     </div>
 
     <% @spells.each do |spell_row| %>
-      <div class="row table-row">
+      <div class="row bottom20">
         <% spell_row.each do |spell| %>
           <div id="<%= spell.name %>" class="spell col-xs-2">
             <button id="<%= spell.id %>" class="btn btn-primary spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>" stlye="height: 100px;">

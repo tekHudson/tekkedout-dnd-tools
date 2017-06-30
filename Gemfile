@@ -5,20 +5,21 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "pg"
+gem "puma", "~> 3.0"
 gem "rails", "~> 5.0.3"
 gem "sprockets-rails"
 gem "turbolinks", "~> 5"
-gem "puma", "~> 3.0"
-gem "pg"
 
-gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
-gem "coffee-rails", "~> 4.2"
-gem "bootstrap-sass", "~> 3.3"
+# Styling
 gem "bootstrap-datepicker-rails"
 gem "bootstrap-guardsjs-rails", "~> 0.4"
-gem "twitter-bootstrap-rails-confirm"
+gem "bootstrap-sass", "~> 3.3"
+gem "coffee-rails", "~> 4.2"
 gem "jquery-datatables-rails", "~> 3.4"
+gem "sass-rails", "~> 5.0"
+gem "twitter-bootstrap-rails-confirm"
+gem "uglifier", ">= 1.3.0"
 
 # Devise
 gem "devise"
@@ -30,25 +31,26 @@ gem "email_validator"
 gem "blueimp-templates-rails"
 
 # JavaScript
-gem "jquery-rails"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 gem "select2-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri
   gem "letter_opener"
+  gem "rubocop", "~> 0.39"
 end
 
 group :development do
   gem "better_errors"
-  gem "web-console", ">= 3.3.0"
   gem "listen", "~> 3.0.5"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "web-console", ">= 3.3.0"
 end
 
 group :production do
   gem "mailgun-ruby"
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
