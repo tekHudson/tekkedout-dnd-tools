@@ -4,9 +4,9 @@ class Spell < ApplicationRecord
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/PerceivedComplexity
   def self.all_for_display(klass = nil, name = nil, description = nil)
-    klass.downcase!
-    name.downcase!
-    description.downcase!
+    klass.downcase! if klass
+    name.downcase! if name
+    description.downcase! if description
 
     if klass && name && description
       return where("? = ANY (klass)", klass).where("lower(name) LIKE ? ", name)
