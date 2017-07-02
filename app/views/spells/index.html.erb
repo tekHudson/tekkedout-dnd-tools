@@ -8,8 +8,6 @@
         <div class="form-group">
           <%= label :search, :name, "By Spell Name:" %>
           <%= text_field_tag :name, params[:name], placeholder: "Search text...", class: "form-control" %>
-          <%= label :description, :by_spell_description, "By Spell Description:" %>
-          <%= text_field_tag :description, params[:description], placeholder: "Search text...", class: "form-control" %>
         </div>
         <%= submit_tag "Search", name: nil, class: "btn btn-danger" %>
       <% end %>

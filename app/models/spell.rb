@@ -3,26 +3,16 @@ class Spell < ApplicationRecord
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/MethodLength
   # rubocop:disable Metrics/PerceivedComplexity
-  def self.all_for_display(klass = nil, name = nil, description = nil)
-    klass.downcase! if klass
+  def self.all_for_display(klass = nil, name = nil)
+    klass.capitalize! if klass
     name.downcase! if name
-    description.downcase! if description
 
-    if klass && name && description
-      return where("? = ANY (klass)", klass).where("lower(name) LIKE ? ", name)
-                                            .where("lower(description) LIKE ? ", description)
-    elsif klass && description
-      return where("? = ANY (klass)", klass).where("lower(description) LIKE ? ", description)
-    elsif klass && name
-      return where("? = ANY (klass)", klass).where("lower(name) LIKE ? ", name)
-    elsif name && description
-      return where("lower(name) LIKE ? ", name).where("lower(description) LIKE ? ", description)
-    elsif klass
-      return where("? = ANY (klass)", klass)
-    elsif description
-      return where("lower(description) LIKE ? ", description)
-    elsif name
-      return where("lower(name) LIKE ? ", name)
+    if klass.present? && name.present?
+      return where("? = ANY (klass)", "#{klass}").where("lower(name) ILIKE ?", "%#{name}%")
+    elsif klass.present?
+      return where("? = ANY (klass)", "#{klass}")
+    elsif name.present?
+      return where("lower(name) ILIKE ?", "%#{name}%")
     else
       return all
     end
