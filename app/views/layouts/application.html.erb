@@ -8,13 +8,13 @@
   <body>
     <%= render partial: "common/navbar", locals: { active: @active_tab } %>
 
-    <%= render partial: "common/flash" %>
+    <%= content_for(:jumbotron) %>
 
-    <%= content_for(:before_content) %>
 
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
+          <%= render partial: "common/flash" %>
 
           <% if content_for(:content).present? || content_for(:sidebar).present? %>
             <div class="row">
