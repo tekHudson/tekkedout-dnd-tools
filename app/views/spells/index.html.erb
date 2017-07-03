@@ -3,33 +3,36 @@
 <% content_for :content do %>
   <div class="spells container-fluid">
     <div class="row bottom20">
-      <%= form_tag spells_path, method: :get, class: "navbar-form" do %>
-        <%= hidden_field_tag :klass, params[:klass] %>
-        <div class="form-group">
-          <%= label :search, :name, "By Spell Name:" %>
-          <%= text_field_tag :name, params[:name], placeholder: "Search text...", class: "form-control" %>
-        </div>
-        <%= submit_tag "Search", name: nil, class: "btn btn-danger" %>
-      <% end %>
-    </div>
-
-    <% @spells.each do |spell_row| %>
-      <div class="row bottom20">
-        <% spell_row.each do |spell| %>
-          <div id="<%= spell.name %>" class="spell col-xs-2">
-            <button id="<%= spell.id %>" class="btn btn-primary spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>" stlye="height: 100px;">
-              <%= spell.name %>
-            </button>
+      <div class="col-xs-12 col-md-6">
+        <h3 class="top0">
+          <%= spells_page_title(params) %> <small>(<%= @spells.count.to_s %>)</small>
+        </h3>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <%= form_tag spells_path, method: :get, class: "form-inline" do %>
+          <%= hidden_field_tag :klass, params[:klass] %>
+          <div class="form-group pull-right">
+            <%= label :search, :name, "Name Search:" %>
+            <%= text_field_tag :name, params[:name], placeholder: "Search text...", class: "form-control" %>
+            <%= submit_tag "Search", name: nil, class: "btn btn-danger" %>
           </div>
         <% end %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="row">
+      <% @spells.each do |spell| %>
+        <div id="<%= spell.name %>" class=" bottom20 spell col-xs-2">
+          <button id="<%= spell.id %>" class="btn btn-primary spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
+            <%= spell.name %>
+          </button>
+        </div>
+      <% end %>
+    </div>
 
     <%# Construct modal for every spell  %>
-    <% @spells.each do |spell_row| %>
-      <% spell_row.each do |spell| %>
-        <%= render partial: "spell_info_modal", :locals => {spell: spell} %>
-      <% end %>
+    <% @spells.each do |spell| %>
+      <%= render partial: "spell_info_modal", :locals => {spell: spell} %>
     <% end %>
   </div>
 <% end %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "combat_trackers#index"
+  root "pages#home"
 
   resources :combatants, only: %i[create update] do
     member do
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :creatures, only: [:index]
 
   resources :klasses, only: [:index]
+
+  resources :pages, only: %i[home]
 
   resources :races, only: [:index]
 
