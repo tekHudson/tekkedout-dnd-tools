@@ -27,7 +27,7 @@
                     <td><%= tracker.updated_at.strftime('%x') %> @ <%= tracker.updated_at.strftime('%r') %></td>
                     <td class="col-xs-1">
                       <% if tracker.deleted? %>
-                        <%= link_to combat_tracker_path(tracker, restore: true), method: :delete, type: :button, class: "btn btn-success" do %>
+                        <%= link_to restore_combat_tracker_path(tracker), method: :post, type: :button, class: "btn btn-success" do %>
                           <span class="glyphicon glyphicon-plus"></span>
                         <% end %>
                       <% else %>

@@ -35,14 +35,16 @@ class CombatTrackersController < ApplicationController
     end
   end
 
+  def restore
+    ct = CombatTracker.find(params[:id])
+    ct.restore
+
+    redirect_to combat_trackers_path, flash: { success: "Tracker successfully restored!" }
+  end
+
   def destroy
     ct = CombatTracker.find(params[:id])
     redirect_to combat_trackers_path unless current_user.can_edit_tracker?(ct)
-
-    if params[:restore]
-      ct.restore
-      redirect_to combat_trackers_path, flash: { success: "Tracker successfully restored!" }
-    end
 
     if ct.soft_delete
       redirect_to combat_trackers_path, flash: { success: "Tracker successfully deleted!" }
