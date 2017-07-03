@@ -21,12 +21,17 @@
 @import "spells";
 
 body {
-    background-image: image-url("page-background.jpg");
+  background-image: image-url("page-background.jpg");
+  padding-top: 50px;
 }
 
 /* Spacer Styles */
 .space-right {
   margin-right: 10px;
+}
+
+.top0 {
+  margin-top:0px;
 }
 
 .top5 {
@@ -47,6 +52,10 @@ body {
 
 .top30 {
   margin-top:30px;
+}
+
+.bottom0 {
+  margin-top:0px;
 }
 
 .bottom5 {
