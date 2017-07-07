@@ -13,12 +13,12 @@ env:
   - DATABASE_PASSWORD=
   - SITE_NAME=TravisTekkedOutDNDTools
 before_install:
-  - gem update --remote bundler
-  - gem update --system
-  - rvm @global do gem uninstall bundler -a -x
-  - rvm @global do gem install bundler -v 1.13.7
+- gem update --remote bundler
+- gem update --system
+- rvm @global do gem uninstall bundler -a -x
+- rvm @global do gem install bundler -v 1.14.6
 install:
-  - bundle install --retry=3
+- bundle install --retry=3
 script:
 - bundle exec rubocop
 # - psql -c 'create database tekkedout_dnd_tools_test;' -U postgres
