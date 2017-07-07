@@ -32,3 +32,6 @@ Style/SpaceInsideBlockBraces:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
