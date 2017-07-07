@@ -2,7 +2,7 @@
 
 <% content_for :content do %>
   <%= form_for @combat_tracker, method: :patch do |f| %>
-
+    <%= hidden_field_tag "combat_tracker[id]", @combat_tracker.id %>
     <div class="form-inline">
       <div class="row">
         <div class="col-xs-12">
@@ -36,7 +36,7 @@
           <button id="add-creature" type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Creature
           </button>
-          <%= hidden_field_tag :combat_tracker_id, @combat_tracker.id %>
+          <%= hidden_field_tag :id, @combat_tracker.id %>
         </div>
       </div>
     </div>
