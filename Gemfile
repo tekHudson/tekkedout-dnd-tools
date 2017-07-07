@@ -38,8 +38,8 @@ gem "select2-rails"
 group :development, :test do
   gem "byebug", platform: :mri
   gem "letter_opener"
-  gem "rubocop", "~> 0.39"
   gem "rb-fsevent", "0.9.8"
+  gem "rubocop", "~> 0.39"
 end
 
 group :development do
