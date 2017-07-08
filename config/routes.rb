@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :combat_trackers, only: %i[index new create edit update destroy] do
+  resources :combat_trackers, only: %i[index new create edit update] do
     collection do
       get :deleted
     end
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     member do
       post :add_combatant
       post :restore
+      post :delete
     end
   end
 
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :klasses, only: [:index]
 
-  resources :pages, only: %i[home]
+  resources :pages, only: [:home]
 
   resources :races, only: [:index]
 

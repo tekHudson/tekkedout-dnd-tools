@@ -28,7 +28,11 @@ User.create(email: "site_user@fake.com", password: "Password1", password_confirm
 ActionMailer::Base.perform_deliveries = true
 
 users = User.where(email: ["site_admin@fake.com", "site_user@fake.com"])
-users.each { |u| u.confirm; u.save }
+
+users.each do |u|
+  u.confirm
+  u.save
+end
 
 (1..10).each do |i|
   ct = CombatTracker.new
@@ -48,4 +52,3 @@ users.each { |u| u.confirm; u.save }
     combatant.save!
   end
 end
-

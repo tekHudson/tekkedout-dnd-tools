@@ -25,13 +25,12 @@ class CombatTrackersController < ApplicationController
   end
 
   def update
-    ct = CombatTracker.includes(:combatants).find(params[:id])
-    redirect_to combat_trackers_path unless current_user.can_edit_tracker?(ct)
+    ct = current_user.update_combat_tracker(combat_tracker_params)
 
-    if ct.update(combat_tracker_params)
+    if ct
       redirect_to edit_combat_tracker_path(ct), flash: { success: "Tracker updated!" }
     else
-      redirect_to edit_combat_tracker_path(ct), alert: ct.errors.full_messages.to_sentence
+      redirect_to :back, alert: ct.errors.full_messages.to_sentence
     end
   end
 
@@ -75,6 +74,6 @@ class CombatTrackersController < ApplicationController
   end
 
   def combat_tracker_params
-    params.require(:combat_tracker).permit(:name, combatants_attributes: %i[id name init max_hp hp ac dc])
+    params.require(:combat_tracker).permit(:id, :name, combatants_attributes: %i[id name init max_hp hp ac dc])
   end
 end

@@ -27,8 +27,11 @@ Rails:
 Style/SignalException:
   EnforcedStyle: only_raise
 
-Style/SpaceInsideBlockBraces:
+Layout/SpaceInsideBlockBraces:
   EnforcedStyleForEmptyBraces: space
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
