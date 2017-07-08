@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
 
     member do
-      post :add_combatant
+      post :add_creature
       post :restore
       post :delete
     end
