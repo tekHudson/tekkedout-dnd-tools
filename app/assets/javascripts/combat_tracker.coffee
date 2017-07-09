@@ -3,7 +3,7 @@ addCreature = () ->
   creature_qty = $("select.creature_qty").val()
   combat_tracker_id = $("#id").val()
 
-  $.post '/combat_trackers/' + combat_tracker_id + '/add_combatant',
+  $.post '/combat_trackers/' + combat_tracker_id + '/add_creature',
     creature_id: creature_id
     creature_qty: creature_qty
 

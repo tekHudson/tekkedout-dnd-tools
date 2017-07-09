@@ -59,17 +59,17 @@ class CombatTrackersController < ApplicationController
     render :index
   end
 
-  def add_combatant
-    add_params = add_combatant_params
+  def add_creature
+    add_params = add_creature_params
     ct = CombatTracker.find(add_params[:id])
-    ct.add_combatant(add_params[:creature_id], add_params[:creature_qty])
+    ct.add_creatures(add_params[:creature_id], add_params[:creature_qty])
 
     redirect_to edit_combat_tracker_path(ct)
   end
 
   private
 
-  def add_combatant_params
+  def add_creature_params
     params.permit(:id, :creature_id, :creature_qty)
   end
 
