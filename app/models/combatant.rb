@@ -3,6 +3,8 @@ class Combatant < ApplicationRecord
   belongs_to :combat_tracker
   before_save :strip_name
 
+  validates :name, presence: true
+
   private
 
   def strip_name

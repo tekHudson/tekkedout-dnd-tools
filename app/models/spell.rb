@@ -1,4 +1,6 @@
 class Spell < ApplicationRecord
+  validates :level, :name, :description, :klass, presence: true
+
   # rubocop:disable Metrics/CyclomaticComplexity
   def self.all_for_display(klass = nil, name = nil)
     klass.capitalize! if klass

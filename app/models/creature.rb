@@ -1,6 +1,8 @@
 class Creature < ApplicationRecord
   before_save :update_modifiers
 
+  validates :name, presence: true
+
   STAT_COLS = %w[str dex con int wis cha].freeze
   STAT_MOD_COLS = %w[str_mod dex_mod con_mod int_mod wis_mod cha_mod].freeze
 

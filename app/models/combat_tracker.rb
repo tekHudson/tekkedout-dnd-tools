@@ -3,6 +3,9 @@ class CombatTracker < ApplicationRecord
   has_many :combatants, autosave: true
   accepts_nested_attributes_for :combatants
 
+  validates :name, presence: true
+  validates_associated :combatants
+
   def mark_deleted
     self.deleted = true
   end
