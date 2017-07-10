@@ -3,9 +3,6 @@ class Creature < ApplicationRecord
 
   validates :name, presence: true
 
-  STAT_COLS = %w[str dex con int wis cha].freeze
-  STAT_MOD_COLS = %w[str_mod dex_mod con_mod int_mod wis_mod cha_mod].freeze
-
   def self.build_stats(creature_id, qty)
     results = []
     creature = Creature.find creature_id
