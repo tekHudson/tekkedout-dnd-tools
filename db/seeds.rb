@@ -33,13 +33,6 @@ u2.save!
 
 ActionMailer::Base.perform_deliveries = true
 
-# users = User.where(email: ["site_admin@fake.com", "site_user@fake.com"])
-
-# users.each do |u|
-#   u.confirm
-#   u.save
-# end
-
 (1..10).each do |i|
   ct = CombatTracker.new
   ct.name = "Test tracker #{i}"
