@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: dnd_tools_development
+  database: tekkedout_dnd_tools_development
 
 test:
   <<: *default
-  database: dnd_tools_test
+  database: tekkedout_dnd_tools_test
 
 production:
   <<: *default
-  database: dnd_tools_production
+  database: tekkedout_dnd_tools_production
