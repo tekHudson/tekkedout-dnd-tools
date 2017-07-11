@@ -40,6 +40,7 @@ group :development, :test do
   gem "letter_opener"
   gem "rb-fsevent", "0.9.8"
   gem "rubocop", "~> 0.39"
+  gem "pry"
 end
 
 group :development do
