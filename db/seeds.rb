@@ -24,15 +24,21 @@ Rake::Task["import_creatures"].invoke
 
 ActionMailer::Base.perform_deliveries = false
 admin = User.create(email: "site_admin@fake.com", password: "Password1", password_confirmation: "Password1")
-User.create(email: "site_user@fake.com", password: "Password1", password_confirmation: "Password1")
+admin.confirm
+admin.save!
+
+u2 = User.create(email: "site_user@fake.com", password: "Password1", password_confirmation: "Password1")
+u2.confirm
+u2.save!
+
 ActionMailer::Base.perform_deliveries = true
 
-users = User.where(email: ["site_admin@fake.com", "site_user@fake.com"])
+# users = User.where(email: ["site_admin@fake.com", "site_user@fake.com"])
 
-users.each do |u|
-  u.confirm
-  u.save
-end
+# users.each do |u|
+#   u.confirm
+#   u.save
+# end
 
 (1..10).each do |i|
   ct = CombatTracker.new
