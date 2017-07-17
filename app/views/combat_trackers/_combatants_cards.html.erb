@@ -1,0 +1,92 @@
+<% combat_tracker.combatants_by_init.each do |combatant| %>
+  <div class="row">
+    <div class="combatant-card bottom20 col-md-6">
+      <%= hidden_field_tag :id, combatant.id %>
+
+      <div class="row">
+        <div class="col-md-3">
+          <h3 class="top10 bottom0">Init: <%= combatant.init %></h3>
+        </div>
+
+        <div class="col-md-9 text-right">
+          <h3 class="top10 bottom0"><%= combatant.name %></h3>
+        </div>
+      </div>
+
+      <hr class="top5 bottom5">
+
+      <div class="row">
+        <div class="col-md-6">
+          Armor Class: <%= combatant.ac %><br/>
+          HP: <%= combatant.max_hp %><br/>
+          Spell DC: <%= combatant.dc %><br/>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="top0 text-right">Current HP</h4>
+
+          <h4 class="top0 bottom0 pull-right">
+            <%= link_to combatant_path(id: combatant.id, combatant: {hp: combatant.hp + 1}), method: :patch, class: 'btn btn-default btn-sm', :remote => true do %>
+              <span class="glyphicon glyphicon-menu-up"></span>
+            <% end %>
+
+            &nbsp;
+            <span id="current-hp"><%= combatant.hp %></span>
+            &nbsp;
+
+            <%= link_to combatant_path(id: combatant.id, combatant: {hp: combatant.hp - 1}), method: :patch, class: 'btn btn-default btn-sm', :remote => true do %>
+              <span class="glyphicon glyphicon-menu-down"></span>
+            <% end %>
+          </h4>
+        </div>
+      </div>
+
+      <% if combatant.creature.present? %>
+        <hr class="top5 bottom5">
+
+        <div class="row">
+          <div class="col-md-2 text-center">
+            <strong>STR</strong><br/>
+            <%= combatant.creature.str %> (<%= combatant.creature.str_mod_with_symbol %>)
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>DEX</strong><br/>
+            <%= combatant.creature.dex %> (<%= combatant.creature.dex_mod_with_symbol %>)
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>CON</strong><br/>
+            <%= combatant.creature.con %> (<%= combatant.creature.con_mod_with_symbol %>)
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>INT</strong><br/>
+            <%= combatant.creature.int %> (<%= combatant.creature.int_mod_with_symbol %>)
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>WIS</strong><br/>
+            <%= combatant.creature.wis %> (<%= combatant.creature.wis_mod_with_symbol %>)
+          </div>
+          <div class="col-md-2 text-center">
+            <strong>CHA</strong><br/>
+            <%= combatant.creature.cha %> (<%= combatant.creature.cha_mod_with_symbol %>)
+          </div>
+        </div>
+      <% end %>
+
+      <hr class="top5 bottom5">
+
+      <div class="row">
+        <div class="col-md-12 bottom5 top0">
+          <button id="<%= combatant.id %>" class="btn btn-primary edit-combatant-btn" data-toggle="modal" data-target="#edit-combatant-<%= combatant.id %>">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </button>
+
+          <%= link_to delete_combatant_path(combatant.id), :method => :patch, class: "btn btn-danger pull-right", data: confirm(title: "Delete combatant?") do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: "combat_trackers/edit_combatant_modal", locals: { combatant: combatant } %>
+<% end %>

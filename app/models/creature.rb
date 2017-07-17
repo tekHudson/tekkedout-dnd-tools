@@ -1,4 +1,6 @@
 class Creature < ApplicationRecord
+  has_many :combatants
+
   before_save :update_modifiers
 
   STAT_COLS = %w[str dex con int wis cha].freeze
@@ -11,7 +13,8 @@ class Creature < ApplicationRecord
     (1..qty.to_i).each do |n|
       creature_name = creature.name
       creature_name += " #{n}" if qty.to_i > 1
-      results << { name: creature_name,
+      results << { creature_id: creature.id,
+                   name: creature_name,
                    init: Roll.d20 + creature.dex_mod,
                    max_hp: creature.hp,
                    hp: creature.hp,
@@ -19,6 +22,30 @@ class Creature < ApplicationRecord
     end
 
     results
+  end
+
+  def str_mod_with_symbol
+    str_mod >= 0 ? "+#{str_mod.to_s}" : "#{str_mod.to_s}"
+  end
+
+  def dex_mod_with_symbol
+    dex_mod >= 0 ? "+#{dex_mod.to_s}" : "#{dex_mod.to_s}"
+  end
+
+  def con_mod_with_symbol
+    con_mod >= 0 ? "+#{con_mod.to_s}" : "#{con_mod.to_s}"
+  end
+
+  def int_mod_with_symbol
+    int_mod >= 0 ? "+#{int_mod.to_s}" : "#{int_mod.to_s}"
+  end
+
+  def wis_mod_with_symbol
+    wis_mod >= 0 ? "+#{wis_mod.to_s}" : "#{wis_mod.to_s}"
+  end
+
+  def cha_mod_with_symbol
+    cha_mod >= 0 ? "+#{cha_mod.to_s}" : "#{cha_mod.to_s}"
   end
 
   private

@@ -25,6 +25,20 @@ body {
   padding-top: 50px;
 }
 
+.combatant-card {
+  color: #561609;
+  background: #FDF1DC;
+  border-radius: 10px;
+  white-space: normal;
+  box-shadow: 0 0 0 2pt white;
+}
+
+hr {
+    height: 2px;
+    background-color: #922610;
+    width: 100%;
+}
+
 /* Spacer Styles */
 .space-right {
   margin-right: 10px;

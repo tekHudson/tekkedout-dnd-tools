@@ -1,6 +1,8 @@
 class Combatant < ApplicationRecord
   # :name, :init, :max_hp, :hp, :ac, :dc
+  belongs_to :creature
   belongs_to :combat_tracker
+
   before_save :strip_name
 
   private
