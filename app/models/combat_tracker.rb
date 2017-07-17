@@ -3,6 +3,10 @@ class CombatTracker < ApplicationRecord
   has_many :combatants, autosave: true
   accepts_nested_attributes_for :combatants
 
+  def combatants_by_init
+    combatants.order(init: :desc)
+  end
+
   def mark_deleted
     self.deleted = true
   end
