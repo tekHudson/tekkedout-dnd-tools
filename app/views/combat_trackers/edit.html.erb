@@ -16,13 +16,11 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <div class="form-group">
-            <% if @combat_tracker.present? && @combat_tracker.combatants.present? %>
-              <%= render partial: "combat_trackers/combatant_cards", locals: { combat_tracker: @combat_tracker } %>
-            <% else %>
-              <p>There are currently no combatants in this combat tracker.</p>
-            <% end %>
-        </div>
+        <% if @combat_tracker.present? && @combat_tracker.combatants.present? %>
+          <%= render partial: "combat_trackers/combatant_cards", locals: { combat_tracker: @combat_tracker } %>
+        <% else %>
+          <p>There are currently no combatants in this combat tracker.</p>
+        <% end %>
       </div>
     </div>
 
