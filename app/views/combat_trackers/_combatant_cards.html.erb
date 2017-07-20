@@ -1,5 +1,5 @@
 <% combat_tracker.combatants_by_init.each do |combatant| %>
-  <div class="combatant-card bottom20 col-md-offset-1 col-md-6 col-sm-9 col-xs-12">
+  <div class="combatant-card bottom20 col-md-7 col-sm-9 col-xs-12">
     <%= hidden_field_tag :id, combatant.id %>
 
     <div class="row">
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <hr class="top5 bottom5">
+    <hr class="combatant-hr top5 bottom5">
 
     <div class="row">
       <div class="col-xs-6">
@@ -21,21 +21,11 @@
         <strong>Spell DC</strong> <%= combatant.dc %><br/>
       </div>
 
-      <!-- <div class="col-sm-3 hidden-xs">
-        <strong>Armor Class</strong> <%= combatant.ac %>
-      </div>
-      <div class="col-sm-3 hidden-xs">
-        <strong>HP</strong> <%= combatant.max_hp %>
-      </div>
-      <div class="col-sm-3 hidden-xs">
-        <strong>Spell DC</strong> <%= combatant.dc %>
-      </div> -->
-
       <div class="col-xs-6">
         <h4 class="top0 text-right">Current HP</h4>
 
         <h4 class="top0 bottom0 pull-right">
-          <%= link_to combatant_path(id: combatant.id, combatant: {hp: combatant.hp + 1}), method: :patch, class: 'btn btn-default btn-sm', :remote => true do %>
+          <%= link_to combatant_path(id: combatant.id, combatant: {hp: combatant.hp + 1}), method: :patch, class: 'btn btn-primary btn-sm', :remote => true do %>
             <span class="glyphicon glyphicon-menu-up"></span>
           <% end %>
 
@@ -43,7 +33,7 @@
           <span id="current-hp"><%= combatant.hp %></span>
           &nbsp;
 
-          <%= link_to combatant_path(id: combatant.id, combatant: {hp: combatant.hp - 1}), method: :patch, class: 'btn btn-default btn-sm', :remote => true do %>
+          <%= link_to combatant_path(id: combatant.id, combatant: {hp: combatant.hp - 1}), method: :patch, class: 'btn btn-primary btn-sm', :remote => true do %>
             <span class="glyphicon glyphicon-menu-down"></span>
           <% end %>
         </h4>
@@ -51,7 +41,7 @@
     </div>
 
     <% if combatant.creature.present? %>
-      <hr class="top5 bottom5">
+      <hr class="combatant-hr top5 bottom5">
 
       <div class="row">
         <div class="col-xs-2 text-center">
@@ -81,7 +71,7 @@
       </div>
     <% end %>
 
-    <hr class="top5 bottom5">
+    <hr class="combatant-hr top5 bottom5">
 
     <div class="row">
       <div class="col-md-12 bottom5 top0">
