@@ -27,32 +27,72 @@ body {
   padding-top: 50px;
 }
 
+.content {
+  background-image: image-url("content-background.jpg");
+}
+
 .btn-danger {
+  color: $color-half-colonial-white;
   background-color: $color-scarlet;
 }
 
 .btn-primary {
   background: $color-tabasco;
   color: $color-half-colonial-white;
-  border: 2px solid $color-mahogany !important;
+  border: 2px solid $color-mahogany;
 }
 
 .btn-primary:hover, .btn-primary:focus {
-  background: $color-half-colonial-white;
-  color: $color-mahogany;
-  border: 2px solid $color-tabasco !important;
+  background: $color-mahogany;
+  color: $color-half-colonial-white;
+  border: 2px solid $color-tabasco;
+}
+
+.btn-success {
+  background: $color-deep-fir;
+  color: $color-half-colonial-white;
+  border: 2px solid $color-green-pea;
+}
+
+.btn-success:hover, .btn-success:focus {
+  color: $color-half-colonial-white;
+  background-color: $color-green-pea;
+  border: 2px solid $color-deep-fir;
 }
 
 .btn-default {
   background: $color-half-colonial-white;
   color: $color-mahogany;
-  border: 2px solid $color-tabasco !important;
+  border: 2px solid $color-tabasco;
 }
 
 .btn-default:hover, .btn-default:focus {
-  color: $color-half-colonial-white !important;
-  background-color: $color-tabasco !important;
-  border-color: $color-half-colonial-white !important;
+  color: $color-half-colonial-white;
+  background-color: $color-tabasco;
+  border: 2px solid $color-half-colonial-white;
+}
+
+a {
+  color: $color-mahogany;
+}
+
+.nav-pills > li > a:hover {
+  background-color: $color-half-colonial-white;
+}
+
+.nav-pills > li > a,
+.nav-pills > li > a:focus {
+  background-color: transparent;
+  color: $color-mahogany;
+  border: 2px solid $color-mahogany;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background: $color-tabasco;
+  color: $color-half-colonial-white;
+  border: 2px solid $color-mahogany !important;
 }
 
 /* Spacer Styles */
