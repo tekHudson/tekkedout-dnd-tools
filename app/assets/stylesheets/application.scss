@@ -18,25 +18,41 @@
 @import "table_row_click";
 @import "devise_bootstrap_views";
 @import "dataTables/jquery.dataTables";
+@import "combat_tracker";
 @import "spells";
+@import "utilities/variables";
 
 body {
   background-image: image-url("page-background.jpg");
   padding-top: 50px;
 }
 
-.combatant-card {
-  color: #561609;
-  background: #FDF1DC;
-  border-radius: 10px;
-  white-space: normal;
-  box-shadow: 0 0 0 2pt white;
+.btn-danger {
+  background-color: $color-scarlet;
 }
 
-hr {
-    height: 2px;
-    background-color: #922610;
-    width: 100%;
+.btn-primary {
+  background: $color-tabasco;
+  color: $color-half-colonial-white;
+  border: 2px solid $color-mahogany !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: $color-half-colonial-white;
+  color: $color-mahogany;
+  border: 2px solid $color-tabasco !important;
+}
+
+.btn-default {
+  background: $color-half-colonial-white;
+  color: $color-mahogany;
+  border: 2px solid $color-tabasco !important;
+}
+
+.btn-default:hover, .btn-default:focus {
+  color: $color-half-colonial-white !important;
+  background-color: $color-tabasco !important;
+  border-color: $color-half-colonial-white !important;
 }
 
 /* Spacer Styles */
