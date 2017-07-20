@@ -3,7 +3,6 @@
 .spell-tile {
     height: 74px !important;
     white-space: normal;
-    box-shadow: 0 0 0 2pt white;
 }
 
 .spell__notfound {
@@ -17,7 +16,7 @@
 }
 
 // Spell Modal
-.spell-modal {
+.spell-modal  .modal-content{
     color: $color-mahogany;
     background: $color-half-colonial-white;
 }
