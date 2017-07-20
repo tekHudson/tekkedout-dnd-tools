@@ -18,18 +18,14 @@
 
 // Spell Modal
 .spell-modal {
-    color: #561609;
-    background: #FDF1DC;
+    color: $color-mahogany;
+    background: $color-half-colonial-white;
 }
 
-.spell-modal-footer {
-    border-top: 2px solid #922610 !important;
+.spell-modal .modal-footer {
+    border-top: 2px solid $color-tabasco !important;
 }
 
-.modal-cancel-btn {
-    border: 1px solid #922610 !important;
-}
-
-.spell-modal-header {
-    border-bottom: 2px solid #922610 !important;
+.spell-modal .modal-header {
+    border-bottom: 2px solid $color-tabasco !important;
 }
