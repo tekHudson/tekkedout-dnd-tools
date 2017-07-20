@@ -36,37 +36,40 @@ body {
   background-color: $color-scarlet;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:focus {
   background: $color-tabasco;
   color: $color-half-colonial-white;
   border: 2px solid $color-mahogany;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover {
   background: $color-mahogany;
   color: $color-half-colonial-white;
   border: 2px solid $color-tabasco;
 }
 
-.btn-success {
+.btn-success,
+.btn-success:focus {
   background: $color-deep-fir;
   color: $color-half-colonial-white;
   border: 2px solid $color-green-pea;
 }
 
-.btn-success:hover, .btn-success:focus {
+.btn-success:hover {
   color: $color-half-colonial-white;
   background-color: $color-green-pea;
   border: 2px solid $color-deep-fir;
 }
 
-.btn-default {
+.btn-default,
+.btn-default:focus {
   background: $color-half-colonial-white;
   color: $color-mahogany;
   border: 2px solid $color-tabasco;
 }
 
-.btn-default:hover, .btn-default:focus {
+.btn-default:hover {
   color: $color-half-colonial-white;
   background-color: $color-tabasco;
   border: 2px solid $color-half-colonial-white;
