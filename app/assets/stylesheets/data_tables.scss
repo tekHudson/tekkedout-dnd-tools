@@ -1,0 +1,60 @@
+@import "utilities/variables";
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: none;
+  border: 1px solid transparent;
+}
+
+ul.pagination {
+  margin: 0px;
+}
+
+.pagination > li > a {
+  background-color: transparent;
+  color: $color-mahogany;
+  border: 2px solid $color-mahogany;
+  border-radius: 4px;
+}
+
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+  background-color: $color-half-colonial-white;
+  border: 2px solid $color-mahogany;
+  border-radius: 4px;
+  color: $color-mahogany;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  background: $color-tabasco;
+  color: $color-half-colonial-white;
+  border: 2px solid $color-mahogany;
+  border-radius: 4px;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  border: 2px solid $color-mahogany;
+}
+
+td.sorting,
+td.sorting_asc,
+td.sorting_desc {
+  color: $color-mahogany;
+}
+
+.dataTables_info,
+.dataTables_length > label,
+.dataTables_filter > label {
+  color: $color-mahogany !important;
+}

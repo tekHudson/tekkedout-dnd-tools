@@ -18,6 +18,7 @@
 @import "table_row_click";
 @import "devise_bootstrap_views";
 @import "dataTables/jquery.dataTables";
+@import "data_tables";
 @import "combat_tracker";
 @import "spells";
 @import "utilities/variables";
@@ -32,47 +33,47 @@ body {
 }
 
 .btn-danger {
-  color: $color-half-colonial-white;
   background-color: $color-scarlet;
+  color: $color-half-colonial-white;
 }
 
 .btn-primary,
 .btn-primary:focus {
   background: $color-tabasco;
-  color: $color-half-colonial-white;
   border: 2px solid $color-mahogany;
+  color: $color-half-colonial-white;
 }
 
 .btn-primary:hover {
   background: $color-mahogany;
-  color: $color-half-colonial-white;
   border: 2px solid $color-tabasco;
+  color: $color-half-colonial-white;
 }
 
 .btn-success,
 .btn-success:focus {
-  background: $color-deep-fir;
+  background: $color-green-pea;
+  border: 2px solid $color-deep-fir;
   color: $color-half-colonial-white;
-  border: 2px solid $color-green-pea;
 }
 
 .btn-success:hover {
+  background-color: $color-deep-fir;
+  border: 2px solid $color-green-pea;
   color: $color-half-colonial-white;
-  background-color: $color-green-pea;
-  border: 2px solid $color-deep-fir;
 }
 
 .btn-default,
 .btn-default:focus {
   background: $color-half-colonial-white;
-  color: $color-mahogany;
   border: 2px solid $color-tabasco;
+  color: $color-mahogany;
 }
 
 .btn-default:hover {
-  color: $color-half-colonial-white;
   background-color: $color-tabasco;
   border: 2px solid $color-half-colonial-white;
+  color: $color-half-colonial-white;
 }
 
 a {
