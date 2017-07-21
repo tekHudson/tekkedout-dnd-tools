@@ -53,6 +53,12 @@ td.sorting_desc {
   color: $color-mahogany;
 }
 
+table.dataTable thead th,
+table.dataTable thead td,
+table.dataTable.no-footer {
+  border-bottom: 2px solid $color-mahogany;
+}
+
 .dataTables_info,
 .dataTables_length > label,
 .dataTables_filter > label {
