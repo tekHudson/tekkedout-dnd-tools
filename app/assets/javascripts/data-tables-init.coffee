@@ -19,5 +19,6 @@ $(document).on "turbolinks:load", ->
     if table.hasClass("no-paging")
       options["paging"] = false
 
+    options["pagingType"] = "numbers"
 
     table.DataTable(options)

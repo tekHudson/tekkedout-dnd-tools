@@ -25,27 +25,27 @@ class Creature < ApplicationRecord
   end
 
   def str_mod_with_symbol
-    str_mod >= 0 ? "+#{str_mod.to_s}" : "#{str_mod.to_s}"
+    str_mod >= 0 ? "+#{str_mod}" : str_mod.to_s
   end
 
   def dex_mod_with_symbol
-    dex_mod >= 0 ? "+#{dex_mod.to_s}" : "#{dex_mod.to_s}"
+    dex_mod >= 0 ? "+#{dex_mod}" : dex_mod.to_s
   end
 
   def con_mod_with_symbol
-    con_mod >= 0 ? "+#{con_mod.to_s}" : "#{con_mod.to_s}"
+    con_mod >= 0 ? "+#{con_mod}" : con_mod.to_s
   end
 
   def int_mod_with_symbol
-    int_mod >= 0 ? "+#{int_mod.to_s}" : "#{int_mod.to_s}"
+    int_mod >= 0 ? "+#{int_mod}" : int_mod.to_s
   end
 
   def wis_mod_with_symbol
-    wis_mod >= 0 ? "+#{wis_mod.to_s}" : "#{wis_mod.to_s}"
+    wis_mod >= 0 ? "+#{wis_mod}" : wis_mod.to_s
   end
 
   def cha_mod_with_symbol
-    cha_mod >= 0 ? "+#{cha_mod.to_s}" : "#{cha_mod.to_s}"
+    cha_mod >= 0 ? "+#{cha_mod}" : cha_mod.to_s
   end
 
   private

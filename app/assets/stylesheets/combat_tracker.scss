@@ -1,0 +1,15 @@
+@import "utilities/variables";
+
+.combatant-card {
+  color: $color-mahogany;
+  background: $color-half-colonial-white;
+  border-top: 5px solid $color-fire-bush !important;
+  border-bottom: 5px solid $color-fire-bush !important;
+  white-space: normal;
+}
+
+.combatant-hr {
+  height: 2px;
+  background-color: $color-tabasco;
+  width: 100%;
+}

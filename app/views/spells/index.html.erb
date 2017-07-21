@@ -8,13 +8,14 @@
           <%= spells_page_title(params) %> <small>(<%= @spells.count.to_s %>)</small>
         </h3>
       </div>
+
       <div class="col-xs-12 col-md-6">
         <%= form_tag spells_path, method: :get, class: "form-inline" do %>
           <%= hidden_field_tag :klass, params[:klass] %>
           <div class="form-group pull-right">
             <%= label :search, :name, "Name Search:" %>
             <%= text_field_tag :name, params[:name], placeholder: "Search text...", class: "form-control" %>
-            <%= submit_tag "Search", name: nil, class: "btn btn-danger" %>
+            <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>
@@ -23,7 +24,7 @@
     <div class="row">
       <% @spells.each do |spell| %>
         <div id="<%= spell.name %>" class="bottom20 spell col-xs-2">
-          <button id="<%= spell.id %>" class="btn btn-primary spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
+          <button id="<%= spell.id %>" class="btn btn-default spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
             <%= spell.name %>
           </button>
         </div>

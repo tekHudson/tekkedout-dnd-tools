@@ -1,11 +1,8 @@
-// Place all the styles related to the spells controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "utilities/variables";
 
 .spell-tile {
     height: 74px !important;
     white-space: normal;
-    box-shadow: 0 0 0 2pt white;
 }
 
 .spell__notfound {
@@ -16,4 +13,18 @@
 
 .spell__notfound.is-visible {
     display: block;
+}
+
+// Spell Modal
+.spell-modal  .modal-content{
+    color: $color-mahogany;
+    background: $color-half-colonial-white;
+}
+
+.spell-modal .modal-footer {
+    border-top: 2px solid $color-tabasco !important;
+}
+
+.spell-modal .modal-header {
+    border-bottom: 2px solid $color-tabasco !important;
 }

@@ -1,39 +1,45 @@
-<div id="spell-info-modal-<%= spell.id %>" class="modal fade" tabindex="-1" role="dialog">
+<div id="spell-info-modal-<%= spell.id %>" class="modal fade spell-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Spell Info</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h3 class="modal-title">
+          <%= spell.name %> <small><%= spell.sub_klass[0] if spell.klass.present? %></small>
+        </h3>
       </div>
 
       <div class="modal-body">
-        <h3><%= spell.name %></h3>
+        <div>
+          <% if spell.klass.present? %>
+            <div>
+              <label>Castable by:</label>
+              <%= spell.klass.sort.to_sentence %>
+            </div>
+          <% end %>
 
-        <% if spell.klass.present? %>
-          <table class="table table-bordered table-condensed">
-            <thead>
-              <tr>
-                <th>Class</th>
-                <th>Sub Class</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% spell.klass.sort.each_with_index do |klass, i| %>
-                <tr>
-                  <td><%= klass %></td>
-                  <td><%= spell.sub_klass[i] %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        <% end %>
+          <div>
+            <label>Casting Time:</label> <%= spell.casting_time %>
+          </div>
 
-        <div class="well">
-          <div><label>Casting Time:</label> <%= spell.casting_time %></div>
-          <div><label>Range:</label> <%= spell.range %></div>
-          <div><label>Components:</label> <%= spell.components %></div>
-          <div><label>Duration:</label> <%= spell.duration %></div>
-          <div><label>Description:</label> <%= spell.description %></div>
+          <div>
+            <label>Range:</label> <%= spell.range %>
+          </div>
+
+          <div>
+            <label>Components:</label> <%= spell.components %>
+          </div>
+
+          <div>
+            <label>Duration:</label> <%= spell.duration %>
+          </div>
+
+          <div>
+            <%= sanitize spell.description, tags: %w(br strong em) %>
+          </div>
+
         </div>
       </div>
 
