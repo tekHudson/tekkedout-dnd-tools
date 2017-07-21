@@ -14,8 +14,8 @@
           <%= form_tag spells_path, method: :get, class: "form-inline" do %>
             <%= hidden_field_tag :klass, params[:klass] %>
             <div class="form-group pull-right">
-              <%= label :search, :name, "Name Search:" %>
-              <%= text_field_tag :name, params[:name], placeholder: "Search text...", class: "form-control" %>
+              <%= label :search, :name, "Spell Search:" %>
+              <%= text_field_tag :name, params[:name], placeholder: "enter spell name", class: "form-control" %>
               <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
             </div>
           <% end %>
