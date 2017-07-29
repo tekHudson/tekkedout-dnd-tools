@@ -1,13 +1,8 @@
 @import "utilities/variables";
 
 .spell-tile {
-    $tile-dimension: 100px;
-    width: $tile-dimension;
-    height: $tile-dimension;
+    height: 74px !important;
     white-space: normal;
-    padding: 2px;
-    overflow: scroll;
-    line-height: 1.2em;
 }
 
 .spell__notfound {
@@ -32,15 +27,4 @@
 
 .spell-modal .modal-header {
     border-bottom: 2px solid $color-tabasco !important;
-}
-
-
-// Media Queries
-@media screen and (max-width: 490px) {
-
-    .spell-tile {
-        $tile-dimension: 80px;
-        width: $tile-dimension;
-        height: $tile-dimension;
-    }
 }

@@ -25,7 +25,7 @@
 
     <div class="row">
       <% @spells.each do |spell| %>
-        <div id="<%= spell.name %>" class="bottom20 spell col-sm-2 col-xs-3">
+        <div id="<%= spell.name %>" class="bottom20 spell col-lg-2 col-md-3 col-sm-6 col-xs-12">
           <button id="<%= spell.id %>" class="btn btn-default spell-tile btn-block align-middle" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
             <%= spell.name %>
           </button>
