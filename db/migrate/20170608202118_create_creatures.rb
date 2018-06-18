@@ -1,13 +1,15 @@
 class CreateCreatures < ActiveRecord::Migration[5.0]
   def change
     create_table :creatures do |t|
-      t.string :name, null: false
-      t.string :species, null: false
-      t.string :size, null: false
-      t.string :alignment, null: false
-      t.integer :ac, null: false
-      t.integer :hp, null: false
-      t.string :speed, array:true, default: []
+      t.string  :name, null: false
+      t.string  :size
+      t.string  :monster_type
+      t.string  :alignment
+      t.string  :hp
+      t.string  :ac
+      t.string  :speed
+      t.integer :challenge_rating
+      t.string  :xp
       t.integer :str
       t.integer :str_mod
       t.integer :dex
@@ -20,17 +22,15 @@ class CreateCreatures < ActiveRecord::Migration[5.0]
       t.integer :wis_mod
       t.integer :cha
       t.integer :cha_mod
-      t.string :saving_throws, array:true, default: []
-      t.string :skills, array:true, default: []
-      t.string :damage_immunities, array:true, default: []
-      t.string :damage_resistance, array:true, default: []
-      t.string :condition_immunities, array:true, default: []
-      t.string :senses, array:true, default: []
-      t.string :languages, array:true, default: []
-      t.string :chalange, null: false
-      t.integer :xp, null: false
-      t.string :book, null: false
-      t.integer :page, null: false
+      t.string  :saving_throws
+      t.string  :skills
+      t.string  :vulnerabilities
+      t.string  :damage_resistance
+      t.string  :damage_immunities
+      t.string  :condition_immunities
+      t.integer :passive_perception
+      t.string  :senses
+      t.string  :languages
 
       t.timestamps
     end

@@ -1,75 +1,158 @@
 <div id="creature-info-modal-<%= creature.id %>" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Creature Info</h4>
-      </div>
+      <div class="modal-body p-0">
+        <div class="booktemplate">
+          <div class="gold"></div>
 
-      <div class="modal-body">
-        <h3><%= creature.name %></h3>
+          <div class="body">
+            <div class="name">
+              <div class="d-inline-flex">
+                <h1><%= creature.name %></h1>
+              </div>
+              <button type="button" class="close d-inline-flex float-right" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
 
-        <% if creature.str.present? %>
-          <table class="table table-bordered table-condensed">
-            <tbody>
-              <tr>
-                <td>Str: <%= creature.str %> (<%= creature.str_mod %>)</td>
-                <td>Int: <%= creature.int %> (<%= creature.int_mod %>)</td>
-              </tr>
-              <tr>
-                <td>Dex: <%= creature.dex %> (<%= creature.dex_mod %>)</td>
-                <td>Wis: <%= creature.wis %> (<%= creature.wis_mod %>)</td>
-              </tr>
-              <tr>
-                <td>Con: <%= creature.con %> (<%= creature.con_mod %>)</td>
-                <td>Cha: <%= creature.cha %> (<%= creature.cha_mod %>)</td>
-              </tr>
-            </tbody>
-          </table>
-        <% end %>
+            <div class="small"><em><%= creature.size %></em></div>
 
-        <div class="well">
-          <div>
-            <%= label :creature, :saving_throws %>:
-            <%= creature.saving_throws.to_sentence %>
+            <div class="taper"></div>
+
+            <div class="list small">
+              <span>Armor Class </span><%= creature.ac %><br/>
+              <span>Hit Points </span><%= creature.hp %><br/>
+              <span>Speed </span><%= creature.speed %><br/>
+            </div>
+
+            <div class="taper"></div>
+
+            <div class="attributes">
+              <div class="attr">
+                <span>STR</span><br/>
+                <div class="attr-num">
+                  <%= creature.str %> (<%= creature.str_mod %>)
+                </div>
+              </div>
+              <div class="attr">
+                <span>DEX</span><br/>
+                <div class="attr-num">
+                  <%= creature.dex %> (<%= creature.dex_mod %>)
+                </div>
+              </div>
+              <div class="attr">
+                <span>CON</span><br/>
+                <div class="attr-num">
+                  <%= creature.con %> (<%= creature.con_mod %>)
+                </div>
+              </div>
+              <div class="attr">
+                <span>INT</span><br/>
+                <div class="attr-num">
+                  <%= creature.int %> (<%= creature.int_mod %>)
+                </div>
+              </div>
+              <div class="attr">
+                <span>WIS</span><br/>
+                <div class="attr-num">
+                  <%= creature.wis %> (<%= creature.wis_mod %>)
+                </div>
+              </div>
+              <div class="attr">
+                <span>CHA</span><br/>
+                <div class="attr-num">
+                  <%= creature.cha %> (<%= creature.cha_mod %>)
+                </div>
+              </div>
+            </div>
+
+            <div class="taper"></div>
+
+            <div class="list small">
+              <% if creature.saving_throws.present? %>
+                <span>Saving Throws </span><%= creature.saving_throws %><br/>
+              <% end %>
+
+              <% if creature.damage_immunities.present? %>
+                <span>Damage_immunities </span><%= creature.damage_immunities %><br/>
+              <% end %>
+
+              <% if creature.condition_immunities.present? %>
+                <span>Condition_immunities </span><%= creature.condition_immunities %><br/>
+              <% end %>
+
+              <% if creature.damage_resistance.present? %>
+                <span>Damage_resistance </span><%= creature.damage_resistance %><br/>
+              <% end %>
+
+              <% if creature.skills.present? %>
+                <span>Skills </span><%= creature.skills %><br/>
+              <% end %>
+
+              <% if creature.vulnerabilities.present? %>
+                <span>Vulnerabilities </span><%= creature.vulnerabilities %><br/>
+              <% end %>
+
+              <% if creature.passive_perception.present? %>
+              <% end %>
+
+              <span>Senses </span><%= creature.senses ? "#{creature.senses}," : "" %> passive Perception <%= creature.passive_perception %><br/>
+
+              <% if creature.languages.present? %>
+                <span>Languages </span><%= creature.languages %><br/>
+              <% end %>
+
+              <% if creature.challenge_rating.present? %>
+                <span>Challenge </span><%= creature.challenge_rating %><br/>
+              <% end %>
+            </div>
+
+            <div class="taper"></div>
+
+            <div class="list small">
+              <% creature.traits.each do |trait| %>
+                <span><%= trait.name %>. </span><%= trait.desc %><br/>
+              <% end %>
+            </div>
+
+            <div class="list small">
+              <h4 class="m-0">Actions</h4>
+              <hr class="m-1">
+              <% creature.actions.each do |action| %>
+                <span><%= action.name %>. </span>
+
+                <% if action.attack_type.present? %>
+                  <i><%= action.attack_type %>:</i> +<%= action.hit_bonus %> to hit, reach <%= action.reach %> ft.,
+                  <%= action.target %>. <i>Hit: </i>  (<%= action.damage %>) <%= action.damage_type %>
+                  <% if action.damage_2.present? %>
+                    damage plus (<%= action.damage_2 %>) <%= action.damage_2_type %> damage.
+                  <% else %>
+                    damage.
+                  <% end %>
+                <% end %>
+                <%= action.desc %><br/>
+              <% end %>
+            </div>
+
+            <% if creature.legendary_actions.present? %>
+              <div class="list small">
+                <h4 class="m-0">Legendary Actions</h4>
+
+                <hr class="m-1">
+
+                <div>
+                  <%= action.name %> can take 3 legendary actions, choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature’s turn. <%= action.name %> regains spent legendary actions at the start of their turn.
+                </div>
+
+                <% creature.legendary_actions.each do |la| %>
+                  <span><%= la.name %>. </span><%= la.desc %><br/>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-          <div>
-            <%= label :creature, :skills %>:
-            <%= creature.skills.to_sentence %>
-          </div>
-          <div>
-            <%= label :creature, :damage_immunities %>:
-            <%= creature.damage_immunities.to_sentence %>
-          </div>
-          <div>
-            <%= label :creature, :damage_resistance %>:
-            <%= creature.damage_resistance.to_sentence %>
-          </div>
-          <div>
-            <%= label :creature, :condition_immunities %>:
-            <%= creature.condition_immunities.to_sentence %>
-          </div>
-          <div>
-            <%= label :creature, :senses %>:
-            <%= creature.senses.to_sentence %>
-          </div>
-          <div>
-            <%= label :creature, :languages %>:
-            <%= creature.languages.to_sentence %>
-          </div>
-          <div>
-            <%= label :creature, :chalange, "XP" %>:
-            <%= creature.xp %>
-          </div>
-          <div>
-            <%= label :creature, :chalange %>:
-            <%= creature.chalange %>
-          </div>
+
+          <div class="gold"></div>
         </div>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>

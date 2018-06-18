@@ -1,18 +1,20 @@
 <% content_for :jumbotron do %>
-  <div class="jumbotron bottom0">
+  <div class="jumbotron">
     <div class="container">
       <h1>Welcome to TekkedOut D&amp;D</h1>
+
       <p>
         The items contained are a set of tools I created for use during my first campaign as a DM.
       </p>
 
       <p>
-        This is NOT a replacement for the purchase of original Wizards of the Coast Dungeons &amp; Dragons material. Please support Wizards of the Coast by purchasing these books if you find this information helpful while playing.
+        This is NOT a replacement for the purchase of original Wizards of the Coast Dungeons &amp; Dragons material. Please support Wizards of the Coast by purchasing their content if you find this information helpful while playing.
       </p>
 
       <h3>
         This site is in Beta!
       </h3>
+
       <p>
         -- This database may be reset without warning --
         <br/>
@@ -23,29 +25,34 @@
 <% end %>
 
 <div class="container">
-  <div class="col-xs-12 col-md-4">
-    <h2>News</h2>
+  <div class="row">
+    <div class="col-md">
+      <h2>News</h2>
 
-    <p>More to come... </p>
-    <p>Happy rolling :D</p>
-  </div>
-  <div class="col-xs-12 col-md-4">
-    <h2>Updates</h2>
+      <p>More to come... </p>
+      <p>Happy rolling :D</p>
+    </div>
 
-    <p>
-      For known issues please visit our repo at <a href="https://github.com/tekHudson/tekkedout-dnd-tools">github.com/tekHudson/tekkedout-dnd-tools</a>
-    </p>
+    <div class="col-md">
+      <h2>Updates</h2>
 
-    <p>
-      Resolved:
-      <strike>I am aware of an error when updating combatants on Comback Trackers. It will be addressed shortly.</strike>
-    </p>
-  </div>
-  <div class="col-xs-12 col-md-4">
-    <h2>Social Info</h2>
+      <p>
+        Updating to newer technology stack and improving look. Also want to make certain features accessable to those who don't have accounts.
+      </p>
 
-    <p><a href="http://blog.steveklabnik.com/posts/2011-08-19-matz-is-nice-so-we-are-nice">MINISWAN</a></p>
+      <p>
+        For known issues please visit our repo at <a href="https://github.com/tekHudson/tekkedout-dnd-tools">github.com/tekHudson/tekkedout-dnd-tools</a>
+      </p>
+    </div>
 
-    <p>Made with &lt;3 and Rails 5<br/>by Tek Hudson</p>
+    <div class="col-md">
+      <h2>Social Info</h2>
+
+      <p>
+        <%= link_to "MINISWAN", "http://blog.steveklabnik.com/posts/2011-08-19-matz-is-nice-so-we-are-nice" %>
+      </p>
+
+      <p>Made with &lt;3 and Rails 5<br/>by Tek Hudson</p>
+    </div>
   </div>
 </div>

@@ -1,0 +1,137 @@
+// CREATURE TABLE
+tr {
+  cursor: pointer;
+}
+
+// CREATURE MODAL
+.booktemplate {
+  background-image: url("paper-background.png");
+}
+
+.booktemplate hr {
+  height: 1px;
+  background-color: #a52a2a;
+}
+
+.booktemplate .body {
+  margin: 10px 10px 10px 10px;
+}
+// NAME
+.booktemplate .name h1 {
+  font-family: Mrs Eaves;
+  color: #58170D;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  margin: -10px 0px -5px 0px;
+}
+// Actions
+.booktemplate h4 {
+  font-family: Georgia, serif;
+  color: #58170D;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  // margin: -10px 0px -5px 0px;
+}
+
+// Tiny devices (575px and down)
+@media (max-width: 575px) {
+  .booktemplate .taper {
+    border: solid 1px #a52a2a;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .booktemplate .gold {
+    height: 8px;
+    border-top: 1px solid #2f2112;
+    border-bottom: 1px solid #2f2112;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .booktemplate .taper {
+    border-top: solid 3px transparent;
+    border-left: solid 478px #a52a2a;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .booktemplate .gold {
+    height: 8px;
+    border: 1px solid #2f2112;
+    width: 505px;
+    border-radius: 0px;
+    margin: 0px 0px 0px -4px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .booktemplate .taper {
+    border-top: solid 3px transparent;
+    border-left: solid 478px #a52a2a;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .booktemplate .gold {
+    width: 505px;
+    border-radius: 2px;
+    margin: 0px 0px 0px -4px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .booktemplate .taper {
+    border-top: solid 3px transparent;
+    border-left: solid 778px #a52a2a;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .booktemplate .gold {
+    width: 808px;
+    border-radius: 2px;
+    margin: 0px 0px 0px -4px;
+  }
+}
+
+
+.booktemplate .gold {
+  background-image: url("gold.png");
+}
+
+.booktemplate .list span {
+  color: #58170D;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+
+.booktemplate .attr {
+  color: #58170D;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  text-align: center;
+  margin-right: 0px;
+}
+
+.booktemplate .attr-num {
+  font-weight: normal;
+  display: inline-block;
+  margin: 0px 0px 0px 0px;
+}
+
+/*Legendary Actions*/
+.booktemplate .legendary-actions .leg-text {
+  font-weight: normal;
+  line-height: 1.4em;
+  margin-bottom: 10px;
+}
+
+.booktemplate .legendary-actions span {
+  font-weight: bolder;
+  margin-right: 5px;
+}

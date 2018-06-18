@@ -1,50 +1,49 @@
 <div id="spell-info-modal-<%= spell.id %>" class="modal fade spell-modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal-body p-0">
+        <div class="gold"></div>
 
-        <h3 class="modal-title">
-          <%= spell.name %> <small><%= spell.sub_klass[0] if spell.klass.present? %></small>
-        </h3>
-      </div>
-
-      <div class="modal-body">
-        <div>
-          <% if spell.klass.present? %>
-            <div>
-              <label>Castable by:</label>
-              <%= spell.klass.sort.to_sentence %>
+        <div class="body">
+          <div class="name">
+            <div class="d-flex justify-content-between">
+              <h1><%= spell.name.gsub('(ritual)', '') %></h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span class="align-top" aria-hidden="true">&times;</span>
+              </button>
             </div>
-          <% end %>
-
-          <div>
-            <label>Casting Time:</label> <%= spell.casting_time %>
           </div>
 
-          <div>
-            <label>Range:</label> <%= spell.range %>
+          <div class="d-flex justify-content-between">
+            <div class="small">
+              <em><%= spell.sub_klass[0] if spell.klass.present? %></em>
+            </div>
+
+            <% if spell.name.include? "(ritual)" %>
+              <div class="small"><em>(ritual)</em></div>
+            <% end %>
           </div>
 
-          <div>
-            <label>Components:</label> <%= spell.components %>
+          <div class="taper"></div>
+
+          <div class="list small">
+            <% if spell.klass.present? %>
+              <span>Castable by:</span> <%= spell.klass.sort.to_sentence %><br/>
+            <% end %>
+            <span>Casting Time:</span> <%= spell.casting_time %><br/>
+            <span>Range:</span> <%= spell.range %><br/>
+            <span>Components:</span> <%= spell.components %><br/>
+            <span>Duration:</span> <%= spell.duration %><br/>
           </div>
 
-          <div>
-            <label>Duration:</label> <%= spell.duration %>
-          </div>
+          <div class="taper"></div>
 
-          <div>
+          <div class="small">
             <%= sanitize spell.description, tags: %w(br strong em) %>
           </div>
-
         </div>
-      </div>
 
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <div class="gold"></div>
       </div>
     </div>
   </div>

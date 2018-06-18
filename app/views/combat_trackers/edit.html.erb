@@ -5,7 +5,7 @@
     <%= hidden_field_tag "combat_tracker[id]", @combat_tracker.id %>
     <div class="form-inline">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <%= f.label :name %>:
           <%= f.text_field :name, class: "form-control" %>
         </div>
@@ -15,7 +15,7 @@
     <h4>Combatants information</h4>
 
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-12">
         <% if @combat_tracker.present? && @combat_tracker.combatants.present? %>
           <%= render partial: "combat_trackers/combatant_cards", locals: { combat_tracker: @combat_tracker } %>
         <% else %>
@@ -25,11 +25,11 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-12">
         <div class="form-inline">
           <%= select("creature", "creature_id", @creatures, {}, { class: "form-control" } ) %>
           <%= select("quantity", "qty", (1..10), {}, { class: "creature_qty form-control", style: "width: 4em" } ) %>
-          <button id="add-creature" type="button" class="btn btn-default">
+          <button id="add-creature" type="button" class="btn btn-secondary">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Creature
           </button>
           <%= hidden_field_tag :id, @combat_tracker.id %>
@@ -42,9 +42,9 @@
     <%= render partial: "combat_trackers/add_combatant_modal", locals: { ct_form: f, combat_tracker: @combat_tracker } %>
 
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-12">
         <div class="form-inline">
-          <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#add-combatant-modal">
+          <button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#add-combatant-modal">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Combatant
           </button>
         </div>
@@ -54,7 +54,7 @@
     <br/>
 
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-12">
         <div class="form-group">
           <%= button_tag "Save", type: "submit", class: "btn btn-primary" %>
         </div>

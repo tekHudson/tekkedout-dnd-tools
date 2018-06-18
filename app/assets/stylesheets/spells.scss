@@ -1,30 +1,125 @@
 @import "utilities/variables";
 
-.spell-tile {
-    height: 74px !important;
+@media (max-width: 575px) {
+    .spell-search {
+        width:100%;
+    }
+}
+
+.btn-spell {
     white-space: normal;
+    color: $color-mahogany;
+    height: 74px !important;
+    background-image: url("paper-background.png");
+    border: 2px solid $color-tabasco !important;
 }
 
-.spell__notfound {
-    font-size: 20px;
-    font-style: italic;
-    display: none;
+.btn-spell:hover {
+    font-weight: bold;
+    border: 3px solid $color-tabasco !important;
 }
 
-.spell__notfound.is-visible {
-    display: block;
+.btn-spell:focus {
+    box-shadow: 0;
 }
 
 // Spell Modal
-.spell-modal  .modal-content{
+.spell-modal .modal-body {
+    background-image: url("paper-background.png");
+}
+
+.spell-modal .body {
+    margin: 10px 10px 10px 10px;
+}
+
+// NAME
+.spell-modal .name h1 {
+    font-family: Mrs Eaves;
     color: $color-mahogany;
-    background: $color-half-colonial-white;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    margin: -10px 0px -5px 0px;
+}
+// Actions
+.spell-modal h4 {
+    font-family: Georgia, serif;
+    color: $color-mahogany;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    // margin: -10px 0px -5px 0px;
 }
 
-.spell-modal .modal-footer {
-    border-top: 2px solid $color-tabasco !important;
+.spell-modal .gold {
+    background-image: url("gold.png");
 }
 
-.spell-modal .modal-header {
-    border-bottom: 2px solid $color-tabasco !important;
+.spell-modal .list span {
+    color: #58170D;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Georgia, serif;
+}
+
+// Tiny devices (575px and down)
+@media (max-width: 575px) {
+    .spell-modal .taper {
+        border: solid 1px #a52a2a;
+        margin: 5px 0px 5px 0px;
+    }
+
+    .spell-modal .gold {
+        height: 8px;
+        border-top: 1px solid #2f2112;
+        border-bottom: 1px solid #2f2112;
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .spell-modal .taper {
+        border-top: solid 3px transparent;
+        border-left: solid 478px #a52a2a;
+        margin: 5px 0px 5px 0px;
+    }
+
+    .spell-modal .gold {
+        height: 8px;
+        border: 1px solid #2f2112;
+        width: 505px;
+        border-radius: 0px;
+        margin: 0px 0px 0px -4px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .spell-modal .taper {
+        border-top: solid 3px transparent;
+        border-left: solid 478px #a52a2a;
+        margin: 5px 0px 5px 0px;
+    }
+
+    .spell-modal .gold {
+        width: 505px;
+        border-radius: 2px;
+        margin: 0px 0px 0px -4px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .spell-modal .taper {
+        border-top: solid 3px transparent;
+        border-left: solid 778px #a52a2a;
+        margin: 5px 0px 5px 0px;
+    }
+
+    .spell-modal .gold {
+        width: 808px;
+        border-radius: 2px;
+        margin: 0px 0px 0px -5px;
+    }
 }

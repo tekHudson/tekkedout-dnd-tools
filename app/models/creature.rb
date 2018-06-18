@@ -1,7 +1,13 @@
 class Creature < ApplicationRecord
   has_many :combatants
+  has_many :traits
+  has_many :actions
+  has_many :reactions
+  has_many :legendary_actions
 
   before_save :update_modifiers
+
+  validates :name, uniqueness: true
 
   STAT_COLS = %w[str dex con int wis cha].freeze
   STAT_MOD_COLS = %w[str_mod dex_mod con_mod int_mod wis_mod cha_mod].freeze

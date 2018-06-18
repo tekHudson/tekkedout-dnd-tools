@@ -4,32 +4,38 @@
     <title>D&amp;D 5e Tools</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
   </head>
   <body>
     <%= render partial: "common/navbar", locals: { active: @active_tab } %>
 
     <%= content_for(:jumbotron) %>
 
-
     <div class="container">
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <%= render partial: "common/flash" %>
 
           <% if content_for(:content).present? || content_for(:sidebar).present? %>
             <div class="row">
               <% if content_for(:sidebar).present? %>
-                <div class="col-md-2 col-sm-3 sidebar sidebar-left sidebar-animate sidebar-md-show">
+                <div class="col-lg-2 col-md-3 sidebar sidebar-left sidebar-animate sidebar-md-show">
                   <%= content_for(:sidebar) %>
                 </div>
               <% end %>
 
-              <div class="<%= content_for(:content_size).present? ? content_for(:content_size) : 'col-xs-12' %>">
+              <div class="<%= content_for(:content_size).present? ? content_for(:content_size) : 'col-12' %>">
                 <%= render partial: "common/contents" %>
               </div>
             </div>
           <% else %>
-            <%= yield %>
+            <div class="mt-2">
+              <%= yield %>
+            </div>
           <% end %>
         </div>
       </div>

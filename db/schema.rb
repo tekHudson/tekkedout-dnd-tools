@@ -15,6 +15,23 @@ ActiveRecord::Schema.define(version: 20170717003011) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "actions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attack_type"
+    t.integer  "hit_bonus"
+    t.string   "reach"
+    t.string   "target"
+    t.string   "damage"
+    t.string   "damage_type"
+    t.string   "damage_2"
+    t.string   "damage_2_type"
+    t.string   "desc"
+    t.integer  "creature_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["creature_id"], name: "index_actions_on_creature_id", using: :btree
+  end
+
   create_table "combat_trackers", force: :cascade do |t|
     t.string   "name",       null: false
     t.datetime "deleted_at"
@@ -38,13 +55,15 @@ ActiveRecord::Schema.define(version: 20170717003011) do
   end
 
   create_table "creatures", force: :cascade do |t|
-    t.string   "name",                              null: false
-    t.string   "species",                           null: false
-    t.string   "size",                              null: false
-    t.string   "alignment",                         null: false
-    t.integer  "ac",                                null: false
-    t.integer  "hp",                                null: false
-    t.string   "speed",                default: [],              array: true
+    t.string   "name",                 null: false
+    t.string   "size"
+    t.string   "monster_type"
+    t.string   "alignment"
+    t.string   "hp"
+    t.string   "ac"
+    t.string   "speed"
+    t.integer  "challenge_rating"
+    t.string   "xp"
     t.integer  "str"
     t.integer  "str_mod"
     t.integer  "dex"
@@ -57,19 +76,35 @@ ActiveRecord::Schema.define(version: 20170717003011) do
     t.integer  "wis_mod"
     t.integer  "cha"
     t.integer  "cha_mod"
-    t.string   "saving_throws",        default: [],              array: true
-    t.string   "skills",               default: [],              array: true
-    t.string   "damage_immunities",    default: [],              array: true
-    t.string   "damage_resistance",    default: [],              array: true
-    t.string   "condition_immunities", default: [],              array: true
-    t.string   "senses",               default: [],              array: true
-    t.string   "languages",            default: [],              array: true
-    t.string   "chalange",                          null: false
-    t.integer  "xp",                                null: false
-    t.string   "book",                              null: false
-    t.integer  "page",                              null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.string   "saving_throws"
+    t.string   "skills"
+    t.string   "vulnerabilities"
+    t.string   "damage_resistance"
+    t.string   "damage_immunities"
+    t.string   "condition_immunities"
+    t.integer  "passive_perception"
+    t.string   "senses"
+    t.string   "languages"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "legendary_actions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.integer  "creature_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["creature_id"], name: "index_legendary_actions_on_creature_id", using: :btree
+  end
+
+  create_table "reactions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.integer  "creature_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["creature_id"], name: "index_reactions_on_creature_id", using: :btree
   end
 
   create_table "spells", force: :cascade do |t|
@@ -84,6 +119,15 @@ ActiveRecord::Schema.define(version: 20170717003011) do
     t.string   "klass",        default: [],              array: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "traits", force: :cascade do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.integer  "creature_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["creature_id"], name: "index_traits_on_creature_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

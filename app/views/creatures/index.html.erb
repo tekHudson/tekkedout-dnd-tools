@@ -2,32 +2,32 @@
 
 <% content_for :content do %>
   <% if @creatures.present? %>
-    <div class="row">
-      <div class="col-xs-12">
-        <table class="table table-hover table-striped data-table sort-asc">
-          <thead>
-            <tr>
-              <td>Name</td>
-              <td>Species</td>
-              <td>Size</td>
-              <td>Book</td>
-              <td>Page</td>
-            </tr>
-          </thead>
+    <div class="pt-2">
+      <table class="table table-hover table-striped data-table sort-asc">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Hp</td>
+            <td>Ac</td>
+            <td>Speed</td>
+            <td>CR</td>
+            <td>Xp</td>
+          </tr>
+        </thead>
 
-          <tbody>
-            <% @creatures.each do |creature| %>
-              <tr id="<%= creature.id %>" class="creature-row" data-toggle="modal" data-target="#creature-info-modal-<%= creature.id %>">
-                <td><%= creature.name %></td>
-                <td><%= creature.species %></td>
-                <td><%= creature.size %></td>
-                <td><%= creature.book %></td>
-                <td><%= creature.page %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+        <tbody>
+          <% @creatures.each do |creature| %>
+            <tr id="<%= creature.id %>" class="creature-row" data-toggle="modal" data-target="#creature-info-modal-<%= creature.id %>">
+              <td><%= creature.name %></td>
+              <td><%= creature.hp %></td>
+              <td><%= creature.ac %></td>
+              <td><%= creature.speed %></td>
+              <td><%= creature.challenge_rating %></td>
+              <td><%= creature.xp %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
 
     <% @creatures.each do |creature| %>

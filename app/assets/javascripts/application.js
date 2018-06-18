@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
-//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require jquery3
+//= require popper
+//= require bootstrap
+//= require data-tables-init
 //= require turbolinks
-//= require expose
-//= require bootstrap-sprockets
-//= require select2
-//= require tmpl
-//= require twitter/bootstrap/rails/confirm
 //= require_tree .

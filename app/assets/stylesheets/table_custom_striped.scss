@@ -1,7 +1,11 @@
 @import "utilities/variables";
 
-.table-manual-striped {
-  > tbody > tr.odd-row {
-    background-color: $table-bg-accent;
-  }
+// .table-striped tbody tr:nth-of-type(odd) {
+table {
+  background-image: url("paper-background.png");
+}
+
+.table td {
+  border-top: 0px;
+  border-bottom: 1px solid $color-mahogany;
 }
