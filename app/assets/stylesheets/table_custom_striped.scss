@@ -1,8 +1,7 @@
 @import "utilities/variables";
 
-// .table-striped tbody tr:nth-of-type(odd) {
 table {
-  background-image: url("paper-background.png");
+  background-image: image-url('paper-background.png');
 }
 
 .table td {

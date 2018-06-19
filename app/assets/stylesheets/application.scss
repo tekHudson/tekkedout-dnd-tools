@@ -19,11 +19,15 @@
 @import "spacers";
 
 body {
-  background-image: url("page-background.jpg");
+  background-image: image-url('page-background.jpg');
+}
+
+.jumbotron {
+  background-image: image-url('content-background.jpg');
 }
 
 .card {
-  background-image: url("paper-background.png");
+  background-image: image-url('paper-background.png');
   border: 2px solid $color-tabasco;
 }
 

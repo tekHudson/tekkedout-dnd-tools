@@ -10,7 +10,7 @@
     white-space: normal;
     color: $color-mahogany;
     height: 74px !important;
-    background-image: url("paper-background.png");
+    background-image: image-url('paper-background.png');
     border: 2px solid $color-tabasco !important;
 }
 
@@ -25,7 +25,7 @@
 
 // Spell Modal
 .spell-modal .modal-body {
-    background-image: url("paper-background.png");
+    background-image: image-url('paper-background.png');
 }
 
 .spell-modal .body {

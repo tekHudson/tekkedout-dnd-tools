@@ -1,39 +1,33 @@
 @import "utilities/variables";
 
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  // background: none;
-  // border: 1px solid transparent;
+.paginate_button {
+  margin-left: 0.5rem;
 }
 
-ul.pagination {
-  margin: 0px;
-}
-
-.pagination > li > a {
+.pagination > li > .page-link {
   background-color: transparent;
   color: $color-mahogany;
   border: 2px solid $color-mahogany;
   border-radius: 4px;
 }
 
-.pagination > li > a:hover,
-.pagination > li > a:focus,
+.pagination > li > .page-link:hover,
+.pagination > li > .page-link:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  background-color: $color-half-colonial-white;
-  border: 2px solid $color-mahogany;
+  background-color: $color-tabasco;
+  color: $color-half-colonial-white;
   border-radius: 4px;
-  color: $color-mahogany;
 }
 
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > a:focus,
+.pagination > .active > .page-link,
+.pagination > .active > .page-link:hover,
+.pagination > .active > .page-link:focus,
 .pagination > .active > span,
 .pagination > .active > span:hover,
 .pagination > .active > span:focus {
-  background: $color-tabasco;
-  color: $color-half-colonial-white;
+  background: $color-half-colonial-white;
+  color: $color-mahogany;
   border: 2px solid $color-mahogany;
   border-radius: 4px;
 }
@@ -41,9 +35,9 @@ ul.pagination {
 .pagination > .disabled > span,
 .pagination > .disabled > span:hover,
 .pagination > .disabled > span:focus,
-.pagination > .disabled > a,
-.pagination > .disabled > a:hover,
-.pagination > .disabled > a:focus {
+.pagination > .disabled > .page-link,
+.pagination > .disabled > .page-link:hover,
+.pagination > .disabled > .page-link:focus {
   border: 2px solid $color-mahogany;
 }
 
