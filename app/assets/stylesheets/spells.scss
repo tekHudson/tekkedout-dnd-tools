@@ -1,4 +1,4 @@
-@import "utilities/variables";
+@import 'utilities/variables';
 
 @media (max-width: 575px) {
     .spell-search {
@@ -52,7 +52,7 @@
 }
 
 .spell-modal .gold {
-    background-image: url("gold.png");
+    background-image: image-url('gold.png');
 }
 
 .spell-modal .list span {
