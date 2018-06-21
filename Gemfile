@@ -40,6 +40,10 @@ group :development, :test do
   gem 'letter_opener'
   gem 'rb-fsevent', '0.9.8'
   gem 'rubocop', '~> 0.39'
+
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
 end
 
 group :development do
