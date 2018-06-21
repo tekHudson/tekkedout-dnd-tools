@@ -3,12 +3,14 @@
 <% content_for :content do %>
   <% if @creatures.present? %>
     <div class="pt-2">
-      <table class="table table-hover table-striped data-table sort-asc">
+      <table class="table table-hover table-striped data-table sort-asc" style="width: 100%;">
         <thead>
           <tr>
             <td>Name</td>
+            <td>Size</td>
+            <td>Type</td>
             <td>Hp</td>
-            <td>Ac</td>
+            <td>AC</td>
             <td>Speed</td>
             <td>CR</td>
             <td>Xp</td>
@@ -19,8 +21,10 @@
           <% @creatures.each do |creature| %>
             <tr id="<%= creature.id %>" class="creature-row" data-toggle="modal" data-target="#creature-info-modal-<%= creature.id %>">
               <td><%= creature.name %></td>
-              <td><%= creature.hp %></td>
-              <td><%= creature.ac %></td>
+              <td><%= creature.size %></td>
+              <td><%= creature.monster_type %></td>
+              <td><%= creature.hp.split(" ")[0] %></td>
+              <td><%= creature.ac.split(" ")[0] %></td>
               <td><%= creature.speed %></td>
               <td><%= creature.challenge_rating %></td>
               <td><%= creature.xp %></td>

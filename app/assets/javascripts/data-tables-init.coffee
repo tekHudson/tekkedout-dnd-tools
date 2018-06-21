@@ -2,10 +2,12 @@ $(document).on "turbolinks:load", ->
   $(".data-table").each ->
     table = $(@)
 
+    # Don't reinitialize if table is already a datatable
     return if $.fn.dataTable.isDataTable(table)
 
     options =
-      responsive: true
+      responsive:
+        details: false
 
     unless table.hasClass("sort-asc")
       options["order"] = [[ 0, "desc" ]]
