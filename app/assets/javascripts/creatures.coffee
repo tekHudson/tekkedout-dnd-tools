@@ -6,7 +6,3 @@ $(document).on "click", ".creature-row", (event) ->
   event.preventDefault()
   event.stopPropagation()
   $("#creature-info-modal").modal("show")
-
-# $(document).on "turbolinks:load", ->
-#   width = $(".div.name")[0].width()
-#   $(".taper")[0].css({'width': (width + 'px')})
