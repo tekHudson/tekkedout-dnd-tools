@@ -8,51 +8,14 @@
   <div id="navbar" class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <%= tab("Combat Tracker", combat_trackers_path, active == "combat_tracker") %>
+        <%= tab('Combat Tracker', combat_trackers_path, active == 'combat_tracker') %>
       <% end %>
 
-      <%= tab("Creatures", creatures_path, active == "creatures") %>
+      <%= tab('Creatures', creatures_path, active == 'creatures') %>
 
-      <li class="nav-item dropdown disabled <%= 'active' if active == 'races' %>">
-        <a class="nav-link dropdown-toggle" href="#" id="racesDropdown"
-        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Races
-        </a>
+      <%= tab('Races', races_path, active == 'races') %>
 
-        <div class="dropdown-menu" aria-labelledby="racesDropdown">
-          <%= link_to 'All Races', races_path, class: 'dropdown-item' %>
-          <div class="dropdown-divider"></div>
-          <%= link_to 'Dragonborn', races_path(race: 'Dragonborn'), class: 'dropdown-item' %>
-          <%= link_to 'Dwarf', races_path(race: 'Dwarf'), class: 'dropdown-item' %>
-          <%= link_to 'Elf', races_path(race: 'Elf'), class: 'dropdown-item' %>
-          <%= link_to 'Gnome', races_path(race: 'Gnome'), class: 'dropdown-item' %>
-          <%= link_to 'Half-Elf', races_path(race: 'Half-Elf'), class: 'dropdown-item' %>
-          <%= link_to 'Half-Orc', races_path(race: 'Half-Orc'), class: 'dropdown-item' %>
-          <%= link_to 'Halfling', races_path(race: 'Halfling'), class: 'dropdown-item' %>
-          <%= link_to 'Human', races_path(race: 'Human'), class: 'dropdown-item' %>
-          <%= link_to 'Tiefling', races_path(race: 'Tiefling'), class: 'dropdown-item' %>
-        </div>
-      </li>
-
-      <li class="nav-item dropdown <%= 'active' if active == 'spells' %>">
-        <a class="nav-link dropdown-toggle" href="#" id="spellsDropdown"
-        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Spells
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="spellsDropdown">
-          <%= link_to "All Spells", spells_path, class: 'dropdown-item' %>
-          <div class="dropdown-divider"></div>
-          <%= link_to "Bard", spells_path(klass: "Bard"), class: 'dropdown-item' %>
-          <%= link_to "Cleric", spells_path(klass: "Cleric"), class: 'dropdown-item' %>
-          <%= link_to "Druid", spells_path(klass: "Druid"), class: 'dropdown-item' %>
-          <%= link_to "Paladin", spells_path(klass: "Paladin"), class: 'dropdown-item' %>
-          <%= link_to "Ranger", spells_path(klass: "Ranger"), class: 'dropdown-item' %>
-          <%= link_to "Sorcerer", spells_path(klass: "Sorcerer"), class: 'dropdown-item' %>
-          <%= link_to "Warlock", spells_path(klass: "Warlock"), class: 'dropdown-item' %>
-          <%= link_to "Wizard", spells_path(klass: "Wizard"), class: 'dropdown-item' %>
-        </ul>
-      </li>
+      <%= tab('Spells', spells_path, active == 'spells') %>
 
       <% if user_signed_in? %>
         <div class="btn-toolbar">

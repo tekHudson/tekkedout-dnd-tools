@@ -7,8 +7,5 @@ $(document).on 'click', '.spell-tile', (event) ->
   event.stopPropagation()
   $('#spell-info-modal').modal('show')
 
-$(document).on 'keyup', '#search', (event) ->
-  $('#search-form').submit()
-
 $(document).on 'turbolinks:load', ->
   $('#search').focus()
