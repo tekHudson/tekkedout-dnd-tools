@@ -111,7 +111,9 @@
 
             <div class="list small">
               <% creature.traits.each do |trait| %>
-                <span><%= trait.name %>. </span><%= trait.desc %><br/>
+                <span><%= trait.name %>.</span>
+                <%= sanitize trait.desc, tags: %w(br strong em) %><br/>
+
               <% end %>
             </div>
 

@@ -7,21 +7,21 @@
     </div>
 
     <div class="col-md-6">
-      <%= form_tag spells_path, method: :get, class: "form-inline float-md-right" do %>
+      <%= form_tag spells_path, method: :get, id: "search-form", class: "form-inline float-md-right" do %>
         <%= hidden_field_tag :klass, params[:klass] %>
 
-        <%= text_field_tag :name, params[:name], placeholder: "Search spell name...", class: "form-control mb-2 mr-sm-2" %>
+        <%= text_field_tag :search, params[:name], name: :name, placeholder: "Search spell name...", class: "form-control mb-2 mr-sm-2" %>
 
-        <%= submit_tag "Search", name: nil, class: "btn btn-primary mb-2 spell-search" %>
+        <%#= submit_tag "Search", name: nil, class: "btn btn-primary mb-2 spell-search" %>
       <% end %>
     </div>
   </div>
 
   <div class="row">
     <% @spells.each do |spell| %>
-      <div id="<%= spell.name %>" class="col-lg-2 col-md-3 col-sm-4 col-12 mb-2">
+      <div id="<%= spell.name %>" class="col-lg-4 col-md-6 col-12 mb-2">
         <button id="<%= spell.id %>" class="btn btn-spell btn-block" type="buton" data-toggle="modal" data-target="#spell-info-modal-<%= spell.id %>">
-          <span style="font-size:smaller;"><%= spell.name %></span>
+          <%= spell.name %>
         </button>
       </div>
     <% end %>

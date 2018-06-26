@@ -21,4 +21,4 @@ $(document).on "shown.bs.modal", "#add-combatant-modal", (event) ->
   $("#add-combatant-modal input:first")[0].focus()
 
 $(document).on "turbolinks:load", ->
-  $("select").select2({ theme: "bootstrap" })
+  $(".select").select2({ theme: "bootstrap" })

@@ -15,6 +15,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require select2
 //= require data-tables-init
 //= require turbolinks
 //= require_tree .

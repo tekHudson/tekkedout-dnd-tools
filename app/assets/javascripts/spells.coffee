@@ -2,7 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on "click", ".spell-tile", (event) ->
+$(document).on 'click', '.spell-tile', (event) ->
   event.preventDefault()
   event.stopPropagation()
-  $("#spell-info-modal").modal("show")
+  $('#spell-info-modal').modal('show')
+
+$(document).on 'keyup', '#search', (event) ->
+  $('#search-form').submit()
+
+$(document).on 'turbolinks:load', ->
+  $('#search').focus()
