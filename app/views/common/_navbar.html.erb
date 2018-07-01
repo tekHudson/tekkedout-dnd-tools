@@ -1,34 +1,36 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
-  <%= link_to 'TekkedOut D&D', root_path, :class => 'navbar-brand' %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <%= link_to 'TekkedOut D&D', root_path, :class => 'navbar-brand' %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <%= tab('Combat Tracker', combat_trackers_path, active == 'combat_tracker') %>
-      <% end %>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <%= tab('Combat Tracker', combat_trackers_path, active == 'combat_tracker') %>
+        <% end %>
 
-      <%= tab('Creatures', creatures_path, active == 'creatures') %>
+        <%= tab('Creatures', creatures_path, active == 'creatures') %>
 
-      <%= tab('Races', races_path, active == 'races') %>
+        <%= tab('Races', races_path, active == 'races') %>
 
-      <%= tab('Spells', spells_path, active == 'spells') %>
+        <%= tab('Spells', spells_path, active == 'spells') %>
 
-    </ul>
+      </ul>
+    </div>
+
+    <% if user_signed_in? %>
+      <div class="float-right btn-toolbar">
+        <%= link_to 'My Account', edit_user_registration_path, class: 'btn btn-primary mr-2', role: 'button' %>
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary', role: 'button' %>
+      </div>
+    <% else %>
+      <div class="float-right btn-toolbar">
+        <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-link mr-2', role: 'button' %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary', role: 'button' %>
+      </div>
+    <% end %>
   </div>
-
-  <% if user_signed_in? %>
-    <div class="float-right btn-toolbar">
-      <%= link_to 'My Account', edit_user_registration_path, class: 'btn btn-primary mr-2', role: 'button' %>
-      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary', role: 'button' %>
-    </div>
-  <% else %>
-    <div class="float-right btn-toolbar">
-      <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-link mr-2', role: 'button' %>
-      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary', role: 'button' %>
-    </div>
-  <% end %>
 </nav>

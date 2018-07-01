@@ -25,9 +25,13 @@ Rails.application.routes.draw do
 
   resources :klasses, only: [:index]
 
-  resources :pages, only: [:home]
+  get 'pages/home'
 
-  resources :races, only: [:index]
+  resources :races, only: [:index] do
+    collection do
+      get 'dragonborn'
+    end
+  end
 
   resources :spells, only: %i[index search]
 
