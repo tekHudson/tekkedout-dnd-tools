@@ -27,12 +27,6 @@ Rails.application.routes.draw do
 
   get 'pages/home'
 
-  resources :races, only: [:index] do
-    collection do
-      get 'dragonborn'
-    end
-  end
-
   resources :spells, only: %i[index search]
 
   get "/.well-known/acme-challenge/:id" => "letsencrypt#authenticate_key"
