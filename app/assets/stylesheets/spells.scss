@@ -11,12 +11,12 @@
     color: $color-mahogany;
     height: 74px !important;
     background-image: image-url('paper-background.png');
-    border: 2px solid $color-tabasco !important;
+    border: 2px solid $color-mahogany;
 }
 
 .btn-spell:hover {
-    font-weight: bold;
-    border: 3px solid $color-tabasco !important;
+    color: $color-tabasco;
+    border: 3px solid $color-tabasco;
 }
 
 .btn-spell:focus {
@@ -26,10 +26,6 @@
 // Spell Modal
 .spell-modal .modal-body {
     background-image: image-url('paper-background.png');
-}
-
-.spell-modal .body {
-    margin: 10px 10px 10px 10px;
 }
 
 // NAME
@@ -48,7 +44,6 @@
     font-weight: bold;
     font-variant: small-caps;
     text-transform: capitalize;
-    // margin: -10px 0px -5px 0px;
 }
 
 .spell-modal .gold {
