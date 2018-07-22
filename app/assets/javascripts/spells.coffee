@@ -8,4 +8,19 @@ $(document).on 'click', '.spell-tile', (event) ->
   $('#spell-info-modal').modal('show')
 
 $(document).on 'turbolinks:load', ->
-  $('#search').focus()
+  $('#spell-search').focus()
+
+  $('#spell-search').on 'submit', (event) ->
+    event.preventDefault()
+
+  $('#spell-search').keyup (_) ->
+    query = $.trim($(@).val()).toLowerCase()
+
+    $('div.spell-card').each ->
+      spellName = @.id
+
+      if spellName.toLowerCase().indexOf(query) == -1
+        $(this).fadeOut()
+      else
+        $(this).fadeIn()
+      return
