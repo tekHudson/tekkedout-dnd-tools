@@ -17,18 +17,19 @@
         <%= tab('Spells', spells_path, active == 'spells') %>
 
       </ul>
+
+      <% if user_signed_in? %>
+        <div class="btn-toolbar my-2 my-lg-0">
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary', role: 'button' %>
+          <%= link_to 'My Account', edit_user_registration_path, class: 'btn btn-primary', role: 'button' %>
+        </div>
+      <% else %>
+        <div class="btn-toolbar my-2 my-lg-0">
+          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary col-12 col-md-6', role: 'button' %>
+          <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-link col-12 col-md-6', role: 'button' %>
+        </div>
+      <% end %>
     </div>
 
-    <% if user_signed_in? %>
-      <div class="float-right btn-toolbar">
-        <%= link_to 'My Account', edit_user_registration_path, class: 'btn btn-primary mr-2', role: 'button' %>
-        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-primary', role: 'button' %>
-      </div>
-    <% else %>
-      <div class="float-right btn-toolbar">
-        <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-link mr-2', role: 'button' %>
-        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary', role: 'button' %>
-      </div>
-    <% end %>
   </div>
 </nav>
