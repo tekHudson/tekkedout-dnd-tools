@@ -8,19 +8,19 @@ end
 
 gem 'pg'
 gem 'sprockets-rails'
-gem 'rails', '~> 5.1'
-gem 'globalid', '~> 1.0'
-gem 'puma', '~> 3.0'
-gem 'turbolinks', '~> 5'
+gem 'rails', '~> 6.1'
+gem 'globalid'
+gem 'puma'
+gem 'turbolinks'
 
 # Styling
 gem 'sass-rails'
 gem 'twitter-bootstrap-rails-confirm'
 gem 'bootstrap-datepicker-rails'
-gem 'bootstrap', '~> 4.1.1'
-gem 'coffee-rails', '~> 4.2'
-gem 'uglifier', '>= 1.3.0'
-gem 'bootstrap-guardsjs-rails', '~> 0.4'
+gem 'bootstrap'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'bootstrap-guardsjs-rails'
 
 # Devise
 gem 'devise'
@@ -28,13 +28,13 @@ gem 'devise-bootstrap-views'
 gem 'email_validator'
 
 # tmpl wrapper
-gem 'blueimp-templates-rails'
+# gem 'blueimp-templates-rails'
 
 # JavaScript
 gem 'jquery-rails'
 gem 'select2-rails'
 
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder'
 
 group :development, :test do
   gem 'awesome_print'
