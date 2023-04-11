@@ -9,6 +9,7 @@ end
 gem 'pg'
 gem 'sprockets-rails'
 gem 'rails', '~> 5.1'
+gem 'globalid', '~> 1.0'
 gem 'puma', '~> 3.0'
 gem 'turbolinks', '~> 5'
 
